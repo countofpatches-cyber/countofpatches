@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feuerwehr Patches & Ärmelabzeichen – Galerie | Count of Patches</title>
+  <meta name="description" content="Galerie: Feuerwehr Ärmelabzeichen & Patches. Alle Bilder werden automatisch aus works/feuerwehr geladen." />
+  <link rel="canonical" href="https://countofpatches.de/feuerwehr.html" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="logo.jpeg" alt="Count of Patches Logo" />
+      <div><strong>Count of Patches</strong><span>Faire Preise für die Blaulichtfamilie</span></div>
+    </a>
+    <nav>
+      <a href="thw.html">THW</a><a href="feuerwehr.html">Feuerwehren</a><a href="polizei.html">Polizei</a>
+      <a href="zoll.html">Zoll</a><a href="behoerden.html">Bund/Land</a><a href="index.html#anfrage">Anfrage</a>
+    </nav>
+    <a class="btn primary" href="index.html#anfrage">Preisanfrage</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Feuerwehren – Galerie</h1>
+    <p class="lead">
+      Beispiele für <strong>Feuerwehr Patches & Ärmelabzeichen</strong> (FF/BF, Jugendfeuerwehr, Sonderdienste).
+      Du legst neue Bilder einfach in <code>works/feuerwehr/</code> – nach dem Deploy erscheinen sie automatisch.
+    </p>
+
+    <div class="note">Ordner: <code>works/feuerwehr/</code> · Formate: jpg/jpeg/png/webp</div>
+
+    <div class="card" style="padding:18px;margin-top:14px">
+      <div id="gallery" class="grid" aria-live="polite"></div>
+      <div id="empty" class="note" style="display:none;margin-top:14px">
+        Noch keine Bilder gefunden. Lege Bilder in <code>works/feuerwehr/</code> ab und deploye erneut.
+      </div>
+      <div class="note" style="margin-top:14px">
+        Anfrage: <a class="link" href="index.html#anfrage">Formular</a> oder <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+  <button class="x" id="closeBtn" type="button">Schließen ✕</button>
+  <img id="lightboxImg" alt="Vorschau" />
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="link" href="index.html">Startseite</a> · <a class="link" href="ablauf.html">Ablauf</a> ·
+    <a class="link" href="ueber-mich.html">Über mich</a> · <a class="link" href="impressum.html">Impressum</a> ·
+    <a class="link" href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="gallery.js"></script>
+<script>initGallery("feuerwehr");</script>
+</body>
+</html>

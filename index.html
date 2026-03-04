@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>THW & Feuerwehr Patches herstellen lassen | Ärmelabzeichen & Rubber/PVC – Count of Patches</title>
+  <meta name="description" content="Individuelle Patches/Ärmelabzeichen für THW, Feuerwehr, Polizei, Zoll sowie Bundes- & Landesbehörden. Gewebt, gestickt, Rubber/PVC 2D/3D, UV-Druck. Faire Preise für die Blaulichtfamilie. Preise nur auf Anfrage." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://countofpatches.de/" />
+
+  <meta property="og:title" content="Count of Patches – Patches & Ärmelabzeichen für die Blaulichtfamilie" />
+  <meta property="og:description" content="THW, Feuerwehr, Polizei, Zoll, Behörden: gewebt, gestickt, Rubber/PVC 2D/3D, UV-Druck. Preise nur auf Anfrage." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://countofpatches.de/" />
+
+  <style>
+    :root{
+      --blue:#0033A0; --blue2:#0B4CC2; --ink:#0b1220; --text:#0f172a; --muted:#475569;
+      --bg:#f6f8fc; --card:#ffffff; --line:rgba(15,23,42,.12);
+      --shadow: 0 18px 40px rgba(0,0,0,.10); --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(980px 520px at 18% 0%, rgba(0,51,160,.10), transparent 58%),
+        radial-gradient(980px 520px at 82% 10%, rgba(11,76,194,.08), transparent 58%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+    header{
+      position:sticky;top:0;z-index:50;
+      background: rgba(246,248,252,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:260px}
+    .brand img{
+      width:48px;height:48px;border-radius:14px;border:1px solid var(--line);
+      background:#fff;object-fit:cover;box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    }
+    .brand strong{display:block;font-size:14px;letter-spacing:.2px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{
+      font-size:13px;color:var(--muted);
+      padding:8px 10px;border-radius:12px;border:1px solid transparent;
+    }
+    nav a:hover{border-color: var(--line);background: rgba(0,51,160,.05);color: var(--text)}
+    @media (max-width: 940px){ nav{display:none} }
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;border-radius:14px;
+      padding:10px 12px;border:1px solid var(--line);background:#fff;
+      box-shadow:0 10px 22px rgba(0,0,0,.06);cursor:pointer;font-size:13px;
+      transition:transform .08s ease, filter .15s ease;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, var(--blue) 0%, var(--blue2) 100%);
+      color:#fff;border-color:transparent;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0px)}
+    .btn.primary:hover{filter:brightness(1.03)}
+
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);background:#fff;color:var(--muted);font-size:13px;width:fit-content;
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--blue)}
+    .hero{padding:52px 0 18px}
+    .hero-grid{display:grid;grid-template-columns: 1.2fr .8fr;gap:18px;align-items:stretch}
+    @media (max-width: 940px){ .hero-grid{grid-template-columns:1fr} }
+    h1{
+      margin:14px 0 10px;font-size:clamp(30px, 4vw, 46px);
+      line-height:1.08;letter-spacing:-.6px;color:var(--ink);
+    }
+    .lead{margin:0 0 16px;color:var(--muted);max-width:72ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:18px;position:relative;overflow:hidden}
+    .hero-card:before{
+      content:"";position:absolute;inset:-80px -120px auto auto;width:260px;height:260px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(0,51,160,.18), transparent 62%),
+                  radial-gradient(circle at 60% 60%, rgba(11,76,194,.12), transparent 58%);
+      pointer-events:none;
+    }
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 520px){ .mini-grid{grid-template-columns:1fr} }
+    .mini{border:1px solid var(--line);border-radius:16px;padding:12px;background:#fff}
+    .mini strong{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
+    .mini span{font-size:12.5px;color:var(--muted)}
+    .link{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px}
+
+    section{padding:26px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .section-title h2{margin:0;font-size:22px;letter-spacing:-.2px;color:var(--ink)}
+    .section-title p{margin:0;color:var(--muted);max-width:72ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width: 940px){ .grid3{grid-template-columns:1fr} }
+    .tile{padding:16px}
+    .tile h3{margin:10px 0 6px;font-size:16px;color:var(--ink)}
+    .tile p{margin:0;color:var(--muted);font-size:13.5px}
+    .icon{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background: rgba(0,51,160,.10);border:1px solid rgba(0,51,160,.18);color:var(--blue);font-size:18px;
+    }
+    .note{
+      margin-top:12px;font-size:12px;color:var(--muted);
+      background: rgba(0,51,160,.06);border:1px solid rgba(0,51,160,.14);
+      padding:10px 12px;border-radius:14px;
+    }
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .tab{
+      border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:14px;
+      cursor:pointer;font-size:13px;color:var(--muted)
+    }
+    .tab.active{background: rgba(0,51,160,.08);border-color: rgba(0,51,160,.22);color: var(--ink)}
+    form{padding:18px}
+    form h3{margin:0 0 6px;color:var(--ink)}
+    form p{margin:0 0 14px;color:var(--muted);font-size:13px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width: 620px){ .row{grid-template-columns:1fr} }
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;padding:11px 12px;border-radius:14px;border:1px solid rgba(15,23,42,.18);
+      background:#fff;color:var(--text);outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(0,51,160,.45);box-shadow: 0 0 0 4px rgba(0,51,160,.10);
+    }
+    textarea{min-height:110px;resize:vertical}
+    footer{
+      padding:26px 0 42px;border-top:1px solid var(--line);
+      color:var(--muted);font-size:12.5px;background:#fff;margin-top:22px;
+    }
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+    @media (max-width: 940px){ .footer-grid{grid-template-columns:1fr} }
+    .smallcaps{letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:rgba(15,23,42,.55)}
+  </style>
+
+  <!-- SEO: Strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Count of Patches",
+    "slogan":"Faire Preise für die Blaulichtfamilie",
+    "url":"https://countofpatches.de/",
+    "email":"Countofpatches@outlook.de",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Mechower Weg 8",
+      "postalCode":"23911",
+      "addressLocality":"Ziethen",
+      "addressRegion":"Schleswig-Holstein",
+      "addressCountry":"DE"
+    }
+  }
+  </script>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Startseite">
+      <img src="logo.jpeg" alt="Count of Patches Logo" />
+      <div>
+        <strong>Count of Patches</strong>
+        <span>Faire Preise für die Blaulichtfamilie</span>
+      </div>
+    </a>
+
+    <nav aria-label="Navigation">
+      <a href="thw.html">THW</a>
+      <a href="feuerwehr.html">Feuerwehren</a>
+      <a href="polizei.html">Polizei</a>
+      <a href="zoll.html">Zoll</a>
+      <a href="behoerden.html">Bund/Land</a>
+      <a href="#anfrage">Anfrage</a>
+    </nav>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+      <a class="btn" href="#anfrage">Preisanfrage</a>
+      <button class="btn primary" type="button" data-open="order">Bestellen</button>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill"><span class="dot"></span> THW · Feuerwehr · Polizei · Zoll · Bundes- & Landesbehörden</div>
+      <h1>Patches & Ärmelabzeichen herstellen lassen – robust, sauber, einsatzbereit.</h1>
+      <p class="lead">
+        Individuelle <strong>Patches / Ärmelabzeichen</strong> für die Blaulichtfamilie – produziert nach Design, Stückzahl und Machart.
+        <strong>Preise werden nicht öffentlich angezeigt</strong>: Du bekommst ein Angebot, das exakt zu eurer Einheit passt.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#anfrage">Jetzt Preisanfrage stellen</a>
+        <a class="btn" href="ablauf.html">Ablauf ansehen</a>
+        <a class="btn" href="ueber-mich.html">Über mich</a>
+      </div>
+
+      <div class="note">
+        <strong>Mindestmengen:</strong> Patches ab <strong>20 Stück</strong> · Schlüsselanhänger ab <strong>50 Stück</strong> · Basecaps: <strong>keine Mindestbestellmenge</strong>.
+      </div>
+    </div>
+
+    <aside class="card hero-card">
+      <div class="mini-grid">
+        <div class="mini">
+          <strong>Macharten</strong>
+          <span>Gewebt · Gestickt · Rubber/PVC 2D/3D · UV-Druck</span>
+        </div>
+        <div class="mini">
+          <strong>Design-Service</strong>
+          <span><strong>70 € / Designerstunde</strong> (inkl. Steuern)</span>
+        </div>
+        <div class="mini">
+          <strong>Produkte</strong>
+          <span>Patches, Basecaps (gestickt), Schlüsselanhänger</span>
+        </div>
+        <div class="mini">
+          <strong>Kontakt</strong>
+          <span><a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a></span>
+        </div>
+      </div>
+      <div class="note">
+        Für ein schnelles Angebot: <strong>Design</strong> (Upload/Link) + <strong>Stückzahl</strong> + <strong>Machart</strong>.
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Beispiele & Referenzen</h2>
+      <p>Galerien mit fertigen Arbeiten – getrennt nach Zielgruppen (ideal auch für Google).</p>
+    </div>
+
+    <div class="grid3">
+      <a class="card tile" href="thw.html"><div class="icon">⚙️</div><h3>THW</h3><p>Beispiele für THW Patches & Ärmelabzeichen.</p></a>
+      <a class="card tile" href="feuerwehr.html"><div class="icon">🔥</div><h3>Feuerwehren</h3><p>Ärmelabzeichen für FF/BF, Jugendfeuerwehr, Sonderdienste.</p></a>
+      <a class="card tile" href="polizei.html"><div class="icon">🛡️</div><h3>Polizei</h3><p>Patches für Einheiten – robust, klar und sauber.</p></a>
+      <a class="card tile" href="zoll.html"><div class="icon">🧾</div><h3>Zoll</h3><p>Beispiele für Zoll Patches & Abzeichen.</p></a>
+      <a class="card tile" href="behoerden.html"><div class="icon">🏛️</div><h3>Bund/Land</h3><p>Bundes- & Landesbehörden – Projekte & Sonderanfertigungen.</p></a>
+      <div class="card tile"><div class="icon">🧢</div><h3>Caps & Schlüsselanhänger</h3><p>Caps ohne Mindestmenge, Schlüsselanhänger ab 50 – passend zum Patch-Design.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="anfrage">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Anfrage & Bestellung</h2>
+      <p>Preise nur auf Anfrage. Kontakt: <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a></p>
+    </div>
+
+    <div class="card" style="padding:18px">
+      <div class="tabs" role="tablist" aria-label="Formularauswahl">
+        <button class="tab active" type="button" data-tab="quote">Preisanfrage</button>
+        <button class="tab" type="button" data-tab="order">Bestellformular</button>
+      </div>
+
+      <div id="tab-quote">
+        <form name="Preisanfrage"
+              method="POST"
+              action="/danke.html"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              enctype="multipart/form-data"
+              class="card">
+          <input type="hidden" name="form-name" value="Preisanfrage" />
+          <input type="hidden" name="redirect" value="/danke.html" />
+          <p style="display:none"><label>Bitte nicht ausfüllen: <input name="bot-field" /></label></p>
+
+          <h3>Preisanfrage</h3>
+          <p>Design + Stückzahl + Machart. Mindestmenge Patches: <strong>20</strong>.</p>
+
+          <div class="row">
+            <div>
+              <label for="q_name">Ansprechpartner</label>
+              <input id="q_name" name="Ansprechpartner" required />
+            </div>
+            <div>
+              <label for="q_email">E-Mail</label>
+              <input id="q_email" name="E-Mail" type="email" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="q_org">Einheit / Organisation</label>
+              <input id="q_org" name="Einheit/Organisation" required />
+            </div>
+            <div>
+              <label for="q_product">Produkt</label>
+              <select id="q_product" name="Produkt" required>
+                <option value="" selected disabled>Bitte auswählen</option>
+                <option value="patch">Patch / Ärmelabzeichen (min. 20)</option>
+                <option value="cap">Basecap gestickt (keine Mindestmenge)</option>
+                <option value="keychain">Schlüsselanhänger (min. 50)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="q_qty">Stückzahl</label>
+              <input id="q_qty" name="Stückzahl" type="number" required min="20" />
+              <div class="note" id="qtyHint">Hinweis: Patches ab 20 Stück.</div>
+            </div>
+            <div>
+              <label for="q_type">Machart</label>
+              <select id="q_type" name="Machart" required>
+                <option value="" selected disabled>Bitte auswählen</option>
+                <option>Gewebt</option>
+                <option>Gestickt</option>
+                <option>Rubber/PVC 2D</option>
+                <option>Rubber/PVC 3D</option>
+                <option>UV-Druck</option>
+                <option>Unklar – bitte beraten</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="q_upload">Design-Datei hochladen (empfohlen)</label>
+          <input id="q_upload" type="file" name="Design-Datei" accept=".png,.jpg,.jpeg,.pdf,.svg,.ai,.eps" />
+
+          <label for="q_notes">Hinweise</label>
+          <textarea id="q_notes" name="Hinweise"></textarea>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Anfrage absenden</button>
+            <a class="btn" href="mailto:Countofpatches@outlook.de?subject=Preisanfrage%20Count%20of%20Patches">Per E-Mail</a>
+          </div>
+        </form>
+      </div>
+
+      <div id="tab-order" style="display:none">
+        <form name="Bestellung"
+              method="POST"
+              action="/danke.html"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              enctype="multipart/form-data"
+              class="card">
+          <input type="hidden" name="form-name" value="Bestellung" />
+          <input type="hidden" name="redirect" value="/danke.html" />
+          <p style="display:none"><label>Bitte nicht ausfüllen: <input name="bot-field" /></label></p>
+
+          <h3>Bestellformular</h3>
+          <p>Für Nachbestellungen oder wenn bereits ein Angebot vorliegt.</p>
+
+          <div class="row">
+            <div>
+              <label for="o_name">Ansprechpartner</label>
+              <input id="o_name" name="Ansprechpartner" required />
+            </div>
+            <div>
+              <label for="o_email">E-Mail</label>
+              <input id="o_email" name="E-Mail" type="email" required />
+            </div>
+          </div>
+
+          <label for="o_org">Einheit / Organisation</label>
+          <input id="o_org" name="Einheit/Organisation" required />
+
+          <div class="row">
+            <div>
+              <label for="o_product">Produkt</label>
+              <select id="o_product" name="Produkt" required>
+                <option value="" selected disabled>Bitte auswählen</option>
+                <option value="patch">Patch / Ärmelabzeichen</option>
+                <option value="cap">Basecap gestickt</option>
+                <option value="keychain">Schlüsselanhänger</option>
+              </select>
+            </div>
+            <div>
+              <label for="o_qty">Stückzahl</label>
+              <input id="o_qty" name="Stückzahl" type="number" required min="1" />
+            </div>
+          </div>
+
+          <label for="o_upload">Datei (optional)</label>
+          <input id="o_upload" type="file" name="Datei" accept=".png,.jpg,.jpeg,.pdf,.svg,.ai,.eps" />
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Bestellung absenden</button>
+            <a class="btn" href="mailto:Countofpatches@outlook.de?subject=Bestellung%20Count%20of%20Patches">Per E-Mail</a>
+          </div>
+
+          <div class="note">Hinweis: Dieses Formular zeigt <strong>keine Preise</strong>.</div>
+        </form>
+      </div>
+
+      <!-- Backup (Form detection) -->
+      <div style="display:none" aria-hidden="true">
+        <form name="Preisanfrage" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="Preisanfrage" />
+          <input name="bot-field" />
+          <input name="Ansprechpartner" />
+          <input name="E-Mail" />
+          <input name="Einheit/Organisation" />
+          <input name="Produkt" />
+          <input name="Stückzahl" />
+          <input name="Machart" />
+          <input type="file" name="Design-Datei" />
+          <textarea name="Hinweise"></textarea>
+        </form>
+        <form name="Bestellung" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="Bestellung" />
+          <input name="bot-field" />
+          <input name="Ansprechpartner" />
+          <input name="E-Mail" />
+          <input name="Einheit/Organisation" />
+          <input name="Produkt" />
+          <input name="Stückzahl" />
+          <input type="file" name="Datei" />
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="smallcaps">Count of Patches</div>
+      <p style="margin:10px 0 0;max-width:72ch">
+        <strong>Faire Preise für die Blaulichtfamilie.</strong><br>
+        Patches & Ärmelabzeichen für THW, Feuerwehren, Polizei, Zoll sowie Bundes- & Landesbehörden.
+      </p>
+      <p style="margin:10px 0 0">
+        Kontakt: <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
+      </p>
+    </div>
+
+    <div>
+      <div class="smallcaps">Seiten</div>
+      <p style="margin:10px 0 0">
+        <a class="link" href="thw.html">THW</a><br>
+        <a class="link" href="feuerwehr.html">Feuerwehren</a><br>
+        <a class="link" href="polizei.html">Polizei</a><br>
+        <a class="link" href="zoll.html">Zoll</a><br>
+        <a class="link" href="behoerden.html">Bund/Land</a><br>
+        <a class="link" href="ablauf.html">Ablauf</a><br>
+        <a class="link" href="ueber-mich.html">Über mich</a><br>
+        <a class="link" href="impressum.html">Impressum</a><br>
+        <a class="link" href="datenschutz.html">Datenschutz</a>
+      </p>
+      <p style="margin:10px 0 0">© <span id="year"></span> Count of Patches</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  const tabs = document.querySelectorAll('.tab');
+  const tabQuote = document.getElementById('tab-quote');
+  const tabOrder = document.getElementById('tab-order');
+
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const which = t.getAttribute('data-tab');
+    tabQuote.style.display = (which === 'quote') ? 'block' : 'none';
+    tabOrder.style.display = (which === 'order') ? 'block' : 'none';
+  }));
+
+  // CTA Bestellen
+  document.querySelectorAll('[data-open="order"]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelector('.tab[data-tab="order"]')?.click();
+      location.hash = '#anfrage';
+      setTimeout(()=> document.getElementById('o_name')?.focus(), 250);
+    });
+  });
+
+  // Jahr
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mindestmengen
+  const product = document.getElementById('q_product');
+  const qty = document.getElementById('q_qty');
+  const hint = document.getElementById('qtyHint');
+
+  function applyMin(){
+    const v = product.value;
+    if(v === 'patch'){ qty.min=20; if(!qty.value||+qty.value<20) qty.value=20; hint.textContent='Hinweis: Patches ab 20 Stück.'; }
+    else if(v === 'keychain'){ qty.min=50; if(!qty.value||+qty.value<50) qty.value=50; hint.textContent='Hinweis: Schlüsselanhänger ab 50 Stück.'; }
+    else if(v === 'cap'){ qty.min=1; if(!qty.value||+qty.value<1) qty.value=1; hint.textContent='Hinweis: Basecaps ohne Mindestbestellmenge.'; }
+    else { qty.min=1; hint.textContent='Hinweis: Mindestmengen je Produkt.'; }
+  }
+  product?.addEventListener('change', applyMin);
+  applyMin();
+</script>
+</body>
+</html>

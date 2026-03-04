@@ -1,0 +1,105 @@
+<!-- 1:1 wie behoerden.html, nur Kategorie "thw" und Text angepasst -->
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THW Patches & Ärmelabzeichen – Galerie | Count of Patches</title>
+<meta name="description" content="Galerie: THW Patches und Ärmelabzeichen. Alle Bilder werden automatisch aus dem Ordner works/thw geladen." />
+<link rel="canonical" href="https://countofpatches.de/thw.html" />
+<meta name="robots" content="index,follow" />
+<style>
+  :root{--blue:#0033A0;--blue2:#0B4CC2;--ink:#0b1220;--text:#0f172a;--muted:#475569;--bg:#f6f8fc;--card:#fff;--line:rgba(15,23,42,.12);--shadow:0 18px 40px rgba(0,0,0,.10);--radius:18px}
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:inherit;text-decoration:none} .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+  header{background:#fff;border-bottom:1px solid var(--line)} .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px} .brand img{width:48px;height:48px;border-radius:14px;border:1px solid var(--line);object-fit:cover;background:#fff}
+  .brand strong{display:block;font-size:14px} .brand span{display:block;font-size:12px;color:var(--muted)}
+  nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end} nav a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:12px}
+  nav a:hover{background:rgba(0,51,160,.06);color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:10px 12px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:13px}
+  .btn.primary{background:linear-gradient(180deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;border-color:transparent}
+  main{padding:34px 0} h1{margin:0 0 10px;font-size:34px;letter-spacing:-.5px;color:var(--ink)} .lead{color:var(--muted);max-width:85ch}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .note{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(0,51,160,.06);border:1px solid rgba(0,51,160,.14);color:var(--muted)}
+  .link{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .item{padding:12px;border-radius:18px;border:1px solid var(--line);background:#fff}
+  .thumb{width:100%;height:260px;object-fit:contain;background:#fff;border-radius:14px;border:1px solid var(--line);display:block}
+  .cap{margin-top:8px;font-size:13px;color:var(--muted);word-break:break-word}
+  .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);z-index:9999;padding:18px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:min(1100px,96vw);max-height:88vh;object-fit:contain;background:#fff;border-radius:16px;border:1px solid rgba(255,255,255,.2)}
+  .x{position:absolute;top:16px;right:16px;background:#fff;border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 12px;cursor:pointer;font-size:14px}
+  footer{padding:26px 0 42px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;background:#fff;margin-top:22px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="logo.jpeg" alt="Count of Patches Logo" /><div><strong>Count of Patches</strong><span>Faire Preise für die Blaulichtfamilie</span></div></a>
+    <nav>
+      <a href="thw.html">THW</a><a href="feuerwehr.html">Feuerwehren</a><a href="polizei.html">Polizei</a>
+      <a href="zoll.html">Zoll</a><a href="behoerden.html">Bund/Land</a><a href="index.html#anfrage">Anfrage</a>
+    </nav>
+    <a class="btn primary" href="index.html#anfrage">Preisanfrage</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>THW – Galerie</h1>
+    <p class="lead">
+      Beispiele für <strong>THW Patches & Ärmelabzeichen</strong> (OV/Einheiten, Fachgruppen, Sonderprojekte). Die Bilder werden automatisch aus <code>works/thw/</code> geladen.
+    </p>
+    <div class="note">Bilder ablegen in: <code>works/thw/</code> — danach neu deployen.</div>
+
+    <div class="card" style="padding:18px;margin-top:14px">
+      <div id="gallery" class="grid" aria-live="polite"></div>
+      <div id="empty" class="note" style="display:none;margin-top:14px">Noch keine Bilder gefunden. Lege Bilder in <code>works/thw/</code> ab und deploye erneut.</div>
+      <div class="note" style="margin-top:14px">
+        Anfrage: <a class="link" href="index.html#anfrage">Formular</a> oder <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+  <button class="x" id="closeBtn" type="button">Schließen ✕</button>
+  <img id="lightboxImg" alt="Vorschau" />
+</div>
+
+<footer><div class="wrap"><a class="link" href="index.html">Startseite</a> · <a class="link" href="ablauf.html">Ablauf</a> · <a class="link" href="ueber-mich.html">Über mich</a> · <a class="link" href="impressum.html">Impressum</a> · <a class="link" href="datenschutz.html">Datenschutz</a></div></footer>
+
+<script>
+(async function(){
+  const res = await fetch('galleries.json', { cache: 'no-store' });
+  if(!res.ok){ document.getElementById('empty').style.display='block'; return; }
+  const data = await res.json();
+  const items = (data.thw || []);
+  const gallery = document.getElementById('gallery');
+  const empty = document.getElementById('empty');
+  if(items.length === 0){ empty.style.display='block'; return; }
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('closeBtn');
+
+  function openLightbox(src, alt){ lbImg.src = src; lbImg.alt = alt || 'Vorschau'; lb.classList.add('open'); }
+  function closeLightbox(){ lb.classList.remove('open'); lbImg.src=''; }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+
+  for(const it of items){
+    const div = document.createElement('div');
+    div.className='item';
+    div.innerHTML = `<img class="thumb" src="${it.src}" alt="${it.alt}"><div class="cap">${it.src.split('/').pop()}</div>`;
+    div.querySelector('img').addEventListener('click', ()=> openLightbox(it.src, it.alt));
+    gallery.appendChild(div);
+  }
+})();
+</script>
+</body>
+</html>
