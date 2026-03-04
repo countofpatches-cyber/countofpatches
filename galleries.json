@@ -1,0 +1,17 @@
+{
+  "feuerwehr": [
+    "works/feuerwehr/feuerwehr-01.jpg"
+  ],
+  "polizei": [
+    "works/polizei/polizei-01.jpg"
+  ],
+  "zoll": [
+    "works/zoll/zoll-01.jpg"
+  ],
+  "thw": [
+    "works/thw/thw-01.jpg"
+  ],
+  "behoerden": [
+    "works/behoerden/behoerden-01.jpg"
+  ]
+}
