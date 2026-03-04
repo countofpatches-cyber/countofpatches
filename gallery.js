@@ -1,51 +1,45 @@
-
 async function initGallery(category) {
-  const galleryEl = document.getElementById("gallery");
-  const emptyEl = document.getElementById("empty");
+
+  const galleryContainer = document.getElementById("gallery");
 
   try {
-    const res = await fetch("/galleries.json", { cache: "no-store" }); // <-- wichtig: führender /
-    if (!res.ok) throw new Error("galleries.json nicht gefunden");
 
-    const data = await res.json();
-    const items = (data[category] || []);
+    // galleries.json IMMER vom Root laden
+    const response = await fetch("/galleries.json", { cache: "no-store" });
 
-    if (!items.length) {
-      emptyEl.style.display = "block";
+    if (!response.ok) {
+      galleryContainer.innerHTML = "Galerie konnte nicht geladen werden.";
       return;
     }
 
-    for (const it of items) {
-      const div = document.createElement("div");
-      div.className = "item";
-      const caption = it.title || (it.src.split("/").pop() || "");
-      div.innerHTML = `
-        <img class="thumb" src="/${it.src}" alt="${it.alt || caption}">
-        <div class="cap">${caption}</div>
-      `;
-      div.querySelector("img").addEventListener("click", () => openLightbox(`/${it.src}`, it.alt || caption));
-      galleryEl.appendChild(div);
+    const data = await response.json();
+
+    if (!data[category] || data[category].length === 0) {
+      galleryContainer.innerHTML = "Noch keine Bilder vorhanden.";
+      return;
     }
-  } catch (e) {
-    emptyEl.style.display = "block";
-    emptyEl.innerHTML = `Galerie kann nicht geladen werden.<br>Prüfe, ob <code>/galleries.json</code> existiert.`;
+
+    galleryContainer.innerHTML = "";
+
+    data[category].forEach(function(image) {
+
+      const img = document.createElement("img");
+      img.src = "/" + image;
+      img.alt = category + " patch";
+      img.loading = "lazy";
+
+      const item = document.createElement("div");
+      item.className = "gallery-item";
+
+      item.appendChild(img);
+      galleryContainer.appendChild(item);
+
+    });
+
+  } catch (error) {
+
+    galleryContainer.innerHTML = "Galerie kann nicht geladen werden. Prüfe, ob /galleries.json existiert.";
+
   }
 
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lightboxImg");
-  const closeBtn = document.getElementById("closeBtn");
-
-  function openLightbox(src, alt) {
-    lbImg.src = src;
-    lbImg.alt = alt || "Vorschau";
-    lb.classList.add("open");
-  }
-  function closeLightbox() {
-    lb.classList.remove("open");
-    lbImg.src = "";
-  }
-
-  closeBtn.addEventListener("click", closeLightbox);
-  lb.addEventListener("click", (ev) => { if (ev.target === lb) closeLightbox(); });
-  document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closeLightbox(); });
 }
