@@ -1,9 +1,10 @@
-async function initGallery(category, options = {}) {
+
+async function initGallery(category) {
   const galleryEl = document.getElementById("gallery");
   const emptyEl = document.getElementById("empty");
 
   try {
-    const res = await fetch("galleries.json", { cache: "no-store" });
+    const res = await fetch("/galleries.json", { cache: "no-store" }); // <-- wichtig: führender /
     if (!res.ok) throw new Error("galleries.json nicht gefunden");
 
     const data = await res.json();
@@ -14,27 +15,22 @@ async function initGallery(category, options = {}) {
       return;
     }
 
-    // Render
     for (const it of items) {
       const div = document.createElement("div");
       div.className = "item";
       const caption = it.title || (it.src.split("/").pop() || "");
       div.innerHTML = `
-        <img class="thumb" src="${it.src}" alt="${it.alt || caption}">
+        <img class="thumb" src="/${it.src}" alt="${it.alt || caption}">
         <div class="cap">${caption}</div>
       `;
-
-      div.querySelector("img").addEventListener("click", () => openLightbox(it.src, it.alt || caption));
+      div.querySelector("img").addEventListener("click", () => openLightbox(`/${it.src}`, it.alt || caption));
       galleryEl.appendChild(div);
     }
-
   } catch (e) {
     emptyEl.style.display = "block";
-    emptyEl.innerHTML = `Galerie kann nicht geladen werden.<br>
-      Prüfe, ob <code>galleries.json</code> nach dem Deploy existiert.`;
+    emptyEl.innerHTML = `Galerie kann nicht geladen werden.<br>Prüfe, ob <code>/galleries.json</code> existiert.`;
   }
 
-  // Lightbox
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightboxImg");
   const closeBtn = document.getElementById("closeBtn");
