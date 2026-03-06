@@ -1,65 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zoll Patches & Abzeichen – Galerie | Count of Patches</title>
-  <meta name="description" content="Galerie: Zoll Patches und Abzeichen. Alle Bilder werden automatisch aus works/zoll geladen." />
-  <link rel="canonical" href="https://countofpatches.de/zoll.html" />
-  <meta name="robots" content="index,follow" />
-  <link rel="stylesheet" href="site.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoll – Galerie | Count of Patches</title>
+  <meta name="description" content="Galerie mit bereits gefertigten Zoll Patches und Abzeichen von Count of Patches.">
+  <link rel="canonical" href="https://countofpatches.de/zoll">
+
+  <style>
+    :root{
+      --blue:#0039A6;
+      --blue-dark:#002c80;
+      --light:#f4f7fc;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5e6b85;
+      --line:#dbe4f2;
+      --shadow:0 12px 28px rgba(0,0,0,0.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--light);color:var(--text);line-height:1.6}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:62px;height:62px;object-fit:contain;border-radius:14px;background:#fff;border:1px solid var(--line);padding:4px}
+    .brand h1{margin:0;font-size:22px;color:var(--blue-dark);line-height:1.1}
+    .brand p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--text);font-weight:600;font-size:15px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
+    .btn:hover{background:var(--blue-dark);text-decoration:none}
+    main{padding:48px 0 36px}
+    .page-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    h2{margin:0 0 14px;font-size:38px;color:var(--blue-dark)}
+    .lead{margin:0 0 18px;color:var(--muted);font-size:18px}
+    .notice{background:#f7fbff;border:1px solid #d6e7ff;padding:14px 16px;border-radius:14px;color:var(--text);margin-bottom:22px}
+    #gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:18px}
+    .gallery-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06);transition:transform 0.2s ease, box-shadow 0.2s ease}
+    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.10)}
+    .gallery-item img{width:100%;height:280px;object-fit:cover;display:block;background:#eef3fb}
+    footer{margin-top:36px;background:#fff;border-top:1px solid var(--line);padding:26px 0 34px}
+    .footer-links a{display:inline-block;margin:0 14px 8px 0;font-weight:600}
+    @media (max-width:780px){h2{font-size:30px}.gallery-item img{height:240px}}
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html">
-      <img src="logo.jpeg" alt="Count of Patches Logo" />
-      <div><strong>Count of Patches</strong><span>Faire Preise für die Blaulichtfamilie</span></div>
-    </a>
-    <nav>
-      <a href="thw.html">THW</a><a href="feuerwehr.html">Feuerwehren</a><a href="polizei.html">Polizei</a>
-      <a href="zoll.html">Zoll</a><a href="behoerden.html">Bund/Land</a><a href="index.html#anfrage">Anfrage</a>
-    </nav>
-    <a class="btn primary" href="index.html#anfrage">Preisanfrage</a>
-  </div>
-</header>
 
-<main>
-  <div class="wrap">
-    <h1>Zoll – Galerie</h1>
-    <p class="lead">
-      Beispiele für <strong>Zoll Patches & Abzeichen</strong>. Je nach Einsatz und Vorgabe: gewebt, gestickt, Rubber/PVC oder UV-Druck.
-      Neue Bilder in <code>works/zoll/</code> ablegen – nach dem Deploy erscheinen sie automatisch.
-    </p>
-
-    <div class="note">Ordner: <code>works/zoll/</code> · Formate: jpg/jpeg/png/webp</div>
-
-    <div class="card" style="padding:18px;margin-top:14px">
-      <div id="gallery" class="grid" aria-live="polite"></div>
-      <div id="empty" class="note" style="display:none;margin-top:14px">
-        Noch keine Bilder gefunden. Lege Bilder in <code>works/zoll/</code> ab und deploye erneut.
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="logo.jpeg" alt="Count of Patches Logo">
+        <div>
+          <h1>Count of Patches</h1>
+          <p>Faire Preise für die Blaulichtfamilie</p>
+        </div>
       </div>
-      <div class="note" style="margin-top:14px">
-        Anfrage: <a class="link" href="index.html#anfrage">Formular</a> oder <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
+
+      <nav>
+        <a href="/thw">THW</a>
+        <a href="/feuerwehr">Feuerwehren</a>
+        <a href="/polizei">Polizei</a>
+        <a href="/zoll">Zoll</a>
+        <a href="/behoerden">Bund/Land</a>
+        <a href="/index.html">Startseite</a>
+        <a class="btn" href="mailto:Countofpatches@outlook.de">Preisanfrage</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-card">
+        <h2>Zoll – Galerie</h2>
+        <p class="lead">
+          Beispiele für bereits gefertigte Zoll Patches und Abzeichen. Saubere und robuste Umsetzung
+          für individuelle Anforderungen und Einsatzzwecke.
+        </p>
+
+        <div class="notice">
+          Die Bilder werden automatisch aus <strong>/galleries.json</strong> geladen.
+        </div>
+
+        <div id="gallery"></div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau">
-  <button class="x" id="closeBtn" type="button">Schließen ✕</button>
-  <img id="lightboxImg" alt="Vorschau" />
-</div>
+  <footer>
+    <div class="wrap footer-links">
+      <a href="/index.html">Startseite</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
 
-<footer>
-  <div class="wrap">
-    <a class="link" href="index.html">Startseite</a> · <a class="link" href="ablauf.html">Ablauf</a> ·
-    <a class="link" href="ueber-mich.html">Über mich</a> · <a class="link" href="impressum.html">Impressum</a> ·
-    <a class="link" href="datenschutz.html">Datenschutz</a>
-  </div>
-</footer>
-
-<script src="gallery.js"></script>
-<script>initGallery("zoll");</script>
+  <script src="/gallery.js"></script>
+  <script>
+    initGallery("zoll");
+  </script>
 </body>
 </html>
