@@ -1,45 +1,41 @@
 async function initGallery(category) {
+  const gallery = document.getElementById("gallery");
 
-  const galleryContainer = document.getElementById("gallery");
+  if (!gallery) {
+    return;
+  }
 
   try {
-
-    // galleries.json IMMER vom Root laden
     const response = await fetch("/galleries.json", { cache: "no-store" });
 
     if (!response.ok) {
-      galleryContainer.innerHTML = "Galerie konnte nicht geladen werden.";
+      gallery.innerHTML = "<p>Galerie konnte nicht geladen werden. Prüfe, ob /galleries.json existiert.</p>";
       return;
     }
 
     const data = await response.json();
 
     if (!data[category] || data[category].length === 0) {
-      galleryContainer.innerHTML = "Noch keine Bilder vorhanden.";
+      gallery.innerHTML = "<p>Für diese Kategorie sind aktuell noch keine Bilder hinterlegt.</p>";
       return;
     }
 
-    galleryContainer.innerHTML = "";
+    gallery.innerHTML = "";
 
-    data[category].forEach(function(image) {
-
-      const img = document.createElement("img");
-      img.src = "/" + image;
-      img.alt = category + " patch";
-      img.loading = "lazy";
-
+    data[category].forEach(function (imagePath) {
       const item = document.createElement("div");
       item.className = "gallery-item";
 
-      item.appendChild(img);
-      galleryContainer.appendChild(item);
+      const img = document.createElement("img");
+      img.src = "/" + imagePath;
+      img.alt = category + " patch";
+      img.loading = "lazy";
 
+      item.appendChild(img);
+      gallery.appendChild(item);
     });
 
   } catch (error) {
-
-    galleryContainer.innerHTML = "Galerie kann nicht geladen werden. Prüfe, ob /galleries.json existiert.";
-
+    gallery.innerHTML = "<p>Galerie konnte nicht geladen werden. Prüfe, ob /galleries.json existiert.</p>";
   }
-
 }
