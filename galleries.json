@@ -2,12 +2,25 @@
   "thw": [
     "works/thw/thw-01.jpg",
     "works/thw/thw-02.jpg",
-    "works/thw/thw-03.jpg"
+    "works/thw/thw-03.jpg",
+    "works/thw/thw-07.jpg",
+    "works/thw/thw-08.jpg",
+    "works/thw/thw-09.jpg",
+    "works/thw/thw-10.jpg",
+    "works/thw/thw-12.jpg",
+    "works/thw/thw-15.jpg",
+    "works/thw/thw-18.jpg",
+    "works/thw/thw-20.jpg",
+    "works/thw/thw-21.jpg"
   ],
   "feuerwehr": [
     "works/feuerwehr/feuerwehr-01.jpg",
     "works/feuerwehr/feuerwehr-02.jpg",
-    "works/feuerwehr/feuerwehr-03.jpg"
+    "works/feuerwehr/feuerwehr-03.jpg",
+    "works/feuerwehr/feuerwehr-04.jpg",
+    "works/feuerwehr/feuerwehr-05.jpg",
+    "works/feuerwehr/feuerwehr-06.jpeg",
+    "works/feuerwehr/feuerwehr-07.jpg"
   ],
   "polizei": [
     "works/polizei/polizei-01.jpg",
@@ -22,6 +35,8 @@
   "behoerden": [
     "works/behoerden/behoerden-01.jpg",
     "works/behoerden/behoerden-02.jpg",
-    "works/behoerden/behoerden-03.jpg"
+    "works/behoerden/behoerden-03.jpg",
+    "works/behoerden/behoerden-04.jpg",
+    "works/behoerden/behoerden-05.jpg"
   ]
 }
