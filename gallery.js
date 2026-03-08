@@ -1,9 +1,7 @@
 async function initGallery(category) {
   const gallery = document.getElementById("gallery");
 
-  if (!gallery) {
-    return;
-  }
+  if (!gallery) return;
 
   try {
     const response = await fetch("/galleries.json", { cache: "no-store" });
@@ -28,7 +26,7 @@ async function initGallery(category) {
 
       const img = document.createElement("img");
       img.src = "/" + imagePath;
-      img.alt = category + " patch";
+      img.alt = category + " Bild";
       img.loading = "lazy";
 
       item.appendChild(img);
