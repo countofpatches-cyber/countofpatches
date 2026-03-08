@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Count of Patches – Faire Preise für die Blaulichtfamilie</title>
   <meta name="description" content="Individuelle Patches, Schlüsselanhänger und Basecaps für THW, Feuerwehr, Polizei, Zoll, Hilfsorganisationen sowie Bundes- und Landesbehörden. Preise auf Anfrage.">
-  <link rel="canonical" href="https://countofpatches.de/">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://countofpatches.de/">
 
   <style>
     :root{
@@ -22,6 +22,11 @@
     }
 
     *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
@@ -30,8 +35,14 @@
       line-height:1.6;
     }
 
-    a{color:var(--blue);text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
 
     .wrap{
       max-width:1200px;
@@ -420,9 +431,9 @@
         <div class="badge-row">
           <span class="badge">Gewebt</span>
           <span class="badge">Gestickt</span>
-          <span class="badge">Rubber / PVC 2D</span>
-          <span class="badge">Rubber / PVC 3D</span>
-          <span class="badge">UV-Druck</span>
+          <span class="badge">UV Druck</span>
+          <span class="badge">Rubber PVC 2D</span>
+          <span class="badge">Rubber PVC 3D</span>
         </div>
 
         <a class="btn" href="#anfrage">Jetzt anfragen</a>
@@ -531,7 +542,7 @@
       <div class="section-head">
         <h3>Preisanfrage & Bestellung</h3>
         <p>
-          Beide Formulare laufen als Netlify Forms. Die Benachrichtigung an deine E-Mail-Adresse richtest du in Netlify unter
+          Die Formulare laufen als Netlify Forms. Die E-Mail-Benachrichtigung richtest du in Netlify unter
           <strong>Forms → Form notifications → Email notification</strong> ein.
         </p>
       </div>
@@ -542,7 +553,6 @@
           <button class="tab-btn" type="button" onclick="showForm('order')">Bestellung</button>
         </div>
 
-        <!-- PREISANFRAGE -->
         <div id="price-form" class="form-panel active">
           <form name="Preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
             <input type="hidden" name="form-name" value="Preisanfrage">
@@ -603,8 +613,15 @@
               </div>
 
               <div class="full">
-                <label for="pq-machart">Machart / Wunschangaben</label>
-                <input id="pq-machart" type="text" name="Machart / Wunschangaben" placeholder="z. B. gewebt, gestickt, Rubber/PVC 2D, 3D, UV-Druck">
+                <label for="pq-machart">Machart</label>
+                <select id="pq-machart" name="Machart" required>
+                  <option value="">Bitte auswählen</option>
+                  <option value="gewebt">gewebt</option>
+                  <option value="gestickt">gestickt</option>
+                  <option value="UV Druck">UV Druck</option>
+                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
+                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                </select>
               </div>
 
               <div class="full">
@@ -623,7 +640,6 @@
           </form>
         </div>
 
-        <!-- BESTELLUNG -->
         <div id="order-form" class="form-panel">
           <form name="Bestellung" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
             <input type="hidden" name="form-name" value="Bestellung">
@@ -685,8 +701,15 @@
               </div>
 
               <div class="full">
-                <label for="bo-machart">Machart / Wunschangaben</label>
-                <input id="bo-machart" type="text" name="Machart / Wunschangaben" placeholder="z. B. gewebt, gestickt, Rubber/PVC 2D, 3D, UV-Druck">
+                <label for="bo-machart">Machart</label>
+                <select id="bo-machart" name="Machart" required>
+                  <option value="">Bitte auswählen</option>
+                  <option value="gewebt">gewebt</option>
+                  <option value="gestickt">gestickt</option>
+                  <option value="UV Druck">UV Druck</option>
+                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
+                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                </select>
               </div>
 
               <div class="full">
@@ -705,7 +728,6 @@
           </form>
         </div>
 
-        <!-- NETLIFY BACKUP -->
         <div style="display:none;">
           <form name="Preisanfrage" data-netlify="true">
             <input type="text" name="Vorname">
@@ -717,7 +739,7 @@
             <input type="text" name="Dienststelle / Ortsverband">
             <input type="text" name="Produkt">
             <input type="text" name="Menge">
-            <input type="text" name="Machart / Wunschangaben">
+            <input type="text" name="Machart">
             <textarea name="Design / Hinweise"></textarea>
           </form>
 
@@ -731,7 +753,7 @@
             <input type="text" name="Dienststelle / Ortsverband">
             <input type="text" name="Produkt">
             <input type="text" name="Menge">
-            <input type="text" name="Machart / Wunschangaben">
+            <input type="text" name="Machart">
             <textarea name="Bestellhinweise"></textarea>
           </form>
         </div>

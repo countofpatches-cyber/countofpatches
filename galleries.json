@@ -2,31 +2,85 @@
   "thw": [
     "works/thw/thw-01.jpg",
     "works/thw/thw-02.jpg",
-    "works/thw/thw-03.jpg"
+    "works/thw/thw-03.jpg",
+    "works/thw/thw-04.jpg",
+    "works/thw/thw-05.jpg",
+    "works/thw/thw-06.jpg",
+    "works/thw/thw-07.jpg",
+    "works/thw/thw-08.jpg",
+    "works/thw/thw-09.jpg",
+    "works/thw/thw-10.jpg",
+    "works/thw/thw-11.jpg",
+    "works/thw/thw-12.jpg"
   ],
   "feuerwehr": [
     "works/feuerwehr/feuerwehr-01.jpg",
     "works/feuerwehr/feuerwehr-02.jpg",
-    "works/feuerwehr/feuerwehr-03.jpg"
+    "works/feuerwehr/feuerwehr-03.jpg",
+    "works/feuerwehr/feuerwehr-04.jpg",
+    "works/feuerwehr/feuerwehr-05.jpg",
+    "works/feuerwehr/feuerwehr-06.jpg",
+    "works/feuerwehr/feuerwehr-07.jpg",
+    "works/feuerwehr/feuerwehr-08.jpg",
+    "works/feuerwehr/feuerwehr-09.jpg",
+    "works/feuerwehr/feuerwehr-10.jpg",
+    "works/feuerwehr/feuerwehr-11.jpg",
+    "works/feuerwehr/feuerwehr-12.jpg"
   ],
   "polizei": [
     "works/polizei/polizei-01.jpg",
     "works/polizei/polizei-02.jpg",
-    "works/polizei/polizei-03.jpg"
+    "works/polizei/polizei-03.jpg",
+    "works/polizei/polizei-04.jpg",
+    "works/polizei/polizei-05.jpg",
+    "works/polizei/polizei-06.jpg",
+    "works/polizei/polizei-07.jpg",
+    "works/polizei/polizei-08.jpg",
+    "works/polizei/polizei-09.jpg",
+    "works/polizei/polizei-10.jpg",
+    "works/polizei/polizei-11.jpg",
+    "works/polizei/polizei-12.jpg"
   ],
   "zoll": [
     "works/zoll/zoll-01.jpg",
     "works/zoll/zoll-02.jpg",
-    "works/zoll/zoll-03.jpg"
+    "works/zoll/zoll-03.jpg",
+    "works/zoll/zoll-04.jpg",
+    "works/zoll/zoll-05.jpg",
+    "works/zoll/zoll-06.jpg",
+    "works/zoll/zoll-07.jpg",
+    "works/zoll/zoll-08.jpg",
+    "works/zoll/zoll-09.jpg",
+    "works/zoll/zoll-10.jpg",
+    "works/zoll/zoll-11.jpg",
+    "works/zoll/zoll-12.jpg"
   ],
   "behoerden": [
     "works/behoerden/behoerden-01.jpg",
     "works/behoerden/behoerden-02.jpg",
-    "works/behoerden/behoerden-03.jpg"
+    "works/behoerden/behoerden-03.jpg",
+    "works/behoerden/behoerden-04.jpg",
+    "works/behoerden/behoerden-05.jpg",
+    "works/behoerden/behoerden-06.jpg",
+    "works/behoerden/behoerden-07.jpg",
+    "works/behoerden/behoerden-08.jpg",
+    "works/behoerden/behoerden-09.jpg",
+    "works/behoerden/behoerden-10.jpg",
+    "works/behoerden/behoerden-11.jpg",
+    "works/behoerden/behoerden-12.jpg"
   ],
   "hilfsorganisationen": [
     "works/hilfsorganisationen/hilfsorganisationen-01.jpg",
     "works/hilfsorganisationen/hilfsorganisationen-02.jpg",
-    "works/hilfsorganisationen/hilfsorganisationen-03.jpg"
+    "works/hilfsorganisationen/hilfsorganisationen-03.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-04.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-05.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-06.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-07.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-08.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-09.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-10.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-11.jpg",
+    "works/hilfsorganisationen/hilfsorganisationen-12.jpg"
   ]
 }
