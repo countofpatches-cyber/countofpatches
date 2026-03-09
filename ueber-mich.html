@@ -1,89 +1,413 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Über mich – Toni Bitterhoff | Count of Patches</title>
-<meta name="description" content="Toni Bitterhoff: 24 Jahre THW ehrenamtlich, 23 Jahre Führungsverantwortung. Aus Sammelleidenschaft wurde Design & Produktion von Patches für die Blaulichtfamilie." />
-<link rel="canonical" href="https://countofpatches.de/ueber-mich.html" />
-<meta name="robots" content="index,follow" />
-<style>
-  :root{--blue:#0033A0;--ink:#0b1220;--text:#0f172a;--muted:#475569;--bg:#f6f8fc;--card:#fff;--line:rgba(15,23,42,.12);--shadow:0 18px 40px rgba(0,0,0,.10);--radius:18px}
-  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);line-height:1.65}
-  a{color:inherit;text-decoration:none} .wrap{max-width:980px;margin:0 auto;padding:0 18px}
-  header{background:#fff;border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{width:48px;height:48px;border-radius:14px;border:1px solid var(--line);object-fit:cover;background:#fff}
-  .brand strong{display:block;font-size:14px} .brand span{display:block;font-size:12px;color:var(--muted)}
-  nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  nav a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:12px}
-  nav a:hover{background:rgba(0,51,160,.06);color:var(--text)}
-  main{padding:34px 0}
-  h1{margin:0 0 10px;font-size:34px;letter-spacing:-.5px;color:var(--ink)}
-  .lead{color:var(--muted);max-width:82ch}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-  .pill{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:12px;margin-right:8px;margin-top:8px}
-  .link{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px}
-  footer{padding:26px 0 42px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;background:#fff;margin-top:22px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über mich | Count of Patches</title>
+  <meta name="description" content="Über Toni Bitterhoff und Count of Patches – Erfahrung, Leidenschaft und faire Preise für die Blaulichtfamilie.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://countofpatches.de/ueber-mich.html">
+
+  <style>
+    :root{
+      --blue:#0039A6;
+      --blue-dark:#002c80;
+      --light:#f4f7fc;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5e6b85;
+      --line:#dbe4f2;
+      --shadow:0 12px 28px rgba(0,0,0,0.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:62px;
+      height:62px;
+      object-fit:contain;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--line);
+      padding:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:22px;
+      color:var(--blue-dark);
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:var(--text);
+      font-weight:600;
+      font-size:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
+    }
+
+    main{
+      padding:52px 0 40px;
+    }
+
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:34px;
+      margin-bottom:24px;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:40px;
+      color:var(--blue-dark);
+      line-height:1.1;
+    }
+
+    .lead{
+      margin:0;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:20px;
+      margin-top:24px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .card h3{
+      margin:0 0 14px;
+      color:var(--blue-dark);
+      font-size:26px;
+    }
+
+    .card p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .stat{
+      background:#f7fbff;
+      border:1px solid #d6e7ff;
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:28px;
+      color:var(--blue-dark);
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .quote{
+      margin-top:18px;
+      padding:18px 20px;
+      border-radius:16px;
+      background:#eef4ff;
+      border:1px solid #d6e7ff;
+      color:var(--blue-dark);
+      font-weight:700;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      background:#eef4ff;
+      border:1px solid #d3e0ff;
+      color:var(--blue-dark);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .cta{
+      margin-top:24px;
+      background:linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color:#fff;
+      border-radius:20px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .cta h3{
+      margin:0 0 6px;
+      font-size:28px;
+      color:#fff;
+    }
+
+    .cta p{
+      margin:0;
+      color:#e6edff;
+    }
+
+    footer{
+      margin-top:34px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:28px 0 38px;
+    }
+
+    .footer-links a{
+      display:inline-block;
+      margin:0 14px 8px 0;
+      font-weight:600;
+    }
+
+    @media (max-width: 900px){
+      .content-grid,
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      h2{
+        font-size:32px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero-card,
+      .card{
+        padding:24px;
+      }
+
+      h2{
+        font-size:28px;
+      }
+    }
+  </style>
 </head>
 <body>
+
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html">
-      <img src="logo.jpeg" alt="Count of Patches Logo" />
-      <div><strong>Count of Patches</strong><span>Faire Preise für die Blaulichtfamilie</span></div>
-    </a>
+    <div class="brand">
+      <img src="logo.jpeg" alt="Count of Patches Logo">
+      <div>
+        <h1>Count of Patches</h1>
+        <p>Faire Preise für die Blaulichtfamilie</p>
+      </div>
+    </div>
+
     <nav>
-      <a href="thw.html">THW</a><a href="feuerwehr.html">Feuerwehren</a><a href="polizei.html">Polizei</a>
-      <a href="zoll.html">Zoll</a><a href="behoerden.html">Bund/Land</a><a href="index.html#anfrage">Anfrage</a>
+      <a href="/index.html">Startseite</a>
+      <a href="/thw">THW</a>
+      <a href="/feuerwehr">Feuerwehr</a>
+      <a href="/polizei">Polizei</a>
+      <a href="/zoll">Zoll</a>
+      <a href="/behoerden">Bund/Land</a>
+      <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a class="btn" href="/index.html#anfrage">Anfrage</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Über mich</h1>
-    <p class="lead">
-      Ich bin <strong>Toni Bitterhoff</strong> – und ich produziere Patches für die Blaulichtfamilie mit dem Anspruch:
-      <strong>fair, sauber und einsatzorientiert</strong>.
-    </p>
+    <div class="hero-card">
+      <h2>Über mich</h2>
+      <p class="lead">
+        Ich bin Toni Bitterhoff und habe aus meiner Leidenschaft für Patches einen festen Teil meines Berufslebens gemacht.
+      </p>
+    </div>
 
-    <div class="card">
-      <p>
-        Seit <strong>24 Jahren</strong> bin ich ehrenamtlich bei der Bundesanstalt <strong>Technisches Hilfswerk</strong> tätig,
-        davon <strong>23 Jahre</strong> in Führungspositionen.
-      </p>
-      <p>
-        Aus meiner Sammelleidenschaft für Patches wurde über die Jahre das <strong>Designen und Produzieren</strong>.
-        Ich bringe <strong>5 Jahre Erfahrung im Bereich Design</strong> und <strong>3 Jahre Erfahrung in der Produktion</strong> mit.
-      </p>
-      <p>
-        Neben Bundesländern und Bundesbehörden bestellen vor allem <strong>THW- und Feuerwehreinheiten</strong> bei mir.
-        Ich freue mich auf eure Anfrage.
-      </p>
+    <div class="content-grid">
+      <div class="card">
+        <h3>Toni Bitterhoff</h3>
+        <p>
+          Seit <strong>24 Jahren</strong> bin ich ehrenamtlich bei der Bundesanstalt Technisches Hilfswerk tätig,
+          davon seit <strong>23 Jahren in Führungspositionen</strong>.
+        </p>
+        <p>
+          Aus meiner Sammelleidenschaft für Patches ist mit der Zeit mehr geworden:
+          aus dem Sammeln wurde zuerst das Designen und schließlich auch das Produzieren.
+        </p>
+        <p>
+          Ich verfüge über <strong>5 Jahre Erfahrung im Bereich Design</strong> und
+          <strong>3 Jahre Erfahrung in der Produktion</strong>.
+        </p>
+        <p>
+          Neben Bundesländern und Bundesbehörden bestellen vor allem
+          <strong>THW- und Feuerwehreinheiten</strong> bei mir.
+        </p>
+        <p>
+          Mein Anspruch ist es, saubere Lösungen, faire Preise und eine Gestaltung zu bieten,
+          die genau zu eurer Einheit und eurem Einsatzzweck passt.
+        </p>
 
-      <div>
-        <span class="pill">Faire Preise</span>
-        <span class="pill">Blaulichtfamilie</span>
-        <span class="pill">THW / Feuerwehr / Behörden</span>
-        <span class="pill">Design + Produktion</span>
+        <div class="quote">
+          Faire Preise für die Blaulichtfamilie.
+        </div>
       </div>
 
-      <p style="margin-top:14px">
-        Kontakt: <a class="link" href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a> ·
-        Anfrage über die <a class="link" href="index.html#anfrage">Startseite</a>
-      </p>
+      <div class="card">
+        <h3>Erfahrung auf einen Blick</h3>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>24</strong>
+            <span>Jahre ehrenamtlich im THW</span>
+          </div>
+
+          <div class="stat">
+            <strong>23</strong>
+            <span>Jahre in Führungspositionen</span>
+          </div>
+
+          <div class="stat">
+            <strong>5</strong>
+            <span>Jahre Erfahrung im Design</span>
+          </div>
+
+          <div class="stat">
+            <strong>3</strong>
+            <span>Jahre Erfahrung in der Produktion</span>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">THW</span>
+          <span class="tag">Feuerwehr</span>
+          <span class="tag">Behörden</span>
+          <span class="tag">Design</span>
+          <span class="tag">Produktion</span>
+          <span class="tag">Blaulichtfamilie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <h3>Ich freue mich auf eure Anfrage</h3>
+        <p>
+          Wenn ihr ein individuelles Patch, Ärmelabzeichen, einen Schlüsselanhänger oder eine bestickte Basecap plant,
+          freue ich mich auf eure Nachricht.
+        </p>
+      </div>
+      <a class="btn" href="/index.html#anfrage">Zur Anfrage</a>
     </div>
   </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <a class="link" href="index.html">Startseite</a> · <a class="link" href="ablauf.html">Ablauf</a> ·
-    <a class="link" href="impressum.html">Impressum</a> · <a class="link" href="datenschutz.html">Datenschutz</a>
+  <div class="wrap footer-links">
+    <a href="/index.html">Startseite</a>
+    <a href="/ablauf.html">Ablauf</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
   </div>
 </footer>
+
 </body>
 </html>

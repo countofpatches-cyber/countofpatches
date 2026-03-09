@@ -19,7 +19,7 @@
     "works/feuerwehr/feuerwehr-03.jpg",
     "works/feuerwehr/feuerwehr-04.jpg",
     "works/feuerwehr/feuerwehr-05.jpg",
-    "works/feuerwehr/feuerwehr-06.jpg",
+    "works/feuerwehr/feuerwehr-06.jpeg",
     "works/feuerwehr/feuerwehr-06.jpg",
     "works/feuerwehr/feuerwehr-07.jpg"
   ],
@@ -39,14 +39,13 @@
     "works/behoerden/behoerden-03.jpg",
     "works/behoerden/behoerden-04.jpg",
     "works/behoerden/behoerden-05.jpg",
-    "works/behoerden/behoerden-06.jpg"
+    "works/behoerden/behoerden-06.jpeg"
   ],
   "hilfsorganisationen": [
     "works/hilfsorganisationen/hilfsorganisationen-01.jpg",
     "works/hilfsorganisationen/hilfsorganisationen-02.jpg",
     "works/hilfsorganisationen/hilfsorganisationen-03.jpg",
     "works/hilfsorganisationen/hilfsorganisationen-04.jpg",
-    "works/hilfsorganisationen/hilfsorganisationen-05.jpg",
-    "works/hilfsorganisationen/hilfsorganisationen-06.jpg"
+    "works/hilfsorganisationen/hilfsorganisationen-05.jpg"
   ]
 }
