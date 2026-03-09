@@ -223,12 +223,6 @@
       gap:18px;
     }
 
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-    }
-
     .info-card{
       padding:22px;
     }
@@ -244,64 +238,8 @@
       color:var(--muted);
     }
 
-    .gallery-link-card{
-      padding:22px;
-      min-height:180px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .gallery-link-card h4{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-      font-size:21px;
-    }
-
-    .gallery-link-card p{
-      margin:0 0 16px;
-      color:var(--muted);
-    }
-
     .form-card{
       padding:24px;
-    }
-
-    .tabs{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:18px;
-    }
-
-    .tab-btn{
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#fff;
-      cursor:pointer;
-      font-weight:700;
-      color:var(--text);
-    }
-
-    .tab-btn.active{
-      background:var(--blue);
-      color:#fff;
-      border-color:var(--blue);
-    }
-
-    .form-panel{
-      display:none;
-    }
-
-    .form-panel.active{
-      display:block;
-    }
-
-    form h4{
-      margin:0 0 12px;
-      font-size:22px;
-      color:var(--blue-dark);
     }
 
     .form-grid{
@@ -335,16 +273,6 @@
       resize:vertical;
     }
 
-    .hint{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:12px;
-      background:#f7fbff;
-      border:1px solid #d6e7ff;
-      color:var(--muted);
-      font-size:14px;
-    }
-
     footer{
       margin-top:30px;
       background:#fff;
@@ -352,33 +280,9 @@
       padding:28px 0 38px;
     }
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr 0.8fr;
-      gap:20px;
-    }
-
-    .footer-grid h4{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-    }
-
-    .footer-grid p{
-      margin:0 0 8px;
-      color:var(--muted);
-    }
-
-    .footer-links a{
-      display:inline-block;
-      margin:0 12px 8px 0;
-      font-weight:600;
-    }
-
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .hero-grid,
       .grid-3,
-      .grid-2,
-      .footer-grid,
       .form-grid{
         grid-template-columns:1fr;
       }
@@ -419,14 +323,7 @@
     <div class="wrap hero-grid">
       <div class="card hero-card">
         <h2>Patches, Schlüsselanhänger und Basecaps für die Blaulichtfamilie</h2>
-        <p>
-          Count of Patches produziert individuelle Ärmelabzeichen, Patches, Schlüsselanhänger und bestickte Basecaps
-          für THW, Feuerwehren, Polizei, Zoll, Hilfsorganisationen sowie Bundes- und Landesbehörden.
-        </p>
-        <p>
-          <strong>Preise gibt es ausschließlich auf Anfrage.</strong> Für eine schnelle Einschätzung werden Design, Stückzahl
-          und gewünschte Machart benötigt.
-        </p>
+        <p>Individuelle Fertigung für THW, Feuerwehr, Polizei, Zoll, Hilfsorganisationen sowie Bundes- und Landesbehörden.</p>
 
         <div class="badge-row">
           <span class="badge">Gewebt</span>
@@ -435,378 +332,26 @@
           <span class="badge">Rubber PVC 2D</span>
           <span class="badge">Rubber PVC 3D</span>
         </div>
-
-        <a class="btn" href="#anfrage">Jetzt anfragen</a>
       </div>
 
       <div class="card side-card">
         <h3>Wichtige Punkte</h3>
         <ul>
-          <li><strong>Patches:</strong> Mindestbestellmenge 20 Stück</li>
-          <li><strong>Schlüsselanhänger:</strong> Mindestbestellmenge 50 Stück</li>
-          <li><strong>Basecaps:</strong> keine Mindestbestellmenge</li>
-          <li><strong>Design-Service:</strong> 70 € pro Designerstunde inklusive Steuern</li>
-          <li><strong>Kontakt:</strong> Countofpatches@outlook.de</li>
+          <li>Patches Mindestbestellmenge 20 Stück</li>
+          <li>Schlüsselanhänger Mindestbestellmenge 50 Stück</li>
+          <li>Basecaps keine Mindestbestellmenge</li>
+          <li>Design-Service 70 € pro Designerstunde</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Produktbereiche</h3>
-        <p>Individuelle Lösungen für Einheiten, Behörden und Organisationen.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card info-card">
-          <h4>Patches & Ärmelabzeichen</h4>
-          <p>Individuell gefertigt für BOS, Behörden und Hilfsorganisationen – passend zu Motiv, Einsatzzweck und Machart.</p>
-        </div>
-
-        <div class="card info-card">
-          <h4>Schlüsselanhänger</h4>
-          <p>Individuelle Anhänger passend zu Einheiten, Teams oder Veranstaltungen. Mindestbestellmenge: 50 Stück.</p>
-        </div>
-
-        <div class="card info-card">
-          <h4>Basecaps</h4>
-          <p>Bestickte Basecaps ohne Mindestbestellmenge – ideal als Einzelstück oder für kleine Gruppen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Galeriebereiche</h3>
-        <p>Bereits gefertigte Arbeiten, aufgeteilt nach Zielgruppen.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card gallery-link-card">
-          <div>
-            <h4>THW</h4>
-            <p>Beispiele für Patches und Ärmelabzeichen für Ortsverbände, Fachgruppen und weitere THW-Einheiten.</p>
-          </div>
-          <a href="/thw">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Feuerwehr</h4>
-            <p>Beispiele für Freiwillige Feuerwehren, Berufsfeuerwehren, Jugendfeuerwehren und Sonderdienste.</p>
-          </div>
-          <a href="/feuerwehr">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Polizei</h4>
-            <p>Beispiele für Polizei-Patches und Abzeichen aus unterschiedlichen Einsatzbereichen.</p>
-          </div>
-          <a href="/polizei">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Zoll</h4>
-            <p>Beispiele für gefertigte Zoll-Patches und Abzeichen.</p>
-          </div>
-          <a href="/zoll">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Bundes- & Landesbehörden</h4>
-            <p>Beispiele für Projekte im behördlichen Bereich.</p>
-          </div>
-          <a href="/behoerden">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Hilfsorganisationen</h4>
-            <p>Beispiele für Malteser, Rettungsdienste und weitere Hilfsorganisationen.</p>
-          </div>
-          <a href="/hilfsorganisationen">Zur Galerie</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="anfrage">
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Preisanfrage & Bestellung</h3>
-        <p>
-          Die Formulare laufen als Netlify Forms. Die E-Mail-Benachrichtigung richtest du in Netlify unter
-          <strong>Forms → Form notifications → Email notification</strong> ein.
-        </p>
-      </div>
-
-      <div class="card form-card">
-        <div class="tabs">
-          <button class="tab-btn active" type="button" onclick="showForm('price')">Preisanfrage</button>
-          <button class="tab-btn" type="button" onclick="showForm('order')">Bestellung</button>
-        </div>
-
-        <div id="price-form" class="form-panel active">
-          <form name="Preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
-            <input type="hidden" name="form-name" value="Preisanfrage">
-            <p style="display:none;">
-              <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-            </p>
-
-            <h4>Preisanfrage</h4>
-
-            <div class="form-grid">
-              <div>
-                <label for="pq-vorname">Vorname</label>
-                <input id="pq-vorname" type="text" name="Vorname" required>
-              </div>
-
-              <div>
-                <label for="pq-nachname">Nachname</label>
-                <input id="pq-nachname" type="text" name="Nachname" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-anschrift">Anschrift</label>
-                <input id="pq-anschrift" type="text" name="Anschrift" required>
-              </div>
-
-              <div>
-                <label for="pq-plz">Postleitzahl</label>
-                <input id="pq-plz" type="text" name="Postleitzahl" required>
-              </div>
-
-              <div>
-                <label for="pq-ort">Wohnort</label>
-                <input id="pq-ort" type="text" name="Wohnort" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-email">E-Mail-Adresse</label>
-                <input id="pq-email" type="email" name="E-Mail-Adresse" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-dienststelle">Dienststelle / Ortsverband (falls vorhanden)</label>
-                <input id="pq-dienststelle" type="text" name="Dienststelle / Ortsverband">
-              </div>
-
-              <div>
-                <label for="pq-produkt">Produkt</label>
-                <select id="pq-produkt" name="Produkt" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="Patch">Patch (Mindestmenge 20)</option>
-                  <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="pq-menge">Menge</label>
-                <input id="pq-menge" type="number" name="Menge" min="1" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-machart">Machart</label>
-                <select id="pq-machart" name="Machart" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="gewebt">gewebt</option>
-                  <option value="gestickt">gestickt</option>
-                  <option value="UV Druck">UV Druck</option>
-                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label for="pq-design">Design / zusätzliche Hinweise</label>
-                <textarea id="pq-design" name="Design / Hinweise"></textarea>
-              </div>
-            </div>
-
-            <div class="hint">
-              Hinweis: Für Patches gilt eine Mindestmenge von 20 Stück, für Schlüsselanhänger 50 Stück.
-            </div>
-
-            <p style="margin-top:18px;">
-              <button class="btn" type="submit">Preisanfrage absenden</button>
-            </p>
-          </form>
-        </div>
-
-        <div id="order-form" class="form-panel">
-          <form name="Bestellung" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
-            <input type="hidden" name="form-name" value="Bestellung">
-            <p style="display:none;">
-              <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-            </p>
-
-            <h4>Bestellung</h4>
-
-            <div class="form-grid">
-              <div>
-                <label for="bo-vorname">Vorname</label>
-                <input id="bo-vorname" type="text" name="Vorname" required>
-              </div>
-
-              <div>
-                <label for="bo-nachname">Nachname</label>
-                <input id="bo-nachname" type="text" name="Nachname" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-anschrift">Anschrift</label>
-                <input id="bo-anschrift" type="text" name="Anschrift" required>
-              </div>
-
-              <div>
-                <label for="bo-plz">Postleitzahl</label>
-                <input id="bo-plz" type="text" name="Postleitzahl" required>
-              </div>
-
-              <div>
-                <label for="bo-ort">Wohnort</label>
-                <input id="bo-ort" type="text" name="Wohnort" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-email">E-Mail-Adresse</label>
-                <input id="bo-email" type="email" name="E-Mail-Adresse" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-dienststelle">Dienststelle / Ortsverband (falls vorhanden)</label>
-                <input id="bo-dienststelle" type="text" name="Dienststelle / Ortsverband">
-              </div>
-
-              <div>
-                <label for="bo-produkt">Produkt</label>
-                <select id="bo-produkt" name="Produkt" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="Patch">Patch (Mindestmenge 20)</option>
-                  <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-                  <option value="Basecap">Basecap (keine Mindestmenge)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="bo-menge">Menge</label>
-                <input id="bo-menge" type="number" name="Menge" min="1" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-machart">Machart</label>
-                <select id="bo-machart" name="Machart" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="gewebt">gewebt</option>
-                  <option value="gestickt">gestickt</option>
-                  <option value="UV Druck">UV Druck</option>
-                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label for="bo-hinweise">Bestellhinweise</label>
-                <textarea id="bo-hinweise" name="Bestellhinweise"></textarea>
-              </div>
-            </div>
-
-            <div class="hint">
-              Hinweis: Patch ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge.
-            </div>
-
-            <p style="margin-top:18px;">
-              <button class="btn" type="submit">Bestellung absenden</button>
-            </p>
-          </form>
-        </div>
-
-        <div style="display:none;">
-          <form name="Preisanfrage" data-netlify="true">
-            <input type="text" name="Vorname">
-            <input type="text" name="Nachname">
-            <input type="text" name="Anschrift">
-            <input type="text" name="Postleitzahl">
-            <input type="text" name="Wohnort">
-            <input type="email" name="E-Mail-Adresse">
-            <input type="text" name="Dienststelle / Ortsverband">
-            <input type="text" name="Produkt">
-            <input type="text" name="Menge">
-            <input type="text" name="Machart">
-            <textarea name="Design / Hinweise"></textarea>
-          </form>
-
-          <form name="Bestellung" data-netlify="true">
-            <input type="text" name="Vorname">
-            <input type="text" name="Nachname">
-            <input type="text" name="Anschrift">
-            <input type="text" name="Postleitzahl">
-            <input type="text" name="Wohnort">
-            <input type="email" name="E-Mail-Adresse">
-            <input type="text" name="Dienststelle / Ortsverband">
-            <input type="text" name="Produkt">
-            <input type="text" name="Menge">
-            <input type="text" name="Machart">
-            <textarea name="Bestellhinweise"></textarea>
-          </form>
-        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap footer-grid">
-    <div>
-      <h4>Count of Patches</h4>
-      <p>Faire Preise für die Blaulichtfamilie</p>
-      <p>Kontakt: <a href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a></p>
-    </div>
-
-    <div>
-      <h4>Seiten</h4>
-      <div class="footer-links">
-        <a href="/thw">THW</a>
-        <a href="/feuerwehr">Feuerwehr</a>
-        <a href="/polizei">Polizei</a>
-        <a href="/zoll">Zoll</a>
-        <a href="/behoerden">Bund/Land</a>
-        <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-        <a href="/ablauf.html">Ablauf</a>
-        <a href="/ueber-mich.html">Über mich</a>
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-      </div>
-    </div>
+  <div class="wrap">
+    Count of Patches – Faire Preise für die Blaulichtfamilie
   </div>
 </footer>
-
-<script>
-  function showForm(type){
-    const price = document.getElementById('price-form');
-    const order = document.getElementById('order-form');
-    const buttons = document.querySelectorAll('.tab-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    if(type === 'price'){
-      price.classList.add('active');
-      order.classList.remove('active');
-      buttons[0].classList.add('active');
-    } else {
-      order.classList.add('active');
-      price.classList.remove('active');
-      buttons[1].classList.add('active');
-    }
-  }
-</script>
 
 </body>
 </html>
