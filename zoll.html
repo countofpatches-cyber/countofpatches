@@ -5,48 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zoll – Galerie | Count of Patches</title>
   <meta name="description" content="Galerie mit bereits gefertigten Zoll Patches und Abzeichen von Count of Patches.">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://countofpatches.de/zoll">
 
   <style>
-    :root{--blue:#0039A6;--blue-dark:#002c80;--light:#f4f7fc;--card:#ffffff;--text:#172033;--muted:#5e6b85;--line:#dbe4f2;--shadow:0 12px 28px rgba(0,0,0,0.08);--radius:18px}
+    :root{
+      --blue:#0039A6;
+      --blue-dark:#002c80;
+      --light:#f4f7fc;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5e6b85;
+      --line:#dbe4f2;
+      --shadow:0 12px 28px rgba(0,0,0,0.08);
+      --radius:18px;
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--light);color:var(--text);line-height:1.6}
-    a{color:var(--blue);text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    header{background:#fff;border-bottom:1px solid var(--line)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:62px;height:62px;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:#fff;padding:4px}
-    .brand h1{margin:0;font-size:22px;color:var(--blue-dark)}
-    .brand p{margin:4px 0 0;font-size:14px;color:var(--muted)}
-    nav{display:flex;gap:16px;flex-wrap:wrap}
-    nav a{color:var(--text);font-weight:600}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700}
-    main{padding:48px 0}
-    .page-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
-    h2{margin:0 0 14px;font-size:38px;color:var(--blue-dark)}
-    .lead{margin:0 0 18px;color:var(--muted);font-size:18px}
-    #gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:18px}
-    .gallery-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06)}
-    .gallery-item img{width:100%;height:280px;object-fit:cover;display:block;background:#eef3fb}
-    footer{margin-top:36px;background:#fff;border-top:1px solid var(--line);padding:26px 0 34px}
-    .footer-links a{display:inline-block;margin:0 14px 8px 0;font-weight:600}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:62px;
+      height:62px;
+      object-fit:contain;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--line);
+      padding:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:22px;
+      color:var(--blue-dark);
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:var(--text);
+      font-weight:600;
+      font-size:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
+    }
+
+    main{
+      padding:48px 0 36px;
+    }
+
+    .page-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:38px;
+      color:var(--blue-dark);
+    }
+
+    .lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .notice{
+      background:#f7fbff;
+      border:1px solid #d6e7ff;
+      padding:14px 16px;
+      border-radius:14px;
+      color:var(--text);
+      margin-bottom:22px;
+    }
+
+    #gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+      margin-top:18px;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,0.06);
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+      padding:12px;
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 24px rgba(0,0,0,0.10);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:280px;
+      object-fit:contain;
+      display:block;
+      background:#eef3fb;
+      border-radius:12px;
+    }
+
+    footer{
+      margin-top:36px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:26px 0 34px;
+    }
+
+    .footer-links a{
+      display:inline-block;
+      margin:0 14px 8px 0;
+      font-weight:600;
+    }
+
+    @media (max-width:780px){
+      h2{font-size:30px}
+      .gallery-item img{height:240px}
+    }
   </style>
 </head>
 <body>
+
 <header>
   <div class="wrap nav">
     <div class="brand">
       <img src="logo.jpeg" alt="Count of Patches Logo">
-      <div><h1>Count of Patches</h1><p>Faire Preise für die Blaulichtfamilie</p></div>
+      <div>
+        <h1>Count of Patches</h1>
+        <p>Faire Preise für die Blaulichtfamilie</p>
+      </div>
     </div>
+
     <nav>
       <a href="/index.html">Startseite</a>
-      <a href="/feuerwehr">Feuerwehr</a>
       <a href="/thw">THW</a>
+      <a href="/feuerwehr">Feuerwehr</a>
       <a href="/polizei">Polizei</a>
       <a href="/behoerden">Bund/Land</a>
       <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+      <a class="btn" href="/index.html#anfrage">Preisanfrage</a>
     </nav>
   </div>
 </header>
@@ -56,6 +233,11 @@
     <div class="page-card">
       <h2>Zoll – Galerie</h2>
       <p class="lead">Beispiele für bereits gefertigte Zoll Patches und Abzeichen.</p>
+
+      <div class="notice">
+        Die Bilder werden automatisch aus <strong>/galleries.json</strong> geladen.
+      </div>
+
       <div id="gallery"></div>
     </div>
   </div>
@@ -70,6 +252,9 @@
 </footer>
 
 <script src="/gallery.js"></script>
-<script>initGallery("zoll");</script>
+<script>
+  initGallery("zoll");
+</script>
+
 </body>
 </html>
