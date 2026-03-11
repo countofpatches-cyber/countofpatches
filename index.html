@@ -23,9 +23,7 @@
 
     *{box-sizing:border-box}
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth}
 
     body{
       margin:0;
@@ -467,6 +465,7 @@
       <a href="/zoll">Zoll</a>
       <a href="/behoerden">Bund/Land</a>
       <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+      <a href="/schluesselanhaenger">Schlüsselanhänger</a>
       <a href="/ablauf.html">Ablauf</a>
       <a href="/ueber-mich.html">Über mich</a>
     </nav>
@@ -508,12 +507,13 @@
           <li><strong>Patches:</strong> Mindestbestellmenge 20 Stück</li>
           <li><strong>Schlüsselanhänger:</strong> Mindestbestellmenge 50 Stück</li>
           <li><strong>Basecaps:</strong> keine Mindestbestellmenge</li>
+          <li><strong>Schlüsselanhänger:</strong> nur als Rubber PVC Variante</li>
           <li><strong>Design-Service:</strong> 70 € pro Designerstunde inklusive Steuern</li>
           <li><strong>Kontakt:</strong> Countofpatches@outlook.de</li>
         </ul>
 
         <div class="notice">
-          Für eine Preisanfrage wichtig: Design oder Entwurf, gewünschte Stückzahl und die gewünschte Machart.
+          Für eine Preisanfrage wichtig: Design oder Entwurf, gewünschte Stückzahl, gewünschte Machart und bei Patches der Größenwunsch.
         </div>
       </div>
     </div>
@@ -538,7 +538,8 @@
         <div class="card info-card">
           <h4>Basecaps & Schlüsselanhänger</h4>
           <p>
-            Bestickte Basecaps ohne Mindestbestellmenge sowie individuelle Schlüsselanhänger passend zum Patch-Design.
+            Bestickte Basecaps ohne Mindestbestellmenge sowie individuelle Schlüsselanhänger.
+            Schlüsselanhänger werden ausschließlich als Rubber PVC Variante umgesetzt.
           </p>
         </div>
 
@@ -607,6 +608,14 @@
           </div>
           <a href="/hilfsorganisationen">Zur Galerie</a>
         </div>
+
+        <div class="card gallery-link-card">
+          <div>
+            <h4>Schlüsselanhänger</h4>
+            <p>Beispiele für Schlüsselanhänger als Rubber PVC Variante für BOS, Hilfsorganisationen und individuelle Anfragen.</p>
+          </div>
+          <a href="/schluesselanhaenger">Zur Schlüsselanhänger-Galerie</a>
+        </div>
       </div>
     </div>
   </section>
@@ -617,7 +626,7 @@
         <h4>Macharten & Produktionsmöglichkeiten</h4>
         <p>
           Gewebt, gestickt, UV Druck, Rubber PVC 2D und Rubber PVC 3D – je nach Motiv und Einsatzzweck
-          wird die passende Ausführung gewählt.
+          wird die passende Ausführung gewählt. Schlüsselanhänger sind ausschließlich als Rubber PVC Variante möglich.
         </p>
       </div>
 
@@ -635,9 +644,7 @@
     <div class="wrap">
       <div class="section-head">
         <h3>Preisanfrage & Bestellung</h3>
-        <p>
-          Bitte alle wichtigen Daten möglichst vollständig ausfüllen.
-        </p>
+        <p>Bitte alle wichtigen Daten möglichst vollständig ausfüllen.</p>
       </div>
 
       <div class="card form-card">
@@ -693,16 +700,22 @@
 
               <div>
                 <label for="pq-produkt">Produkt</label>
-                <select id="pq-produkt" name="Produkt" required>
+                <select id="pq-produkt" name="Produkt" required onchange="togglePriceFields()">
                   <option value="">Bitte auswählen</option>
                   <option value="Patch">Patch (Mindestmenge 20)</option>
                   <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
+                  <option value="Basecap">Basecap (keine Mindestmenge)</option>
                 </select>
               </div>
 
               <div>
                 <label for="pq-menge">Menge</label>
                 <input id="pq-menge" type="number" name="Menge" min="1" required>
+              </div>
+
+              <div class="full" id="pq-groesse-wrap">
+                <label for="pq-groesse">Größenwunsch</label>
+                <input id="pq-groesse" type="text" name="Größenwunsch" placeholder="z. B. 8 cm, 90 mm, 10 x 6 cm">
               </div>
 
               <div class="full">
@@ -717,6 +730,23 @@
                 </select>
               </div>
 
+              <div class="full" id="pq-schluesseltyp-wrap" style="display:none;">
+                <label for="pq-schluesseltyp">Auswahl Schlüsselanhänger</label>
+                <select id="pq-schluesseltyp" name="Auswahl Schlüsselanhänger">
+                  <option value="">Bitte auswählen</option>
+                  <option value="DRK">DRK</option>
+                  <option value="THW">THW</option>
+                  <option value="THW Jugend">THW Jugend</option>
+                  <option value="ASB">ASB</option>
+                  <option value="Malteser">Malteser</option>
+                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
+                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
+                  <option value="Feuerwehr rot">Feuerwehr rot</option>
+                  <option value="Polizei">Polizei</option>
+                  <option value="individuelle Anfrage">individuelle Anfrage</option>
+                </select>
+              </div>
+
               <div class="full">
                 <label for="pq-design">Design / zusätzliche Hinweise</label>
                 <textarea id="pq-design" name="Design / Hinweise"></textarea>
@@ -724,7 +754,7 @@
             </div>
 
             <div class="hint">
-              Hinweis: Für Patches gilt eine Mindestmenge von 20 Stück, für Schlüsselanhänger 50 Stück.
+              Hinweis: Patches ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge. Schlüsselanhänger ausschließlich als Rubber PVC Variante.
             </div>
 
             <p style="margin-top:18px;">
@@ -780,7 +810,7 @@
 
               <div>
                 <label for="bo-produkt">Produkt</label>
-                <select id="bo-produkt" name="Produkt" required>
+                <select id="bo-produkt" name="Produkt" required onchange="toggleOrderFields()">
                   <option value="">Bitte auswählen</option>
                   <option value="Patch">Patch (Mindestmenge 20)</option>
                   <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
@@ -791,6 +821,11 @@
               <div>
                 <label for="bo-menge">Menge</label>
                 <input id="bo-menge" type="number" name="Menge" min="1" required>
+              </div>
+
+              <div class="full" id="bo-groesse-wrap">
+                <label for="bo-groesse">Größenwunsch</label>
+                <input id="bo-groesse" type="text" name="Größenwunsch" placeholder="z. B. 8 cm, 90 mm, 10 x 6 cm">
               </div>
 
               <div class="full">
@@ -805,6 +840,23 @@
                 </select>
               </div>
 
+              <div class="full" id="bo-schluesseltyp-wrap" style="display:none;">
+                <label for="bo-schluesseltyp">Auswahl Schlüsselanhänger</label>
+                <select id="bo-schluesseltyp" name="Auswahl Schlüsselanhänger">
+                  <option value="">Bitte auswählen</option>
+                  <option value="DRK">DRK</option>
+                  <option value="THW">THW</option>
+                  <option value="THW Jugend">THW Jugend</option>
+                  <option value="ASB">ASB</option>
+                  <option value="Malteser">Malteser</option>
+                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
+                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
+                  <option value="Feuerwehr rot">Feuerwehr rot</option>
+                  <option value="Polizei">Polizei</option>
+                  <option value="individuelle Anfrage">individuelle Anfrage</option>
+                </select>
+              </div>
+
               <div class="full">
                 <label for="bo-hinweise">Bestellhinweise</label>
                 <textarea id="bo-hinweise" name="Bestellhinweise"></textarea>
@@ -812,7 +864,7 @@
             </div>
 
             <div class="hint">
-              Hinweis: Patch ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge.
+              Hinweis: Patch ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge. Schlüsselanhänger ausschließlich als Rubber PVC Variante.
             </div>
 
             <p style="margin-top:18px;">
@@ -832,7 +884,9 @@
             <input type="text" name="Dienststelle / Ortsverband">
             <input type="text" name="Produkt">
             <input type="text" name="Menge">
+            <input type="text" name="Größenwunsch">
             <input type="text" name="Machart">
+            <input type="text" name="Auswahl Schlüsselanhänger">
             <textarea name="Design / Hinweise"></textarea>
           </form>
 
@@ -846,7 +900,9 @@
             <input type="text" name="Dienststelle / Ortsverband">
             <input type="text" name="Produkt">
             <input type="text" name="Menge">
+            <input type="text" name="Größenwunsch">
             <input type="text" name="Machart">
+            <input type="text" name="Auswahl Schlüsselanhänger">
             <textarea name="Bestellhinweise"></textarea>
           </form>
         </div>
@@ -859,7 +915,7 @@
       <div class="cta-box">
         <div>
           <h3>Jetzt anfragen</h3>
-          <p>Faire Preise für die Blaulichtfamilie – Angebote individuell nach Design, Stückzahl und Machart.</p>
+          <p>Faire Preise für die Blaulichtfamilie – Angebote individuell nach Design, Stückzahl, Größenwunsch und Machart.</p>
         </div>
         <a class="btn" href="mailto:Countofpatches@outlook.de?subject=Anfrage%20Count%20of%20Patches">Mail an Count of Patches</a>
       </div>
@@ -884,6 +940,7 @@
         <a href="/zoll">Zoll</a>
         <a href="/behoerden">Bund/Land</a>
         <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
         <a href="/ablauf.html">Ablauf</a>
         <a href="/ueber-mich.html">Über mich</a>
         <a href="/impressum.html">Impressum</a>
@@ -909,6 +966,34 @@
       order.classList.add('active');
       price.classList.remove('active');
       buttons[1].classList.add('active');
+    }
+  }
+
+  function togglePriceFields(){
+    const product = document.getElementById('pq-produkt').value;
+    const sizeWrap = document.getElementById('pq-groesse-wrap');
+    const keyWrap = document.getElementById('pq-schluesseltyp-wrap');
+    const machart = document.getElementById('pq-machart');
+
+    sizeWrap.style.display = (product === 'Patch') ? 'block' : 'none';
+    keyWrap.style.display = (product === 'Schlüsselanhänger') ? 'block' : 'none';
+
+    if(product === 'Schlüsselanhänger'){
+      machart.value = 'Rubber PVC 2D';
+    }
+  }
+
+  function toggleOrderFields(){
+    const product = document.getElementById('bo-produkt').value;
+    const sizeWrap = document.getElementById('bo-groesse-wrap');
+    const keyWrap = document.getElementById('bo-schluesseltyp-wrap');
+    const machart = document.getElementById('bo-machart');
+
+    sizeWrap.style.display = (product === 'Patch') ? 'block' : 'none';
+    keyWrap.style.display = (product === 'Schlüsselanhänger') ? 'block' : 'none';
+
+    if(product === 'Schlüsselanhänger'){
+      machart.value = 'Rubber PVC 2D';
     }
   }
 </script>

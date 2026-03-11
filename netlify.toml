@@ -1,8 +1,7 @@
 [build]
-  command = "node build-galleries.js"
-  publish = "."
+publish = "."
 
 [[headers]]
-  for = "/works/*"
+for = "/works/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+  Cache-Control = "public, max-age=86400"
