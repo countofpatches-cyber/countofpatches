@@ -6,8 +6,6 @@
   <title>Schlüsselanhänger – Galerie | Count of Patches</title>
   <meta name="description" content="Galerie mit bereits gefertigten Schlüsselanhängern von Count of Patches.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://countofpatches.de/schluesselanhaenger">
-
   <style>
     :root{
       --blue:#0039A6;
@@ -185,6 +183,16 @@
       border-radius:12px;
     }
 
+    .error-box{
+      padding:14px 16px;
+      border:1px solid #e3bcbc;
+      background:#fff4f4;
+      color:#8a1f1f;
+      border-radius:12px;
+      margin-top:16px;
+      white-space:pre-line;
+    }
+
     footer{
       margin-top:36px;
       background:#fff;
@@ -209,7 +217,7 @@
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <img src="logo.jpeg" alt="Count of Patches Logo">
+      <img src="/logo.jpeg" alt="Count of Patches Logo">
       <div>
         <h1>Count of Patches</h1>
         <p>Faire Preise für die Blaulichtfamilie</p>
@@ -243,6 +251,7 @@
       </div>
 
       <div id="gallery"></div>
+      <div id="errorBox"></div>
     </div>
   </div>
 </main>
@@ -257,9 +266,59 @@
   </div>
 </footer>
 
-<script src="/gallery.js"></script>
 <script>
-  initGallery("schluesselanhaenger");
+(async function () {
+  const gallery = document.getElementById("gallery");
+  const errorBox = document.getElementById("errorBox");
+
+  function showError(message) {
+    errorBox.className = "error-box";
+    errorBox.textContent = message;
+  }
+
+  try {
+    const response = await fetch("/galleries.json?v=" + Date.now(), { cache: "no-store" });
+
+    if (!response.ok) {
+      showError("galleries.json konnte nicht geladen werden.");
+      return;
+    }
+
+    const data = await response.json();
+    const images = data["schluesselanhaenger"];
+
+    if (!Array.isArray(images) || images.length === 0) {
+      showError("Für schluesselanhaenger sind keine Bilder in galleries.json hinterlegt.");
+      return;
+    }
+
+    gallery.innerHTML = "";
+
+    images.forEach((imagePath) => {
+      const item = document.createElement("div");
+      item.className = "gallery-item";
+
+      const img = document.createElement("img");
+      img.src = "/" + imagePath + "?v=" + Date.now();
+      img.alt = "schluesselanhaenger Bild";
+      img.loading = "lazy";
+
+      img.onerror = function () {
+        const msg = document.createElement("div");
+        msg.className = "error-box";
+        msg.textContent = "Bild konnte nicht geladen werden:\n/" + imagePath;
+        item.innerHTML = "";
+        item.appendChild(msg);
+      };
+
+      item.appendChild(img);
+      gallery.appendChild(item);
+    });
+
+  } catch (error) {
+    showError("Fehler beim Laden der Galerie: " + error.message);
+  }
+})();
 </script>
 
 </body>
