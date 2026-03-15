@@ -42,6 +42,12 @@
     "works/hilfsorganisationen/hilfsorganisationen-03.jpg",
     "works/hilfsorganisationen/hilfsorganisationen-04.jpg"
   ],
+  "basecaps": [
+    "works/basecaps/basecaps-01.jpg",
+    "works/basecaps/basecaps-02.jpg",
+    "works/basecaps/basecaps-03.jpg",
+    "works/basecaps/basecaps-04.jpg"
+  ],
   "schluesselanhaenger": [
     "works/schluesselanhaenger/a1.jpg",
     "works/schluesselanhaenger/a2.jpg",
@@ -51,7 +57,6 @@
     "works/schluesselanhaenger/a6.jpg",
     "works/schluesselanhaenger/a7.jpg",
     "works/schluesselanhaenger/a8.jpg",
-    "works/schluesselanhaenger/a9.jpg",
-    "works/schluesselanhaenger/a8.jpg"
+     works/schluesselanhaenger/a9.jpg
   ]
 }

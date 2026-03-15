@@ -1,124 +1,655 @@
-<form name="preisanfrage" method="POST" action="/danke.html" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="preisanfrage">
-  <p hidden>
-    <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-  </p>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count of Patches – Patches, Basecaps & Schlüsselanhänger</title>
+  <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Ärmelabzeichen, Basecaps und Schlüsselanhänger für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
+  <style>
+    :root{
+      --blue:#0039a6;
+      --blue-dark:#002d7a;
+      --light:#f3f6fb;
+      --card:#ffffff;
+      --text:#1a2238;
+      --muted:#667089;
+      --line:#d9e2f0;
+      --success:#e9f7ee;
+      --danger:#fff1f1;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+      --radius:18px;
+    }
 
-  <div class="grid two">
-    <div>
-      <label for="pa_vorname">Vorname</label>
-      <input type="text" id="pa_vorname" name="vorname" required>
-    </div>
-    <div>
-      <label for="pa_nachname">Nachname</label>
-      <input type="text" id="pa_nachname" name="nachname" required>
-    </div>
-  </div>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-  <div class="grid two">
-    <div>
-      <label for="pa_email">E-Mail-Adresse</label>
-      <input type="email" id="pa_email" name="email" required>
-    </div>
-    <div>
-      <label for="pa_dienststelle">Dienststelle / Ortsverband (optional)</label>
-      <input type="text" id="pa_dienststelle" name="dienststelle">
-    </div>
-  </div>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-  <div class="grid two">
-    <div>
-      <label for="pa_anschrift">Anschrift</label>
-      <input type="text" id="pa_anschrift" name="anschrift" required>
-    </div>
-    <div>
-      <label for="pa_plz">Postleitzahl</label>
-      <input type="text" id="pa_plz" name="plz" required>
-    </div>
-  </div>
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
 
-  <div class="grid two">
-    <div>
-      <label for="pa_wohnort">Wohnort</label>
-      <input type="text" id="pa_wohnort" name="wohnort" required>
-    </div>
-    <div>
-      <label for="pa_produkt">Produkt</label>
-      <select id="pa_produkt" name="produkt" required>
-        <option value="">Bitte auswählen</option>
-        <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen (Mindestmenge 20)</option>
-        <option value="Basecap">Basecap (keine Mindestmenge)</option>
-        <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-      </select>
-    </div>
-  </div>
+    a:hover{text-decoration:underline}
 
-  <div class="grid two">
-    <div>
-      <label for="pa_stueckzahl">Stückzahl</label>
-      <input type="number" id="pa_stueckzahl" name="stueckzahl" min="1" required>
-    </div>
-    <div>
-      <label for="pa_groesse">Größenwunsch</label>
-      <input type="text" id="pa_groesse" name="groessenwunsch" placeholder="z. B. 8 cm breit">
-    </div>
-  </div>
+    img{max-width:100%;display:block}
 
-  <div class="grid two">
-    <div>
-      <label for="pa_machart">Machart</label>
-      <select id="pa_machart" name="machart" required>
-        <option value="">Bitte auswählen</option>
-        <option value="Gewebt">Gewebt</option>
-        <option value="Gestickt">Gestickt</option>
-        <option value="UV-Druck">UV-Druck</option>
-        <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-        <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-      </select>
-    </div>
-    <div>
-      <label for="pa_befestigung">Befestigung (optional)</label>
-      <select id="pa_befestigung" name="befestigung">
-        <option value="">Bitte auswählen</option>
-        <option value="Klett">Klett</option>
-        <option value="Zum Aufnähen">Zum Aufnähen</option>
-        <option value="Andere / Unklar">Andere / Unklar</option>
-      </select>
-    </div>
-  </div>
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
 
-  <div class="grid two">
-    <div>
-      <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
-      <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
-        <option value="">Bitte auswählen</option>
-        <option value="DRK">DRK</option>
-        <option value="THW">THW</option>
-        <option value="THW Jugend">THW Jugend</option>
-        <option value="ASB">ASB</option>
-        <option value="Malteser">Malteser</option>
-        <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
-        <option value="Feuerwehr gelb">Feuerwehr gelb</option>
-        <option value="Feuerwehr rot">Feuerwehr rot</option>
-        <option value="Polizei">Polizei</option>
-        <option value="Individuelle Anfrage">Individuelle Anfrage</option>
-      </select>
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:280px;
+    }
+
+    .brand-logo{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      padding:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      color:var(--blue-dark);
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:var(--text);
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--blue);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
+    }
+
+    .hero{
+      padding:54px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .hero h2{
+      margin:0 0 14px;
+      font-size:44px;
+      line-height:1.1;
+      color:var(--blue-dark);
+    }
+
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .hero-box{
+      display:grid;
+      gap:14px;
+    }
+
+    .info{
+      background:#f8fbff;
+      border:1px solid #d9e8ff;
+      border-radius:14px;
+      padding:14px 16px;
+      color:var(--text);
+      font-weight:600;
+    }
+
+    section{
+      padding:18px 0 28px;
+    }
+
+    .section-title{
+      margin:0 0 16px;
+      font-size:34px;
+      color:var(--blue-dark);
+    }
+
+    .section-sub{
+      margin:0 0 24px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .category-grid,
+    .preview-grid,
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .category-card,
+    .preview-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .category-card .inner,
+    .preview-card .inner{
+      padding:20px;
+    }
+
+    .category-card h3,
+    .preview-card h3{
+      margin:0 0 10px;
+      color:var(--blue-dark);
+      font-size:24px;
+    }
+
+    .category-card p,
+    .preview-card p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .gallery-grid .item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      padding:12px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:260px;
+      object-fit:contain;
+      background:#eef3fb;
+      border-radius:12px;
+    }
+
+    .form-section{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    form{
+      display:grid;
+      gap:14px;
+    }
+
+    .grid-two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:12px 14px;
+      border:1px solid #cdd8ea;
+      border-radius:12px;
+      font:inherit;
+      color:var(--text);
+      background:#fff;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:-6px;
+    }
+
+    .notice{
+      border-radius:14px;
+      padding:14px 16px;
+      font-weight:600;
+      border:1px solid #dce7fb;
+      background:#f8fbff;
+      margin-bottom:14px;
+    }
+
+    footer{
+      margin-top:24px;
+      padding:30px 0 40px;
+      background:#fff;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-weight:700;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    @media (max-width: 960px){
+      .hero-grid,
+      .form-section{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 700px){
+      .hero h2{font-size:34px}
+      .section-title{font-size:28px}
+      .grid-two{grid-template-columns:1fr}
+      nav{gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
+        <div>
+          <h1>Count of Patches</h1>
+          <p>Faire Preise für die Blaulichtfamilie</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="/thw">THW</a>
+        <a href="/feuerwehr">Feuerwehr</a>
+        <a href="/polizei">Polizei</a>
+        <a href="/zoll">Zoll</a>
+        <a href="/behoerden">Bund/Land</a>
+        <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+        <a href="/basecaps">Basecaps</a>
+        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
+        <a class="btn" href="#anfrage">Preisanfrage</a>
+      </nav>
     </div>
-    <div>
-      <label for="pa_designlink">Design-Link (optional)</label>
-      <input type="url" id="pa_designlink" name="design_link">
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="card">
+          <h2>Patches, Basecaps und Schlüsselanhänger für die Blaulichtfamilie</h2>
+          <p>
+            Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.
+            Faire Preise, klare Kommunikation und saubere Umsetzung.
+          </p>
+          <p>
+            Bestellbar sind unter anderem Patch / Ärmelabzeichen, Basecaps sowie Schlüsselanhänger.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
+            <a class="btn" href="#bestellung">Direkt bestellen</a>
+          </div>
+        </div>
+
+        <div class="hero-box">
+          <div class="info">Patch / Ärmelabzeichen: Mindestmenge 20 Stück</div>
+          <div class="info">Schlüsselanhänger: Mindestmenge 50 Stück</div>
+          <div class="info">Basecaps: keine Mindestmenge</div>
+          <div class="info">Macharten: Gewebt, Gestickt, UV-Druck, Rubber PVC 2D, Rubber PVC 3D</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Produktbereiche</h2>
+        <p class="section-sub">Wähle einfach den passenden Bereich aus und sieh dir Beispiele an.</p>
+
+        <div class="category-grid">
+          <div class="category-card"><div class="inner"><h3>THW</h3><p>Beispiele für Ortsverbände, Fachgruppen und weitere Einheiten.</p><a href="/thw">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Feuerwehr</h3><p>Patches und Ärmelabzeichen für Feuerwehren und Jugendfeuerwehren.</p><a href="/feuerwehr">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Polizei</h3><p>Beispiele für Polizei-Patches und individuelle Umsetzungen.</p><a href="/polizei">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Zoll</h3><p>Beispiele für Zoll-Patches und individuelle Anfertigungen.</p><a href="/zoll">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Bund / Land</h3><p>Abzeichen und Patches für Behörden, Ämter und weitere Bereiche.</p><a href="/behoerden">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Hilfsorganisationen</h3><p>DRK, ASB, Malteser, DLRG und weitere Hilfsorganisationen.</p><a href="/hilfsorganisationen">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Basecaps</h3><p>Beispiele für Basecaps mit individueller Bestickung oder Druck.</p><a href="/basecaps">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Rubber PVC Schlüsselanhänger für Feuerwehr, THW, DRK, Polizei und mehr.</p><a href="/schluesselanhaenger">Zur Galerie</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Vorschau</h2>
+        <p class="section-sub">Ein kurzer Überblick über einige Produktbereiche.</p>
+        <div class="preview-grid">
+          <div class="preview-card"><div class="inner"><h3>Basecaps</h3><p>Kein Mindestabnahmewert. Ideal für kleine Stückzahlen.</p><a href="/basecaps">Galerie ansehen</a></div></div>
+          <div class="preview-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Nur als Rubber PVC Variante. Mindestmenge 50 Stück.</p><a href="/schluesselanhaenger">Galerie ansehen</a></div></div>
+          <div class="preview-card"><div class="inner"><h3>Patches</h3><p>Gestickt, gewebt, UV-Druck oder Rubber PVC in 2D / 3D.</p><a href="/feuerwehr">Beispiele ansehen</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage">
+      <div class="wrap">
+        <h2 class="section-title">Preisanfrage</h2>
+        <p class="section-sub">Sende deine Anfrage direkt über das Formular.</p>
+
+        <div class="form-section">
+          <div class="card">
+            <div class="notice">Datei-Upload ist möglich. Nach dem Absenden wirst du auf die Danke-Seite weitergeleitet.</div>
+
+            <form name="preisanfrage" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+              <input type="hidden" name="form-name" value="preisanfrage">
+              <p hidden>
+                <label>Bitte leer lassen: <input name="bot-field"></label>
+              </p>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_vorname">Vorname</label>
+                  <input id="pa_vorname" name="vorname" type="text" required>
+                </div>
+                <div>
+                  <label for="pa_nachname">Nachname</label>
+                  <input id="pa_nachname" name="nachname" type="text" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_anschrift">Anschrift</label>
+                  <input id="pa_anschrift" name="anschrift" type="text" required>
+                </div>
+                <div>
+                  <label for="pa_plz">Postleitzahl</label>
+                  <input id="pa_plz" name="plz" type="text" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_wohnort">Wohnort</label>
+                  <input id="pa_wohnort" name="wohnort" type="text" required>
+                </div>
+                <div>
+                  <label for="pa_email">E-Mail-Adresse</label>
+                  <input id="pa_email" name="email" type="email" required>
+                </div>
+              </div>
+
+              <div>
+                <label for="pa_dienststelle">Dienststelle / Ortsverband (optional)</label>
+                <input id="pa_dienststelle" name="dienststelle" type="text">
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_produkt">Produkt</label>
+                  <select id="pa_produkt" name="produkt" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen (Mindestmenge 20)</option>
+                    <option value="Basecap">Basecap (keine Mindestmenge)</option>
+                    <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pa_stueckzahl">Stückzahl</label>
+                  <input id="pa_stueckzahl" name="stueckzahl" type="number" min="1" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_groesse">Größenwunsch</label>
+                  <input id="pa_groesse" name="groessenwunsch" type="text" placeholder="z. B. 8 cm breit">
+                </div>
+                <div>
+                  <label for="pa_machart">Machart</label>
+                  <select id="pa_machart" name="machart" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Gewebt">Gewebt</option>
+                    <option value="Gestickt">Gestickt</option>
+                    <option value="UV-Druck">UV-Druck</option>
+                    <option value="Rubber PVC 2D">Rubber PVC 2D</option>
+                    <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
+                <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
+                  <option value="">Bitte auswählen</option>
+                  <option value="DRK">DRK</option>
+                  <option value="THW">THW</option>
+                  <option value="THW Jugend">THW Jugend</option>
+                  <option value="ASB">ASB</option>
+                  <option value="Malteser">Malteser</option>
+                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
+                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
+                  <option value="Feuerwehr rot">Feuerwehr rot</option>
+                  <option value="Polizei">Polizei</option>
+                  <option value="Individuelle Anfrage">Individuelle Anfrage</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="pa_datei">Datei hochladen (optional)</label>
+                <input id="pa_datei" name="datei" type="file">
+                <div class="small">Bei Schlüsselanhängern ist nur Rubber PVC sinnvoll.</div>
+              </div>
+
+              <div>
+                <label for="pa_hinweise">Weitere Hinweise</label>
+                <textarea id="pa_hinweise" name="hinweise"></textarea>
+              </div>
+
+              <button class="btn" type="submit">Preisanfrage absenden</button>
+            </form>
+          </div>
+
+          <div id="bestellung" class="card">
+            <div class="notice">Direktbestellung mit Lieferadresse und optionalem Datei-Upload.</div>
+
+            <form name="bestellung" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+              <input type="hidden" name="form-name" value="bestellung">
+              <p hidden>
+                <label>Bitte leer lassen: <input name="bot-field"></label>
+              </p>
+
+              <div class="grid-two">
+                <div>
+                  <label for="be_vorname">Vorname</label>
+                  <input id="be_vorname" name="vorname" type="text" required>
+                </div>
+                <div>
+                  <label for="be_nachname">Nachname</label>
+                  <input id="be_nachname" name="nachname" type="text" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="be_anschrift">Anschrift</label>
+                  <input id="be_anschrift" name="anschrift" type="text" required>
+                </div>
+                <div>
+                  <label for="be_plz">Postleitzahl</label>
+                  <input id="be_plz" name="plz" type="text" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="be_wohnort">Wohnort</label>
+                  <input id="be_wohnort" name="wohnort" type="text" required>
+                </div>
+                <div>
+                  <label for="be_email">E-Mail-Adresse</label>
+                  <input id="be_email" name="email" type="email" required>
+                </div>
+              </div>
+
+              <div>
+                <label for="be_dienststelle">Dienststelle / Ortsverband (optional)</label>
+                <input id="be_dienststelle" name="dienststelle" type="text">
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="be_produkt">Produkt</label>
+                  <select id="be_produkt" name="produkt" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen</option>
+                    <option value="Basecap">Basecap</option>
+                    <option value="Schlüsselanhänger">Schlüsselanhänger</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="be_stueckzahl">Stückzahl</label>
+                  <input id="be_stueckzahl" name="stueckzahl" type="number" min="1" required>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="be_groesse">Größenwunsch</label>
+                  <input id="be_groesse" name="groessenwunsch" type="text" placeholder="z. B. 8 cm breit">
+                </div>
+                <div>
+                  <label for="be_machart">Machart</label>
+                  <select id="be_machart" name="machart" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Gewebt">Gewebt</option>
+                    <option value="Gestickt">Gestickt</option>
+                    <option value="UV-Druck">UV-Druck</option>
+                    <option value="Rubber PVC 2D">Rubber PVC 2D</option>
+                    <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="be_lieferadresse">Lieferadresse</label>
+                <textarea id="be_lieferadresse" name="lieferadresse" required></textarea>
+              </div>
+
+              <div>
+                <label for="be_datei">Datei hochladen / Artikelbeschreibung</label>
+                <input id="be_datei" name="datei" type="file">
+              </div>
+
+              <div>
+                <label for="be_hinweise">Zusätzliche Hinweise</label>
+                <textarea id="be_hinweise" name="hinweise"></textarea>
+              </div>
+
+              <button class="btn" type="submit">Bestellung absenden</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-links">
+      <a href="/index.html">Startseite</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
     </div>
-  </div>
-
-  <div>
-    <label for="pa_datei">Datei hochladen (optional)</label>
-    <input type="file" id="pa_datei" name="datei">
-  </div>
-
-  <div>
-    <label for="pa_hinweise">Hinweise</label>
-    <textarea id="pa_hinweise" name="hinweise" rows="5"></textarea>
-  </div>
-
-  <button type="submit">Preisanfrage absenden</button>
-</form>
+  </footer>
+</body>
+</html>
