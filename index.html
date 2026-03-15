@@ -1,1002 +1,124 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Count of Patches – Faire Preise für die Blaulichtfamilie</title>
-  <meta name="description" content="Individuelle Patches, Ärmelabzeichen, Schlüsselanhänger und Basecaps für THW, Feuerwehr, Polizei, Zoll, Hilfsorganisationen sowie Bundes- und Landesbehörden. Preise auf Anfrage.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://countofpatches.de/">
-
-  <style>
-    :root{
-      --blue:#0039A6;
-      --blue-dark:#002c80;
-      --light:#f4f7fc;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#5e6b85;
-      --line:#dbe4f2;
-      --shadow:0 12px 28px rgba(0,0,0,0.08);
-      --radius:18px;
-    }
-
-    *{box-sizing:border-box}
-
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{
-      color:var(--blue);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    .wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-
-    header{
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      position:sticky;
-      top:0;
-      z-index:50;
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:16px 0;
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .brand img{
-      width:64px;
-      height:64px;
-      object-fit:contain;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:#fff;
-      padding:4px;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:24px;
-      color:var(--blue-dark);
-      line-height:1.1;
-    }
-
-    .brand p{
-      margin:4px 0 0;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    nav{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    nav a{
-      color:var(--text);
-      font-weight:600;
-      font-size:15px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:12px;
-      background:var(--blue);
-      color:#fff;
-      font-weight:700;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      box-shadow:var(--shadow);
-    }
-
-    .btn:hover{
-      background:var(--blue-dark);
-      text-decoration:none;
-    }
-
-    .btn.secondary{
-      background:#fff;
-      color:var(--blue-dark);
-      border:1px solid var(--line);
-      box-shadow:none;
-    }
-
-    .hero{
-      padding:56px 0 30px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.15fr 0.85fr;
-      gap:22px;
-      align-items:stretch;
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card{
-      padding:30px;
-    }
-
-    .hero-card h2{
-      margin:0 0 14px;
-      font-size:42px;
-      line-height:1.1;
-      color:var(--blue-dark);
-    }
-
-    .hero-card p{
-      margin:0 0 16px;
-      font-size:18px;
-      color:var(--muted);
-    }
-
-    .badge-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:18px 0 22px;
-    }
-
-    .badge{
-      padding:8px 12px;
-      border-radius:999px;
-      background:#eef4ff;
-      border:1px solid #d3e0ff;
-      color:var(--blue-dark);
-      font-weight:700;
-      font-size:14px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-
-    .side-card{
-      padding:24px;
-    }
-
-    .side-card h3{
-      margin:0 0 12px;
-      color:var(--blue-dark);
-      font-size:24px;
-    }
-
-    .side-card ul{
-      margin:0;
-      padding-left:20px;
-      color:var(--muted);
-    }
-
-    .side-card li{
-      margin-bottom:10px;
-    }
-
-    .notice{
-      margin-top:18px;
-      padding:14px 16px;
-      border-radius:14px;
-      background:#f7fbff;
-      border:1px solid #d6e7ff;
-      color:var(--text);
-      font-size:15px;
-    }
-
-    section{
-      padding:18px 0 26px;
-    }
-
-    .section-head{
-      margin-bottom:18px;
-    }
-
-    .section-head h3{
-      margin:0 0 8px;
-      font-size:30px;
-      color:var(--blue-dark);
-    }
-
-    .section-head p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-    }
-
-    .info-card{
-      padding:22px;
-    }
-
-    .info-card h4{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-      font-size:20px;
-    }
-
-    .info-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .gallery-link-card{
-      padding:22px;
-      min-height:190px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .gallery-link-card h4{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-      font-size:21px;
-    }
-
-    .gallery-link-card p{
-      margin:0 0 16px;
-      color:var(--muted);
-    }
-
-    .form-card{
-      padding:24px;
-    }
-
-    .tabs{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:18px;
-    }
-
-    .tab-btn{
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#fff;
-      cursor:pointer;
-      font-weight:700;
-      color:var(--text);
-    }
-
-    .tab-btn.active{
-      background:var(--blue);
-      color:#fff;
-      border-color:var(--blue);
-    }
-
-    .form-panel{
-      display:none;
-    }
-
-    .form-panel.active{
-      display:block;
-    }
-
-    form h4{
-      margin:0 0 12px;
-      font-size:22px;
-      color:var(--blue-dark);
-    }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px 16px;
-    }
-
-    .full{
-      grid-column:1 / -1;
-    }
-
-    label{
-      display:block;
-      font-weight:700;
-      font-size:14px;
-      margin-bottom:6px;
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      font:inherit;
-      background:#fff;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    .hint{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:12px;
-      background:#f7fbff;
-      border:1px solid #d6e7ff;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .cta-box{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-      background:linear-gradient(135deg, var(--blue), var(--blue-dark));
-      color:#fff;
-      border-radius:var(--radius);
-      padding:28px;
-      box-shadow:var(--shadow);
-    }
-
-    .cta-box h3{
-      margin:0 0 6px;
-      font-size:28px;
-      color:#fff;
-    }
-
-    .cta-box p{
-      margin:0;
-      color:#e6edff;
-    }
-
-    footer{
-      margin-top:30px;
-      background:#fff;
-      border-top:1px solid var(--line);
-      padding:28px 0 38px;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr 0.8fr;
-      gap:20px;
-    }
-
-    .footer-grid h4{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-    }
-
-    .footer-grid p{
-      margin:0 0 8px;
-      color:var(--muted);
-    }
-
-    .footer-links a{
-      display:inline-block;
-      margin:0 12px 8px 0;
-      font-weight:600;
-    }
-
-    @media (max-width: 980px){
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .footer-grid,
-      .form-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-card h2{
-        font-size:34px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .hero-card h2{
-        font-size:29px;
-      }
-
-      .section-head h3{
-        font-size:24px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <img src="logo.jpeg" alt="Count of Patches Logo">
-      <div>
-        <h1>Count of Patches</h1>
-        <p>Faire Preise für die Blaulichtfamilie</p>
-      </div>
-    </div>
-
-    <nav>
-      <a href="/thw">THW</a>
-      <a href="/feuerwehr">Feuerwehr</a>
-      <a href="/polizei">Polizei</a>
-      <a href="/zoll">Zoll</a>
-      <a href="/behoerden">Bund/Land</a>
-      <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-      <a href="/schluesselanhaenger">Schlüsselanhänger</a>
-      <a href="/ablauf.html">Ablauf</a>
-      <a href="/ueber-mich.html">Über mich</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="card hero-card">
-        <h2>Patches & Ärmelabzeichen für THW, Feuerwehr, Polizei, Zoll und Behörden</h2>
-        <p>
-          Count of Patches steht für hochwertige individuelle Patches, Emblemabzeichen, bestickte Basecaps
-          und Schlüsselanhänger für die gesamte Blaulichtfamilie.
-        </p>
-        <p>
-          <strong>Preise gibt es ausschließlich auf Anfrage.</strong>
-          Für eine schnelle Einschätzung werden Design, Stückzahl und Machart benötigt.
-        </p>
-
-        <div class="badge-row">
-          <span class="badge">Gewebt</span>
-          <span class="badge">Gestickt</span>
-          <span class="badge">UV Druck</span>
-          <span class="badge">Rubber PVC 2D</span>
-          <span class="badge">Rubber PVC 3D</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn" href="#anfrage">Jetzt anfragen</a>
-          <a class="btn secondary" href="/ablauf.html">Ablauf ansehen</a>
-          <a class="btn secondary" href="/ueber-mich.html">Über mich</a>
-        </div>
-      </div>
-
-      <div class="card side-card">
-        <h3>Wichtige Punkte auf einen Blick</h3>
-        <ul>
-          <li><strong>Patches:</strong> Mindestbestellmenge 20 Stück</li>
-          <li><strong>Schlüsselanhänger:</strong> Mindestbestellmenge 50 Stück</li>
-          <li><strong>Basecaps:</strong> keine Mindestbestellmenge</li>
-          <li><strong>Schlüsselanhänger:</strong> nur als Rubber PVC Variante</li>
-          <li><strong>Design-Service:</strong> 70 € pro Designerstunde inklusive Steuern</li>
-          <li><strong>Kontakt:</strong> Countofpatches@outlook.de</li>
-        </ul>
-
-        <div class="notice">
-          Für eine Preisanfrage wichtig: Design oder Entwurf, gewünschte Stückzahl, gewünschte Machart und bei Patches der Größenwunsch.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Unser Angebot</h3>
-        <p>Maßgeschneiderte Lösungen für Einheiten, Behörden und Organisationen mit Sicherheitsaufgaben.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card info-card">
-          <h4>Patches & Ärmelabzeichen</h4>
-          <p>
-            Individuelle Designs für THW, Freiwillige Feuerwehren, Berufsfeuerwehren, Polizei, Zoll,
-            Leitstellen, Malteser sowie Bundes- und Landesbehörden.
-          </p>
-        </div>
-
-        <div class="card info-card">
-          <h4>Basecaps & Schlüsselanhänger</h4>
-          <p>
-            Bestickte Basecaps ohne Mindestbestellmenge sowie individuelle Schlüsselanhänger.
-            Schlüsselanhänger werden ausschließlich als Rubber PVC Variante umgesetzt.
-          </p>
-        </div>
-
-        <div class="card info-card">
-          <h4>Design-Erstellung</h4>
-          <p>
-            Vom ersten Entwurf bis zur fertigen Vorlage – sauber, einsatznah und passend für die spätere Produktion.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Für wen wir produzieren</h3>
-        <p>Aufgeteilt nach Zielgruppen und Referenzbereichen. Die Unterseiten zeigen bereits gefertigte Arbeiten.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Technisches Hilfswerk (THW)</h4>
-            <p>Patches und Ärmelabzeichen für Ortsverbände, Fachgruppen und weitere THW-Einheiten.</p>
-          </div>
-          <a href="/thw">Zur THW-Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Feuerwehr</h4>
-            <p>Individuelle Patches für Freiwillige Feuerwehren, Berufsfeuerwehren, Sonderdienste und Jugendfeuerwehren.</p>
-          </div>
-          <a href="/feuerwehr">Zur Feuerwehr-Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Polizei</h4>
-            <p>Beispiele für Polizei-Patches und Abzeichen aus unterschiedlichen Einsatzbereichen.</p>
-          </div>
-          <a href="/polizei">Zur Polizei-Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Zoll</h4>
-            <p>Beispiele für gefertigte Zoll-Patches und Abzeichen.</p>
-          </div>
-          <a href="/zoll">Zur Zoll-Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Bundes- & Landesbehörden</h4>
-            <p>Beispiele für Projekte im behördlichen Bereich.</p>
-          </div>
-          <a href="/behoerden">Zur Behörden-Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Hilfsorganisationen</h4>
-            <p>Beispiele für Malteser, Rettungsdienste und weitere Hilfsorganisationen.</p>
-          </div>
-          <a href="/hilfsorganisationen">Zur Galerie</a>
-        </div>
-
-        <div class="card gallery-link-card">
-          <div>
-            <h4>Schlüsselanhänger</h4>
-            <p>Beispiele für Schlüsselanhänger als Rubber PVC Variante für BOS, Hilfsorganisationen und individuelle Anfragen.</p>
-          </div>
-          <a href="/schluesselanhaenger">Zur Schlüsselanhänger-Galerie</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid-2">
-      <div class="card info-card">
-        <h4>Macharten & Produktionsmöglichkeiten</h4>
-        <p>
-          Gewebt, gestickt, UV Druck, Rubber PVC 2D und Rubber PVC 3D – je nach Motiv und Einsatzzweck
-          wird die passende Ausführung gewählt. Schlüsselanhänger sind ausschließlich als Rubber PVC Variante möglich.
-        </p>
-      </div>
-
-      <div class="card info-card">
-        <h4>Design-Service</h4>
-        <p>
-          Falls noch kein fertiges Design vorhanden ist, kann die Gestaltung übernommen werden.
-          Designkosten: <strong>70 € pro Designerstunde inklusive Steuern</strong>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="anfrage">
-    <div class="wrap">
-      <div class="section-head">
-        <h3>Preisanfrage & Bestellung</h3>
-        <p>Bitte alle wichtigen Daten möglichst vollständig ausfüllen.</p>
-      </div>
-
-      <div class="card form-card">
-        <div class="tabs">
-          <button class="tab-btn active" type="button" onclick="showForm('price')">Preisanfrage</button>
-          <button class="tab-btn" type="button" onclick="showForm('order')">Bestellung</button>
-        </div>
-
-        <div id="price-form" class="form-panel active">
-          <form name="Preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
-            <input type="hidden" name="form-name" value="Preisanfrage">
-            <p style="display:none;">
-              <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-            </p>
-
-            <h4>Preisanfrage</h4>
-
-            <div class="form-grid">
-              <div>
-                <label for="pq-vorname">Vorname</label>
-                <input id="pq-vorname" type="text" name="Vorname" required>
-              </div>
-
-              <div>
-                <label for="pq-nachname">Nachname</label>
-                <input id="pq-nachname" type="text" name="Nachname" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-anschrift">Anschrift</label>
-                <input id="pq-anschrift" type="text" name="Anschrift" required>
-              </div>
-
-              <div>
-                <label for="pq-plz">Postleitzahl</label>
-                <input id="pq-plz" type="text" name="Postleitzahl" required>
-              </div>
-
-              <div>
-                <label for="pq-ort">Wohnort</label>
-                <input id="pq-ort" type="text" name="Wohnort" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-email">E-Mail-Adresse</label>
-                <input id="pq-email" type="email" name="E-Mail-Adresse" required>
-              </div>
-
-              <div class="full">
-                <label for="pq-dienststelle">Dienststelle / Ortsverband (falls vorhanden)</label>
-                <input id="pq-dienststelle" type="text" name="Dienststelle / Ortsverband">
-              </div>
-
-              <div>
-                <label for="pq-produkt">Produkt</label>
-                <select id="pq-produkt" name="Produkt" required onchange="togglePriceFields()">
-                  <option value="">Bitte auswählen</option>
-                  <option value="Patch">Patch (Mindestmenge 20)</option>
-                  <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-                  <option value="Basecap">Basecap (keine Mindestmenge)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="pq-menge">Menge</label>
-                <input id="pq-menge" type="number" name="Menge" min="1" required>
-              </div>
-
-              <div class="full" id="pq-groesse-wrap">
-                <label for="pq-groesse">Größenwunsch</label>
-                <input id="pq-groesse" type="text" name="Größenwunsch" placeholder="z. B. 8 cm, 90 mm, 10 x 6 cm">
-              </div>
-
-              <div class="full">
-                <label for="pq-machart">Machart</label>
-                <select id="pq-machart" name="Machart" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="gewebt">gewebt</option>
-                  <option value="gestickt">gestickt</option>
-                  <option value="UV Druck">UV Druck</option>
-                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                </select>
-              </div>
-
-              <div class="full" id="pq-schluesseltyp-wrap" style="display:none;">
-                <label for="pq-schluesseltyp">Auswahl Schlüsselanhänger</label>
-                <select id="pq-schluesseltyp" name="Auswahl Schlüsselanhänger">
-                  <option value="">Bitte auswählen</option>
-                  <option value="DRK">DRK</option>
-                  <option value="THW">THW</option>
-                  <option value="THW Jugend">THW Jugend</option>
-                  <option value="ASB">ASB</option>
-                  <option value="Malteser">Malteser</option>
-                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
-                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
-                  <option value="Feuerwehr rot">Feuerwehr rot</option>
-                  <option value="Polizei">Polizei</option>
-                  <option value="individuelle Anfrage">individuelle Anfrage</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label for="pq-design">Design / zusätzliche Hinweise</label>
-                <textarea id="pq-design" name="Design / Hinweise"></textarea>
-              </div>
-            </div>
-
-            <div class="hint">
-              Hinweis: Patches ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge. Schlüsselanhänger ausschließlich als Rubber PVC Variante.
-            </div>
-
-            <p style="margin-top:18px;">
-              <button class="btn" type="submit">Preisanfrage absenden</button>
-            </p>
-          </form>
-        </div>
-
-        <div id="order-form" class="form-panel">
-          <form name="Bestellung" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html">
-            <input type="hidden" name="form-name" value="Bestellung">
-            <p style="display:none;">
-              <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
-            </p>
-
-            <h4>Bestellung</h4>
-
-            <div class="form-grid">
-              <div>
-                <label for="bo-vorname">Vorname</label>
-                <input id="bo-vorname" type="text" name="Vorname" required>
-              </div>
-
-              <div>
-                <label for="bo-nachname">Nachname</label>
-                <input id="bo-nachname" type="text" name="Nachname" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-anschrift">Anschrift</label>
-                <input id="bo-anschrift" type="text" name="Anschrift" required>
-              </div>
-
-              <div>
-                <label for="bo-plz">Postleitzahl</label>
-                <input id="bo-plz" type="text" name="Postleitzahl" required>
-              </div>
-
-              <div>
-                <label for="bo-ort">Wohnort</label>
-                <input id="bo-ort" type="text" name="Wohnort" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-email">E-Mail-Adresse</label>
-                <input id="bo-email" type="email" name="E-Mail-Adresse" required>
-              </div>
-
-              <div class="full">
-                <label for="bo-dienststelle">Dienststelle / Ortsverband (falls vorhanden)</label>
-                <input id="bo-dienststelle" type="text" name="Dienststelle / Ortsverband">
-              </div>
-
-              <div>
-                <label for="bo-produkt">Produkt</label>
-                <select id="bo-produkt" name="Produkt" required onchange="toggleOrderFields()">
-                  <option value="">Bitte auswählen</option>
-                  <option value="Patch">Patch (Mindestmenge 20)</option>
-                  <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-                  <option value="Basecap">Basecap (keine Mindestmenge)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="bo-menge">Menge</label>
-                <input id="bo-menge" type="number" name="Menge" min="1" required>
-              </div>
-
-              <div class="full" id="bo-groesse-wrap">
-                <label for="bo-groesse">Größenwunsch</label>
-                <input id="bo-groesse" type="text" name="Größenwunsch" placeholder="z. B. 8 cm, 90 mm, 10 x 6 cm">
-              </div>
-
-              <div class="full">
-                <label for="bo-machart">Machart</label>
-                <select id="bo-machart" name="Machart" required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="gewebt">gewebt</option>
-                  <option value="gestickt">gestickt</option>
-                  <option value="UV Druck">UV Druck</option>
-                  <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                  <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                </select>
-              </div>
-
-              <div class="full" id="bo-schluesseltyp-wrap" style="display:none;">
-                <label for="bo-schluesseltyp">Auswahl Schlüsselanhänger</label>
-                <select id="bo-schluesseltyp" name="Auswahl Schlüsselanhänger">
-                  <option value="">Bitte auswählen</option>
-                  <option value="DRK">DRK</option>
-                  <option value="THW">THW</option>
-                  <option value="THW Jugend">THW Jugend</option>
-                  <option value="ASB">ASB</option>
-                  <option value="Malteser">Malteser</option>
-                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
-                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
-                  <option value="Feuerwehr rot">Feuerwehr rot</option>
-                  <option value="Polizei">Polizei</option>
-                  <option value="individuelle Anfrage">individuelle Anfrage</option>
-                </select>
-              </div>
-
-              <div class="full">
-                <label for="bo-hinweise">Bestellhinweise</label>
-                <textarea id="bo-hinweise" name="Bestellhinweise"></textarea>
-              </div>
-            </div>
-
-            <div class="hint">
-              Hinweis: Patch ab 20 Stück, Schlüsselanhänger ab 50 Stück, Basecaps ohne Mindestbestellmenge. Schlüsselanhänger ausschließlich als Rubber PVC Variante.
-            </div>
-
-            <p style="margin-top:18px;">
-              <button class="btn" type="submit">Bestellung absenden</button>
-            </p>
-          </form>
-        </div>
-
-        <div style="display:none;">
-          <form name="Preisanfrage" data-netlify="true">
-            <input type="text" name="Vorname">
-            <input type="text" name="Nachname">
-            <input type="text" name="Anschrift">
-            <input type="text" name="Postleitzahl">
-            <input type="text" name="Wohnort">
-            <input type="email" name="E-Mail-Adresse">
-            <input type="text" name="Dienststelle / Ortsverband">
-            <input type="text" name="Produkt">
-            <input type="text" name="Menge">
-            <input type="text" name="Größenwunsch">
-            <input type="text" name="Machart">
-            <input type="text" name="Auswahl Schlüsselanhänger">
-            <textarea name="Design / Hinweise"></textarea>
-          </form>
-
-          <form name="Bestellung" data-netlify="true">
-            <input type="text" name="Vorname">
-            <input type="text" name="Nachname">
-            <input type="text" name="Anschrift">
-            <input type="text" name="Postleitzahl">
-            <input type="text" name="Wohnort">
-            <input type="email" name="E-Mail-Adresse">
-            <input type="text" name="Dienststelle / Ortsverband">
-            <input type="text" name="Produkt">
-            <input type="text" name="Menge">
-            <input type="text" name="Größenwunsch">
-            <input type="text" name="Machart">
-            <input type="text" name="Auswahl Schlüsselanhänger">
-            <textarea name="Bestellhinweise"></textarea>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="cta-box">
-        <div>
-          <h3>Jetzt anfragen</h3>
-          <p>Faire Preise für die Blaulichtfamilie – Angebote individuell nach Design, Stückzahl, Größenwunsch und Machart.</p>
-        </div>
-        <a class="btn" href="mailto:Countofpatches@outlook.de?subject=Anfrage%20Count%20of%20Patches">Mail an Count of Patches</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap footer-grid">
+<form name="preisanfrage" method="POST" action="/danke.html" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="preisanfrage">
+  <p hidden>
+    <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
+  </p>
+
+  <div class="grid two">
     <div>
-      <h4>Count of Patches</h4>
-      <p>Faire Preise für die Blaulichtfamilie</p>
-      <p>Kontakt: <a href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a></p>
+      <label for="pa_vorname">Vorname</label>
+      <input type="text" id="pa_vorname" name="vorname" required>
     </div>
-
     <div>
-      <h4>Wichtige Seiten</h4>
-      <div class="footer-links">
-        <a href="/thw">THW</a>
-        <a href="/feuerwehr">Feuerwehr</a>
-        <a href="/polizei">Polizei</a>
-        <a href="/zoll">Zoll</a>
-        <a href="/behoerden">Bund/Land</a>
-        <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
-        <a href="/ablauf.html">Ablauf</a>
-        <a href="/ueber-mich.html">Über mich</a>
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-      </div>
+      <label for="pa_nachname">Nachname</label>
+      <input type="text" id="pa_nachname" name="nachname" required>
     </div>
   </div>
-</footer>
 
-<script>
-  function showForm(type){
-    const price = document.getElementById('price-form');
-    const order = document.getElementById('order-form');
-    const buttons = document.querySelectorAll('.tab-btn');
+  <div class="grid two">
+    <div>
+      <label for="pa_email">E-Mail-Adresse</label>
+      <input type="email" id="pa_email" name="email" required>
+    </div>
+    <div>
+      <label for="pa_dienststelle">Dienststelle / Ortsverband (optional)</label>
+      <input type="text" id="pa_dienststelle" name="dienststelle">
+    </div>
+  </div>
 
-    buttons.forEach(btn => btn.classList.remove('active'));
+  <div class="grid two">
+    <div>
+      <label for="pa_anschrift">Anschrift</label>
+      <input type="text" id="pa_anschrift" name="anschrift" required>
+    </div>
+    <div>
+      <label for="pa_plz">Postleitzahl</label>
+      <input type="text" id="pa_plz" name="plz" required>
+    </div>
+  </div>
 
-    if(type === 'price'){
-      price.classList.add('active');
-      order.classList.remove('active');
-      buttons[0].classList.add('active');
-    } else {
-      order.classList.add('active');
-      price.classList.remove('active');
-      buttons[1].classList.add('active');
-    }
-  }
+  <div class="grid two">
+    <div>
+      <label for="pa_wohnort">Wohnort</label>
+      <input type="text" id="pa_wohnort" name="wohnort" required>
+    </div>
+    <div>
+      <label for="pa_produkt">Produkt</label>
+      <select id="pa_produkt" name="produkt" required>
+        <option value="">Bitte auswählen</option>
+        <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen (Mindestmenge 20)</option>
+        <option value="Basecap">Basecap (keine Mindestmenge)</option>
+        <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
+      </select>
+    </div>
+  </div>
 
-  function togglePriceFields(){
-    const product = document.getElementById('pq-produkt').value;
-    const sizeWrap = document.getElementById('pq-groesse-wrap');
-    const keyWrap = document.getElementById('pq-schluesseltyp-wrap');
-    const machart = document.getElementById('pq-machart');
+  <div class="grid two">
+    <div>
+      <label for="pa_stueckzahl">Stückzahl</label>
+      <input type="number" id="pa_stueckzahl" name="stueckzahl" min="1" required>
+    </div>
+    <div>
+      <label for="pa_groesse">Größenwunsch</label>
+      <input type="text" id="pa_groesse" name="groessenwunsch" placeholder="z. B. 8 cm breit">
+    </div>
+  </div>
 
-    sizeWrap.style.display = (product === 'Patch') ? 'block' : 'none';
-    keyWrap.style.display = (product === 'Schlüsselanhänger') ? 'block' : 'none';
+  <div class="grid two">
+    <div>
+      <label for="pa_machart">Machart</label>
+      <select id="pa_machart" name="machart" required>
+        <option value="">Bitte auswählen</option>
+        <option value="Gewebt">Gewebt</option>
+        <option value="Gestickt">Gestickt</option>
+        <option value="UV-Druck">UV-Druck</option>
+        <option value="Rubber PVC 2D">Rubber PVC 2D</option>
+        <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+      </select>
+    </div>
+    <div>
+      <label for="pa_befestigung">Befestigung (optional)</label>
+      <select id="pa_befestigung" name="befestigung">
+        <option value="">Bitte auswählen</option>
+        <option value="Klett">Klett</option>
+        <option value="Zum Aufnähen">Zum Aufnähen</option>
+        <option value="Andere / Unklar">Andere / Unklar</option>
+      </select>
+    </div>
+  </div>
 
-    if(product === 'Schlüsselanhänger'){
-      machart.value = 'Rubber PVC 2D';
-    }
-  }
+  <div class="grid two">
+    <div>
+      <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
+      <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
+        <option value="">Bitte auswählen</option>
+        <option value="DRK">DRK</option>
+        <option value="THW">THW</option>
+        <option value="THW Jugend">THW Jugend</option>
+        <option value="ASB">ASB</option>
+        <option value="Malteser">Malteser</option>
+        <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
+        <option value="Feuerwehr gelb">Feuerwehr gelb</option>
+        <option value="Feuerwehr rot">Feuerwehr rot</option>
+        <option value="Polizei">Polizei</option>
+        <option value="Individuelle Anfrage">Individuelle Anfrage</option>
+      </select>
+    </div>
+    <div>
+      <label for="pa_designlink">Design-Link (optional)</label>
+      <input type="url" id="pa_designlink" name="design_link">
+    </div>
+  </div>
 
-  function toggleOrderFields(){
-    const product = document.getElementById('bo-produkt').value;
-    const sizeWrap = document.getElementById('bo-groesse-wrap');
-    const keyWrap = document.getElementById('bo-schluesseltyp-wrap');
-    const machart = document.getElementById('bo-machart');
+  <div>
+    <label for="pa_datei">Datei hochladen (optional)</label>
+    <input type="file" id="pa_datei" name="datei">
+  </div>
 
-    sizeWrap.style.display = (product === 'Patch') ? 'block' : 'none';
-    keyWrap.style.display = (product === 'Schlüsselanhänger') ? 'block' : 'none';
+  <div>
+    <label for="pa_hinweise">Hinweise</label>
+    <textarea id="pa_hinweise" name="hinweise" rows="5"></textarea>
+  </div>
 
-    if(product === 'Schlüsselanhänger'){
-      machart.value = 'Rubber PVC 2D';
-    }
-  }
-</script>
-
-</body>
-</html>
+  <button type="submit">Preisanfrage absenden</button>
+</form>
