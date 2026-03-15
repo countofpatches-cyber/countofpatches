@@ -3,106 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bundes- & Landesbehörden – Galerie | Count of Patches</title>
-  <meta name="description" content="Galerie mit bereits gefertigten Patches und Emblemabzeichen für Bundes- und Landesbehörden von Count of Patches.">
-  <link rel="canonical" href="https://countofpatches.de/behoerden">
-
+  <title>Bund / Land – Galerie | Count of Patches</title>
   <style>
-    :root{
-      --blue:#0039A6;
-      --blue-dark:#002c80;
-      --light:#f4f7fc;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#5e6b85;
-      --line:#dbe4f2;
-      --shadow:0 12px 28px rgba(0,0,0,0.08);
-      --radius:18px;
-    }
+    :root{--blue:#0039a6;--blue-dark:#002d7a;--light:#f3f6fb;--line:#d9e2f0;--text:#1a2238;--muted:#667089;--shadow:0 12px 28px rgba(0,0,0,.08);--radius:18px}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--light);color:var(--text);line-height:1.6}
-    a{color:var(--blue);text-decoration:none}
-    a:hover{text-decoration:underline}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.6}
     .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;flex-wrap:wrap}
     .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:62px;height:62px;object-fit:contain;border-radius:14px;background:#fff;border:1px solid var(--line);padding:4px}
-    .brand h1{margin:0;font-size:22px;color:var(--blue-dark);line-height:1.1}
-    .brand p{margin:4px 0 0;font-size:14px;color:var(--muted)}
-    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    nav a{color:var(--text);font-weight:600;font-size:15px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
-    .btn:hover{background:var(--blue-dark);text-decoration:none}
-    main{padding:48px 0 36px}
-    .page-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
-    h2{margin:0 0 14px;font-size:38px;color:var(--blue-dark)}
+    .brand img{width:64px;height:64px;object-fit:contain;border:1px solid var(--line);border-radius:14px;background:#fff;padding:4px}
+    .brand h1{margin:0;color:var(--blue-dark);font-size:22px}
+    .brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+    nav a{color:var(--text);text-decoration:none;font-weight:700}
+    .btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+    main{padding:42px 0}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    h2{margin:0 0 14px;font-size:42px;color:var(--blue-dark)}
     .lead{margin:0 0 18px;color:var(--muted);font-size:18px}
-    .notice{background:#f7fbff;border:1px solid #d6e7ff;padding:14px 16px;border-radius:14px;color:var(--text);margin-bottom:22px}
-    #gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:18px}
-    .gallery-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,0.06);transition:transform 0.2s ease, box-shadow 0.2s ease}
-    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.10)}
-    .gallery-item img{width:100%;height:280px;object-fit:cover;display:block;background:#eef3fb}
-    footer{margin-top:36px;background:#fff;border-top:1px solid var(--line);padding:26px 0 34px}
-    .footer-links a{display:inline-block;margin:0 14px 8px 0;font-weight:600}
-    @media (max-width:780px){h2{font-size:30px}.gallery-item img{height:240px}}
+    .notice{background:#f8fbff;border:1px solid #d9e8ff;border-radius:14px;padding:14px 16px;margin-bottom:18px;font-weight:600}
+    #gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .gallery-item{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;padding:12px}
+    .gallery-item img{width:100%;height:260px;object-fit:contain;background:#eef3fb;border-radius:12px}
+    .error-box{background:#fff1f1;border:1px solid #efc4c4;color:#8f2727;border-radius:12px;padding:12px;white-space:pre-line}
+    footer{margin-top:24px;background:#fff;border-top:1px solid var(--line);padding:28px 0 36px}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none;font-weight:700;color:var(--blue)}
   </style>
 </head>
-<body>
-
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <img src="logo.jpeg" alt="Count of Patches Logo">
-        <div>
-          <h1>Count of Patches</h1>
-          <p>Faire Preise für die Blaulichtfamilie</p>
-        </div>
-      </div>
-
-      <nav>
-        <a href="/thw">THW</a>
-        <a href="/feuerwehr">Feuerwehren</a>
-        <a href="/polizei">Polizei</a>
-        <a href="/zoll">Zoll</a>
-        <a href="/behoerden">Bund/Land</a>
-        <a href="/index.html">Startseite</a>
-        <a class="btn" href="mailto:Countofpatches@outlook.de">Preisanfrage</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <div class="wrap">
-      <div class="page-card">
-        <h2>Bundes- & Landesbehörden – Galerie</h2>
-        <p class="lead">
-          Beispiele für bereits gefertigte Emblemabzeichen und Patches für Bundes- und Landesbehörden
-          sowie weitere sicherheitsrelevante Organisationen.
-        </p>
-
-        <div class="notice">
-          Die Bilder werden automatisch aus <strong>/galleries.json</strong> geladen.
-        </div>
-
-        <div id="gallery"></div>
+<body data-gallery="behoerden">
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <img src="/logo.jpeg" alt="Count of Patches Logo">
+      <div>
+        <h1>Count of Patches</h1>
+        <p>Faire Preise für die Blaulichtfamilie</p>
       </div>
     </div>
-  </main>
-
-  <footer>
-    <div class="wrap footer-links">
+    <nav>
+      <a href="/thw">THW</a>
+      <a href="/feuerwehr">Feuerwehr</a>
+      <a href="/polizei">Polizei</a>
+      <a href="/zoll">Zoll</a>
+      <a href="/behoerden">Bund/Land</a>
       <a href="/index.html">Startseite</a>
-      <a href="/ablauf.html">Ablauf</a>
-      <a href="/ueber-mich.html">Über mich</a>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <a class="btn" href="/index.html#anfrage">Preisanfrage</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="card">
+      <h2>Bund / Land – Galerie</h2>
+      <p class="lead">Beispiele für bereits gefertigte Patches und Abzeichen für Bund, Land und weitere Behördenbereiche.</p>
+      <div class="notice">Die Bilder werden direkt aus <strong>/galleries.json</strong> geladen.</div>
+      <div id="gallery"></div>
     </div>
-  </footer>
-
-  <script src="/gallery.js"></script>
-  <script>
-    initGallery("behoerden");
-  </script>
+  </div>
+</main>
+<footer>
+  <div class="wrap footer-links">
+    <a href="/index.html">Startseite</a>
+    <a href="/ablauf.html">Ablauf</a>
+    <a href="/ueber-mich.html">Über mich</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+<script src="/gallery.js"></script>
 </body>
 </html>
