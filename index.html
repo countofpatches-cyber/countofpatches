@@ -639,7 +639,8 @@
   </footer>
 
   <!-- Unsichtbare Netlify-Formulare zur sicheren Erkennung -->
-  <form name="preisanfrage" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+  <form name="preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+    <input type="hidden" name="form-name" value="preisanfrage">
     <input type="text" name="vorname">
     <input type="text" name="nachname">
     <input type="text" name="anschrift">
@@ -656,7 +657,8 @@
     <textarea name="hinweise"></textarea>
   </form>
 
-  <form name="bestellung" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+  <form name="bestellung" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+    <input type="hidden" name="form-name" value="bestellung">
     <input type="text" name="vorname">
     <input type="text" name="nachname">
     <input type="text" name="anschrift">
