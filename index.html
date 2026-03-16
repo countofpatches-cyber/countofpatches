@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Count of Patches – Patches, Basecaps & Schlüsselanhänger</title>
-  <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Ärmelabzeichen, Basecaps und Schlüsselanhänger für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
+  <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps und Schlüsselanhänger für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
   <style>
     :root{
       --blue:#0039a6;
@@ -14,8 +14,6 @@
       --text:#1a2238;
       --muted:#667089;
       --line:#d9e2f0;
-      --success:#e9f7ee;
-      --danger:#fff1f1;
       --shadow:0 12px 28px rgba(0,0,0,.08);
       --radius:18px;
     }
@@ -36,9 +34,14 @@
       text-decoration:none;
     }
 
-    a:hover{text-decoration:underline}
+    a:hover{
+      text-decoration:underline;
+    }
 
-    img{max-width:100%;display:block}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     .wrap{
       max-width:1200px;
@@ -117,6 +120,7 @@
       border:none;
       cursor:pointer;
       box-shadow:var(--shadow);
+      font-size:15px;
     }
 
     .btn:hover{
@@ -194,8 +198,7 @@
     }
 
     .category-grid,
-    .preview-grid,
-    .gallery-grid{
+    .preview-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
@@ -226,23 +229,6 @@
     .preview-card p{
       margin:0 0 14px;
       color:var(--muted);
-    }
-
-    .gallery-grid .item{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      padding:12px;
-    }
-
-    .gallery-grid img{
-      width:100%;
-      height:260px;
-      object-fit:contain;
-      background:#eef3fb;
-      border-radius:12px;
     }
 
     .form-section{
@@ -318,8 +304,8 @@
       font-weight:700;
     }
 
-    .muted{
-      color:var(--muted);
+    .hidden-netlify-form{
+      display:none !important;
     }
 
     @media (max-width: 960px){
@@ -651,5 +637,40 @@
       <a href="/datenschutz.html">Datenschutz</a>
     </div>
   </footer>
+
+  <!-- Unsichtbare Netlify-Formulare zur sicheren Erkennung -->
+  <form name="preisanfrage" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+    <input type="text" name="vorname">
+    <input type="text" name="nachname">
+    <input type="text" name="anschrift">
+    <input type="text" name="plz">
+    <input type="text" name="wohnort">
+    <input type="email" name="email">
+    <input type="text" name="dienststelle">
+    <input type="text" name="produkt">
+    <input type="text" name="stueckzahl">
+    <input type="text" name="groessenwunsch">
+    <input type="text" name="machart">
+    <input type="text" name="schluesselanhaenger_typ">
+    <input type="file" name="datei">
+    <textarea name="hinweise"></textarea>
+  </form>
+
+  <form name="bestellung" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
+    <input type="text" name="vorname">
+    <input type="text" name="nachname">
+    <input type="text" name="anschrift">
+    <input type="text" name="plz">
+    <input type="text" name="wohnort">
+    <input type="email" name="email">
+    <input type="text" name="dienststelle">
+    <input type="text" name="produkt">
+    <input type="text" name="stueckzahl">
+    <input type="text" name="groessenwunsch">
+    <input type="text" name="machart">
+    <textarea name="lieferadresse"></textarea>
+    <input type="file" name="datei">
+    <textarea name="hinweise"></textarea>
+  </form>
 </body>
 </html>
