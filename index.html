@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Count of Patches – Patches, Basecaps & Schlüsselanhänger</title>
-  <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps und Schlüsselanhänger für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
+  <title>Count of Patches – Patches, Basecaps, Schlüsselanhänger & Textilien</title>
+  <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps, Schlüsselanhänger, T-Shirts und Poloshirts für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
   <style>
     :root{
       --blue:#0039a6;
@@ -343,6 +343,7 @@
         <a href="/hilfsorganisationen">Hilfsorganisationen</a>
         <a href="/basecaps">Basecaps</a>
         <a href="/schluesselanhaenger">Schlüsselanhänger</a>
+        <a href="/textilien">Textilien</a>
         <a class="btn" href="#anfrage">Preisanfrage</a>
       </nav>
     </div>
@@ -352,13 +353,14 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="card">
-          <h2>Patches, Basecaps und Schlüsselanhänger für die Blaulichtfamilie</h2>
+          <h2>Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie</h2>
           <p>
             Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.
             Faire Preise, klare Kommunikation und saubere Umsetzung.
           </p>
           <p>
-            Bestellbar sind unter anderem Patch / Ärmelabzeichen, Basecaps sowie Schlüsselanhänger.
+            Bestellbar sind unter anderem Patch / Ärmelabzeichen, Basecaps, Schlüsselanhänger,
+            T-Shirts und Poloshirts.
           </p>
           <div class="hero-actions">
             <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
@@ -370,7 +372,7 @@
           <div class="info">Patch / Ärmelabzeichen: Mindestmenge 20 Stück</div>
           <div class="info">Schlüsselanhänger: Mindestmenge 50 Stück</div>
           <div class="info">Basecaps: keine Mindestmenge</div>
-          <div class="info">Macharten: Gewebt, Gestickt, UV-Druck, Rubber PVC 2D, Rubber PVC 3D</div>
+          <div class="info">T-Shirts & Poloshirts mit individueller Veredelung möglich</div>
         </div>
       </div>
     </section>
@@ -389,6 +391,7 @@
           <div class="category-card"><div class="inner"><h3>Hilfsorganisationen</h3><p>DRK, ASB, Malteser, DLRG und weitere Hilfsorganisationen.</p><a href="/hilfsorganisationen">Zur Galerie</a></div></div>
           <div class="category-card"><div class="inner"><h3>Basecaps</h3><p>Beispiele für Basecaps mit individueller Bestickung oder Druck.</p><a href="/basecaps">Zur Galerie</a></div></div>
           <div class="category-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Rubber PVC Schlüsselanhänger für Feuerwehr, THW, DRK, Polizei und mehr.</p><a href="/schluesselanhaenger">Zur Galerie</a></div></div>
+          <div class="category-card"><div class="inner"><h3>Textilien</h3><p>Beispiele für T-Shirts, Poloshirts und textile Veredelungen.</p><a href="/textilien">Zur Galerie</a></div></div>
         </div>
       </div>
     </section>
@@ -400,7 +403,7 @@
         <div class="preview-grid">
           <div class="preview-card"><div class="inner"><h3>Basecaps</h3><p>Kein Mindestabnahmewert. Ideal für kleine Stückzahlen.</p><a href="/basecaps">Galerie ansehen</a></div></div>
           <div class="preview-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Nur als Rubber PVC Variante. Mindestmenge 50 Stück.</p><a href="/schluesselanhaenger">Galerie ansehen</a></div></div>
-          <div class="preview-card"><div class="inner"><h3>Patches</h3><p>Gestickt, gewebt, UV-Druck oder Rubber PVC in 2D / 3D.</p><a href="/feuerwehr">Beispiele ansehen</a></div></div>
+          <div class="preview-card"><div class="inner"><h3>Textilien</h3><p>T-Shirts und Poloshirts mit individueller Bestickung und Veredelung.</p><a href="/textilien">Galerie ansehen</a></div></div>
         </div>
       </div>
     </section>
@@ -466,19 +469,41 @@
                     <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen (Mindestmenge 20)</option>
                     <option value="Basecap">Basecap (keine Mindestmenge)</option>
                     <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
+                    <option value="T-Shirt">T-Shirt</option>
+                    <option value="Poloshirt">Poloshirt</option>
                   </select>
                 </div>
                 <div>
-                  <label for="pa_stueckzahl">Stückzahl</label>
+                  <label for="pa_stueckzahl">Menge / Stückzahl</label>
                   <input id="pa_stueckzahl" name="stueckzahl" type="number" min="1" required>
                 </div>
               </div>
 
               <div class="grid-two">
                 <div>
-                  <label for="pa_groesse">Größenwunsch</label>
-                  <input id="pa_groesse" name="groessenwunsch" type="text" placeholder="z. B. 8 cm breit">
+                  <label for="pa_groesse">Größenauswahl</label>
+                  <select id="pa_groesse" name="groessenwunsch">
+                    <option value="">Bitte auswählen</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
                 </div>
+                <div>
+                  <label for="pa_farbe">Farbe</label>
+                  <select id="pa_farbe" name="farbe">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ultramarinblau">Ultramarinblau</option>
+                    <option value="Weiß">Weiß</option>
+                    <option value="Weitere Farben auf Anfrage">Weitere Farben auf Anfrage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-two">
                 <div>
                   <label for="pa_machart">Machart</label>
                   <select id="pa_machart" name="machart" required>
@@ -488,31 +513,69 @@
                     <option value="UV-Druck">UV-Druck</option>
                     <option value="Rubber PVC 2D">Rubber PVC 2D</option>
                     <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                    <option value="Textilveredelung / Bestickung">Textilveredelung / Bestickung</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
+                  <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
+                    <option value="">Bitte auswählen</option>
+                    <option value="DRK">DRK</option>
+                    <option value="THW">THW</option>
+                    <option value="THW Jugend">THW Jugend</option>
+                    <option value="ASB">ASB</option>
+                    <option value="Malteser">Malteser</option>
+                    <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
+                    <option value="Feuerwehr gelb">Feuerwehr gelb</option>
+                    <option value="Feuerwehr rot">Feuerwehr rot</option>
+                    <option value="Polizei">Polizei</option>
+                    <option value="Individuelle Anfrage">Individuelle Anfrage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_rueckenbestickung">Rückenbestickung</label>
+                  <select id="pa_rueckenbestickung" name="rueckenbestickung">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pa_brustbestickung">Brustbestickung mit Wappen</label>
+                  <select id="pa_brustbestickung" name="brustbestickung_mit_wappen">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-two">
+                <div>
+                  <label for="pa_linker_arm_name">Linker Arm: Name</label>
+                  <select id="pa_linker_arm_name" name="linker_arm_name">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pa_rechter_arm_funktion">Rechter Arm: Funktion</label>
+                  <select id="pa_rechter_arm_funktion" name="rechter_arm_funktion">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
-                <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
-                  <option value="">Bitte auswählen</option>
-                  <option value="DRK">DRK</option>
-                  <option value="THW">THW</option>
-                  <option value="THW Jugend">THW Jugend</option>
-                  <option value="ASB">ASB</option>
-                  <option value="Malteser">Malteser</option>
-                  <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
-                  <option value="Feuerwehr gelb">Feuerwehr gelb</option>
-                  <option value="Feuerwehr rot">Feuerwehr rot</option>
-                  <option value="Polizei">Polizei</option>
-                  <option value="Individuelle Anfrage">Individuelle Anfrage</option>
-                </select>
-              </div>
-
-              <div>
                 <label for="pa_datei">Datei hochladen (optional)</label>
                 <input id="pa_datei" name="datei" type="file">
-                <div class="small">Bei Schlüsselanhängern ist nur Rubber PVC sinnvoll.</div>
+                <div class="small">Bei Textilien können Logos, Wappen oder Skizzen hochgeladen werden.</div>
               </div>
 
               <div>
@@ -579,6 +642,8 @@
                     <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen</option>
                     <option value="Basecap">Basecap</option>
                     <option value="Schlüsselanhänger">Schlüsselanhänger</option>
+                    <option value="T-Shirt">T-Shirt</option>
+                    <option value="Poloshirt">Poloshirt</option>
                   </select>
                 </div>
                 <div>
@@ -590,7 +655,15 @@
               <div class="grid-two">
                 <div>
                   <label for="be_groesse">Größenwunsch</label>
-                  <input id="be_groesse" name="groessenwunsch" type="text" placeholder="z. B. 8 cm breit">
+                  <select id="be_groesse" name="groessenwunsch">
+                    <option value="">Bitte auswählen</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
                 </div>
                 <div>
                   <label for="be_machart">Machart</label>
@@ -601,6 +674,7 @@
                     <option value="UV-Druck">UV-Druck</option>
                     <option value="Rubber PVC 2D">Rubber PVC 2D</option>
                     <option value="Rubber PVC 3D">Rubber PVC 3D</option>
+                    <option value="Textilveredelung / Bestickung">Textilveredelung / Bestickung</option>
                   </select>
                 </div>
               </div>
@@ -638,7 +712,6 @@
     </div>
   </footer>
 
-  <!-- Unsichtbare Netlify-Formulare zur sicheren Erkennung -->
   <form name="preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
     <input type="hidden" name="form-name" value="preisanfrage">
     <input type="text" name="vorname">
@@ -651,8 +724,13 @@
     <input type="text" name="produkt">
     <input type="text" name="stueckzahl">
     <input type="text" name="groessenwunsch">
+    <input type="text" name="farbe">
     <input type="text" name="machart">
     <input type="text" name="schluesselanhaenger_typ">
+    <input type="text" name="rueckenbestickung">
+    <input type="text" name="brustbestickung_mit_wappen">
+    <input type="text" name="linker_arm_name">
+    <input type="text" name="rechter_arm_funktion">
     <input type="file" name="datei">
     <textarea name="hinweise"></textarea>
   </form>

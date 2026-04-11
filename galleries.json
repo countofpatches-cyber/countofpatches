@@ -56,8 +56,13 @@
     "works/schluesselanhaenger/a5.jpg",
     "works/schluesselanhaenger/a6.jpg",
     "works/schluesselanhaenger/a7.jpg",
-    "works/schluesselanhaenger/a8.jpg",
-    "works/schluesselanhaenger/a9.jpg",
-    "works/schluesselanhaenger/a10.jpg"
+    "works/schluesselanhaenger/a8.jpg"
+  ],
+  "textilien": [
+    "works/textilien/textilien-01.jpg",
+    "works/textilien/textilien-02.jpg",
+    "works/textilien/textilien-03.jpg",
+    "works/textilien/textilien-04.jpg",
+    "works/textilien/textilien-05.jpg"
   ]
 }
