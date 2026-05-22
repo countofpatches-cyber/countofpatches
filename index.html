@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Count of Patches – Patches, Basecaps, Schlüsselanhänger & Textilien</title>
+
   <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps, Schlüsselanhänger, T-Shirts und Poloshirts für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
 
   <style>
@@ -18,7 +19,6 @@
       --shadow:0 12px 28px rgba(0,0,0,.08);
       --radius:18px;
       --accent:#f0b400;
-      --accent-bg:#fff8e1;
       --shop-bg:#eef4ff;
       --shop-line:#cfe0ff;
     }
@@ -221,31 +221,6 @@
       font-size:17px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      padding:20px;
-    }
-
-    .box h3{
-      margin:0 0 10px;
-      font-size:24px;
-      color:var(--blue-dark);
-    }
-
-    .box p{
-      margin:0 0 14px;
-      color:var(--muted);
-    }
-
     .shop-banner{
       background:var(--shop-bg);
       border:1px solid var(--shop-line);
@@ -269,7 +244,7 @@
 
     .form-section{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1fr;
       gap:24px;
     }
 
@@ -329,10 +304,6 @@
       font-weight:700;
     }
 
-    .hidden-netlify-form{
-      display:none!important;
-    }
-
     @media (max-width:960px){
       .hero-grid,
       .form-section{
@@ -349,6 +320,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -371,7 +343,7 @@
       <a href="/basecaps">Basecaps</a>
       <a href="/schluesselanhaenger">Schlüsselanhänger</a>
       <a href="/textilien">Textilien</a>
-      <a href="/shop">Shop</a>
+      <a href="https://count-of-patches.com">Shop</a>
       <a class="btn" href="#anfrage">Preisanfrage</a>
     </nav>
   </div>
@@ -396,7 +368,11 @@
 
       <div class="hero-actions">
         <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
-        <a class="btn btn-secondary" href="/shop">Jetzt im Shop kaufen</a>
+
+        <a class="btn btn-secondary"
+           href="https://count-of-patches.com">
+          Jetzt im Shop kaufen
+        </a>
       </div>
     </div>
 
@@ -422,42 +398,16 @@
       </p>
 
       <div class="shop-actions">
-        <a class="btn btn-accent" href="/shop">Zum Shop</a>
-        <a class="btn btn-secondary" href="#anfrage">Individuell anfragen</a>
+        <a class="btn btn-accent"
+           href="https://count-of-patches.com">
+          Zum Shop
+        </a>
+
+        <a class="btn btn-secondary"
+           href="#anfrage">
+          Individuell anfragen
+        </a>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-
-    <h2 class="section-title">Direkt im Shop erhältlich</h2>
-    <p class="section-sub">
-      Standardprodukte schnell und direkt bestellen.
-    </p>
-
-    <div class="grid">
-
-      <div class="box">
-        <h3>Schlüsselanhänger</h3>
-        <p>PVC Rubber Schlüsselanhänger für THW, Feuerwehr, Polizei und mehr.</p>
-        <a href="/shop/collections/schluesselanhaenger">Jetzt ansehen</a>
-      </div>
-
-      <div class="box">
-        <h3>Textilien</h3>
-        <p>Poloshirts und T-Shirts direkt verfügbar.</p>
-        <a href="/shop">Jetzt ansehen</a>
-      </div>
-
-      <div class="box">
-        <h3>Basecaps</h3>
-        <p>Bestickte Caps für Dienst und Freizeit.</p>
-        <a href="/shop">Jetzt ansehen</a>
-      </div>
-
     </div>
 
   </div>
@@ -466,7 +416,10 @@
 <section id="anfrage">
   <div class="wrap">
 
-    <h2 class="section-title">Preisanfrage für individuelle Projekte</h2>
+    <h2 class="section-title">
+      Preisanfrage für individuelle Projekte
+    </h2>
+
     <p class="section-sub">
       Patches, Sonderanfertigungen, Textilveredelung oder größere Mengen.
     </p>
@@ -479,43 +432,28 @@
           Datei-Upload möglich. Nach Absenden Weiterleitung auf Danke-Seite.
         </div>
 
-        <form
-          name="preisanfrage"
-          method="POST"
-          action="/danke.html"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          enctype="multipart/form-data"
-        >
-
-          <input type="hidden" name="form-name" value="preisanfrage">
-
-          <p hidden>
-            <label>Leer lassen:
-              <input name="bot-field">
-            </label>
-          </p>
+        <form>
 
           <div class="grid-two">
             <div>
               <label>Vorname</label>
-              <input type="text" name="vorname" required>
+              <input type="text" required>
             </div>
 
             <div>
               <label>Nachname</label>
-              <input type="text" name="nachname" required>
+              <input type="text" required>
             </div>
           </div>
 
           <div>
             <label>E-Mail</label>
-            <input type="email" name="email" required>
+            <input type="email" required>
           </div>
 
           <div>
             <label>Produkt</label>
-            <select name="produkt" required>
+            <select required>
               <option value="">Bitte auswählen</option>
               <option>Patch / Ärmelabzeichen</option>
               <option>Basecap</option>
@@ -527,17 +465,17 @@
 
           <div>
             <label>Stückzahl</label>
-            <input type="number" min="1" name="menge" required>
+            <input type="number" min="1" required>
           </div>
 
           <div>
             <label>Datei hochladen</label>
-            <input type="file" name="datei">
+            <input type="file">
           </div>
 
           <div>
             <label>Weitere Hinweise</label>
-            <textarea name="hinweise"></textarea>
+            <textarea></textarea>
           </div>
 
           <button class="btn" type="submit">
@@ -545,24 +483,6 @@
           </button>
 
         </form>
-      </div>
-
-      <div class="card">
-
-        <div class="notice">
-          Standardprodukte bitte direkt über den Shop bestellen.
-        </div>
-
-        <h3 style="margin-top:0;">Direkt zu den Standardprodukten</h3>
-
-        <p>
-          Für sofort verfügbare Schlüsselanhänger geht es hier direkt in den Shop.
-        </p>
-
-        <a class="btn btn-secondary"
-           href="/shop/collections/schluesselanhaenger">
-          Schlüsselanhänger im Shop
-        </a>
 
       </div>
 
@@ -578,28 +498,11 @@
     <a href="/index.html">Startseite</a>
     <a href="/ablauf.html">Ablauf</a>
     <a href="/ueber-mich.html">Über mich</a>
-    <a href="/shop">Shop</a>
+    <a href="https://count-of-patches.com">Shop</a>
     <a href="/impressum.html">Impressum</a>
     <a href="/datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-
-<form
-  name="preisanfrage"
-  method="POST"
-  data-netlify="true"
-  hidden
-  class="hidden-netlify-form"
->
-  <input type="hidden" name="form-name" value="preisanfrage">
-  <input type="text" name="vorname">
-  <input type="text" name="nachname">
-  <input type="email" name="email">
-  <input type="text" name="produkt">
-  <input type="text" name="menge">
-  <input type="file" name="datei">
-  <textarea name="hinweise"></textarea>
-</form>
 
 </body>
 </html>
