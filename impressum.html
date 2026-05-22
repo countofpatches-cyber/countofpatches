@@ -3,79 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum | Count of Patches</title>
-  <meta name="description" content="Impressum von Count of Patches">
-  <meta name="robots" content="index,follow">
-
+  <title>Impressum – Count of Patches</title>
+  <meta name="description" content="Impressum von Count of Patches. Angaben gemäß den gesetzlichen Informationspflichten.">
   <style>
+    :root{
+      --blue:#0039a6;
+      --blue-dark:#002d7a;
+      --light:#f3f6fb;
+      --card:#ffffff;
+      --text:#1a2238;
+      --muted:#667089;
+      --line:#d9e2f0;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+      --radius:18px;
+      --accent:#f0b400;
+      --accent-bg:#fff8e1;
+    }
+
+    *{box-sizing:border-box}
     body{
-      font-family:Arial, Helvetica, sans-serif;
       margin:0;
-      background:#f4f7fc;
-      color:#172033;
-      line-height:1.7;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
     }
-
-    .wrap{
-      max-width:900px;
-      margin:60px auto;
-      padding:0 20px;
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:100;
+      background:#fff;border-bottom:1px solid var(--line);
     }
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;
+      gap:20px;padding:16px 0;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:14px;min-width:280px}
+    .brand-logo{
+      width:64px;height:64px;object-fit:contain;
+      border:1px solid var(--line);border-radius:14px;background:#fff;padding:4px;
+    }
+    .brand h1{margin:0;color:var(--blue-dark);font-size:22px;line-height:1.1}
+    .brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--text);font-weight:700;font-size:15px}
 
-    .card{
-      background:#fff;
-      border:1px solid #dbe4f2;
-      border-radius:18px;
+    .hero{padding:60px 0 30px}
+    .hero-card,.content-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:32px;
-      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+    }
+    .hero h2{
+      margin:0 0 14px;
+      font-size:42px;
+      line-height:1.1;
+      color:var(--blue-dark);
+    }
+    .hero p{margin:0;color:var(--muted);font-size:18px}
+
+    section{padding:18px 0 28px}
+    .section-title{
+      margin:0 0 16px;
+      font-size:30px;
+      color:var(--blue-dark);
+    }
+    .block{margin-bottom:28px}
+    .block h3{
+      margin:0 0 10px;
+      color:var(--blue-dark);
+      font-size:22px;
+    }
+    .block p{margin:0 0 10px;color:var(--muted)}
+    .notice-box{
+      border-radius:14px;
+      padding:16px 18px;
+      font-weight:600;
+      border:1px solid #f2d67b;
+      background:var(--accent-bg);
+      margin-top:18px;
     }
 
-    h1{
-      color:#0039A6;
-      margin-top:0;
+    footer{
+      margin-top:24px;
+      padding:30px 0 40px;
+      background:#fff;
+      border-top:1px solid var(--line);
     }
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{font-weight:700}
 
-    a{
-      color:#0039A6;
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
+    @media (max-width:700px){
+      .hero-card,.content-card{padding:24px}
+      .hero h2{font-size:32px}
+      nav{gap:12px}
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
+        <div>
+          <h1>Count of Patches</h1>
+          <p>Faire Preise für die Blaulichtfamilie</p>
+        </div>
+      </div>
 
-<div class="wrap">
-  <div class="card">
-    <h1>Impressum</h1>
+      <nav>
+        <a href="/index.html">Startseite</a>
+        <a href="/ablauf.html">Ablauf</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      </nav>
+    </div>
+  </header>
 
-    <p>
-      <strong>Toni Bitterhoff</strong><br>
-      Count of Patches<br>
-      Mechower Weg 8<br>
-      23911 Ziethen<br>
-      Schleswig-Holstein<br>
-      Deutschland
-    </p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <h2>Impressum</h2>
+          <p>Angaben gemäß § 5 DDG.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      E-Mail:
-      <a href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
-    </p>
+    <section>
+      <div class="wrap">
+        <div class="content-card">
+          <div class="block">
+            <h3>Anbieter</h3>
+            <p>
+              <strong>Count of Patches</strong><br>
+              [Toni Bitterhoff / Count of Patches]<br>
+              [Mechower Weg 8]<br>
+              [23911 Ziethen]<br>
+              Deutschland
+            </p>
+          </div>
 
-    <p>
-      Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-      DE429614459
-    </p>
+          <div class="block">
+            <h3>Kontakt</h3>
+            <p>
+              Telefon: [015140302676]<br>
+              E-Mail: [countofpatches@outlook.de]
+            </p>
+          </div>
 
-    <p>
-      Social Media:<br>
-      Facebook / Instagram: Count of Patches
-    </p>
-  </div>
-</div>
+          <div class="block">
+            <h3>Umsatzsteuer</h3>
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
+              [USt-IdNr.DE429614459]
+            </p>
+          </div>
 
+          <div class="block">
+            <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+            <p>
+              [Toni Bitterhoff]<br>
+              [Mechower Weg 8]<br>
+              [23911 Ziethen]
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Verbraucherstreitbeilegung</h3>
+            <p>
+              Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren
+              vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Haftung für Inhalte</h3>
+            <p>
+              Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den
+              allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung
+              übermittelter oder gespeicherter fremder Informationen besteht jedoch erst
+              ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Haftung für Links</h3>
+            <p>
+              Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte
+              wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
+              keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der
+              jeweilige Anbieter oder Betreiber verantwortlich.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Urheberrecht</h3>
+            <p>
+              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website
+              unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung,
+              Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts
+              bedürfen der schriftlichen Zustimmung des jeweiligen Urhebers bzw. Erstellers.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-links">
+      <a href="/index.html">Startseite</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
 </body>
 </html>

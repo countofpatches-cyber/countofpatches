@@ -3,98 +3,296 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutz | Count of Patches</title>
-  <meta name="description" content="Datenschutzerklärung von Count of Patches">
-  <meta name="robots" content="index,follow">
-
+  <title>Datenschutz – Count of Patches</title>
+  <meta name="description" content="Datenschutzhinweise von Count of Patches zur Nutzung der Website, des Anfrageformulars und des Shopify-Shops.">
   <style>
+    :root{
+      --blue:#0039a6;
+      --blue-dark:#002d7a;
+      --light:#f3f6fb;
+      --card:#ffffff;
+      --text:#1a2238;
+      --muted:#667089;
+      --line:#d9e2f0;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+      --radius:18px;
+      --accent:#f0b400;
+      --accent-bg:#fff8e1;
+    }
+
+    *{box-sizing:border-box}
     body{
-      font-family:Arial, Helvetica, sans-serif;
       margin:0;
-      background:#f4f7fc;
-      color:#172033;
-      line-height:1.7;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
     }
-
-    .wrap{
-      max-width:900px;
-      margin:60px auto;
-      padding:0 20px;
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:100;
+      background:#fff;border-bottom:1px solid var(--line);
     }
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;
+      gap:20px;padding:16px 0;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:14px;min-width:280px}
+    .brand-logo{
+      width:64px;height:64px;object-fit:contain;
+      border:1px solid var(--line);border-radius:14px;background:#fff;padding:4px;
+    }
+    .brand h1{margin:0;color:var(--blue-dark);font-size:22px;line-height:1.1}
+    .brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--text);font-weight:700;font-size:15px}
 
-    .card{
-      background:#fff;
-      border:1px solid #dbe4f2;
-      border-radius:18px;
+    .hero{padding:60px 0 30px}
+    .hero-card,.content-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:32px;
-      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+    }
+    .hero h2{
+      margin:0 0 14px;
+      font-size:42px;
+      line-height:1.1;
+      color:var(--blue-dark);
+    }
+    .hero p{margin:0;color:var(--muted);font-size:18px}
+
+    section{padding:18px 0 28px}
+    .block{margin-bottom:28px}
+    .block h3{
+      margin:0 0 10px;
+      color:var(--blue-dark);
+      font-size:22px;
+    }
+    .block p,.block li{color:var(--muted)}
+    .block ul{margin:10px 0 0 20px}
+    .notice-box{
+      border-radius:14px;
+      padding:16px 18px;
+      font-weight:600;
+      border:1px solid #f2d67b;
+      background:var(--accent-bg);
+      margin-top:18px;
     }
 
-    h1,h2{
-      color:#0039A6;
+    footer{
+      margin-top:24px;
+      padding:30px 0 40px;
+      background:#fff;
+      border-top:1px solid var(--line);
     }
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{font-weight:700}
 
-    a{
-      color:#0039A6;
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
+    @media (max-width:700px){
+      .hero-card,.content-card{padding:24px}
+      .hero h2{font-size:32px}
+      nav{gap:12px}
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
+        <div>
+          <h1>Count of Patches</h1>
+          <p>Faire Preise für die Blaulichtfamilie</p>
+        </div>
+      </div>
 
-<div class="wrap">
-  <div class="card">
-    <h1>Datenschutzerklärung</h1>
+      <nav>
+        <a href="/index.html">Startseite</a>
+        <a href="/ablauf.html">Ablauf</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      </nav>
+    </div>
+  </header>
 
-    <h2>1. Verantwortlicher</h2>
-    <p>
-      Toni Bitterhoff<br>
-      Count of Patches<br>
-      Mechower Weg 8<br>
-      23911 Ziethen<br>
-      Deutschland
-    </p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <h2>Datenschutz</h2>
+          <p>Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      E-Mail:
-      <a href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
-    </p>
+    <section>
+      <div class="wrap">
+        <div class="content-card">
+          <div class="block">
+            <h3>1. Verantwortlicher</h3>
+            <p>
+              Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
+              <strong>Count of Patches</strong><br>
+              [Toni Bitterhoff / Count of Patches]<br>
+              [Mechower Weg 8]<br>
+              [23911 Ziethen]<br>
+              Deutschland<br><br>
+              E-Mail: [countofpatches@outlook.de]<br>
+              Telefon: [015140302676]
+            </p>
+          </div>
 
-    <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-    <p>
-      Personenbezogene Daten werden nur erhoben, wenn diese freiwillig im Rahmen
-      einer Anfrage oder Bestellung übermittelt werden.
-    </p>
+          <div class="block">
+            <h3>2. Allgemeine Hinweise zur Datenverarbeitung</h3>
+            <p>
+              Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung
+              einer funktionsfähigen Website, zur Bearbeitung von Anfragen sowie zur
+              Abwicklung unserer Leistungen erforderlich ist.
+            </p>
+            <p>
+              Die Verarbeitung personenbezogener Daten erfolgt auf Grundlage der DSGVO
+              und der jeweils einschlägigen gesetzlichen Vorschriften.
+            </p>
+          </div>
 
-    <h2>3. Verwendung der Daten</h2>
-    <p>
-      Die übermittelten Daten werden ausschließlich zur Bearbeitung von Anfragen,
-      Angeboten und Bestellungen verwendet.
-    </p>
+          <div class="block">
+            <h3>3. Hosting</h3>
+            <p>
+              Diese Website wird über Netlify bereitgestellt. Beim Aufruf der Website können
+              durch den Hosting-Anbieter technisch erforderliche Daten verarbeitet werden,
+              beispielsweise IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten,
+              Browserinformationen und Logdaten.
+            </p>
+            <p>
+              Die Verarbeitung erfolgt zur sicheren Bereitstellung der Website und auf Grundlage
+              unseres berechtigten Interesses an einem sicheren und stabilen Webauftritt.
+            </p>
+          </div>
 
-    <h2>4. Weitergabe von Daten</h2>
-    <p>
-      Eine Weitergabe personenbezogener Daten an Dritte erfolgt nicht,
-      sofern keine gesetzliche Verpflichtung besteht.
-    </p>
+          <div class="block">
+            <h3>4. Anfrageformular</h3>
+            <p>
+              Wenn du uns über das Anfrageformular kontaktierst, verarbeiten wir die von dir
+              eingegebenen Daten zur Bearbeitung deiner Anfrage. Dazu können insbesondere gehören:
+            </p>
+            <ul>
+              <li>Vor- und Nachname</li>
+              <li>Anschrift, PLZ und Wohnort</li>
+              <li>E-Mail-Adresse</li>
+              <li>Dienststelle / Ortsverband</li>
+              <li>Produkt- und Mengendaten</li>
+              <li>hochgeladene Dateien</li>
+              <li>weitere freiwillige Angaben</li>
+            </ul>
+            <p>
+              Die Verarbeitung erfolgt zur Bearbeitung deiner Anfrage und zur Durchführung
+              vorvertraglicher Maßnahmen.
+            </p>
+          </div>
 
-    <h2>5. Rechte der betroffenen Personen</h2>
-    <p>
-      Es besteht jederzeit das Recht auf Auskunft, Berichtigung oder Löschung
-      der gespeicherten personenbezogenen Daten.
-    </p>
+          <div class="block">
+            <h3>5. Dateien und Uploads</h3>
+            <p>
+              Wenn du Dateien übermittelst, verarbeiten wir diese ausschließlich zur Prüfung
+              und Bearbeitung deiner Anfrage. Bitte lade nur Dateien hoch, die für die Anfrage
+              erforderlich sind.
+            </p>
+          </div>
 
-    <h2>6. Kontakt</h2>
-    <p>
-      Bei Fragen zum Datenschutz:
-      <a href="mailto:Countofpatches@outlook.de">Countofpatches@outlook.de</a>
-    </p>
-  </div>
-</div>
+          <div class="block">
+            <h3>6. Shop / Shopify</h3>
+            <p>
+              Für direkt bestellbare Produkte verlinken wir auf unseren externen Shop bei Shopify:
+              <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">count-of-patches.myshopify.com</a>
+            </p>
+            <p>
+              Wenn du den Shop besuchst oder dort bestellst, erfolgt die Datenverarbeitung
+              im Verantwortungsbereich des jeweiligen Shop-Systems bzw. der dort eingebundenen
+              Dienste. Es gelten insoweit ergänzend die Datenschutzbestimmungen des Shop-Anbieters.
+            </p>
+          </div>
 
+          <div class="block">
+            <h3>7. Cookies und ähnliche Technologien</h3>
+            <p>
+              Diese Website kann technisch notwendige Cookies oder vergleichbare Technologien
+              verwenden, soweit dies für den sicheren und funktionalen Betrieb erforderlich ist.
+            </p>
+            <p>
+              Sofern nicht notwendige Cookies, Tracking- oder Analyse-Technologien eingesetzt
+              werden, erfolgt dies nur nach entsprechender Einwilligung.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>8. Rechtsgrundlagen</h3>
+            <p>
+              Die Verarbeitung personenbezogener Daten erfolgt je nach Fall insbesondere auf Grundlage:
+            </p>
+            <ul>
+              <li>deiner Einwilligung,</li>
+              <li>zur Durchführung vorvertraglicher Maßnahmen oder zur Vertragserfüllung,</li>
+              <li>zur Erfüllung rechtlicher Verpflichtungen,</li>
+              <li>auf Grundlage berechtigter Interessen.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>9. Speicherdauer</h3>
+            <p>
+              Personenbezogene Daten werden nur so lange gespeichert, wie dies für die genannten
+              Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>10. Deine Rechte</h3>
+            <p>
+              Du hast nach Maßgabe der gesetzlichen Vorschriften insbesondere das Recht auf:
+            </p>
+            <ul>
+              <li>Auskunft über deine gespeicherten Daten,</li>
+              <li>Berichtigung unrichtiger Daten,</li>
+              <li>Löschung deiner Daten,</li>
+              <li>Einschränkung der Verarbeitung,</li>
+              <li>Widerspruch gegen die Verarbeitung,</li>
+              <li>Datenübertragbarkeit,</li>
+              <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>11. Beschwerderecht bei einer Aufsichtsbehörde</h3>
+            <p>
+              Du hast das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren,
+              wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten
+              rechtswidrig erfolgt.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>12. Stand</h3>
+            <p>Stand dieser Datenschutzerklärung: April 2026</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-links">
+      <a href="/index.html">Startseite</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
 </body>
 </html>

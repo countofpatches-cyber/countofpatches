@@ -3,61 +3,332 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vielen Dank – Count of Patches</title>
-  <meta name="description" content="Vielen Dank für deine Anfrage oder Bestellung bei Count of Patches.">
+  <title>Danke für deine Anfrage – Count of Patches</title>
+  <meta name="description" content="Vielen Dank für deine Anfrage bei Count of Patches. Wir melden uns schnellstmöglich bei dir zurück.">
   <style>
+    :root{
+      --blue:#0039a6;
+      --blue-dark:#002d7a;
+      --light:#f3f6fb;
+      --card:#ffffff;
+      --text:#1a2238;
+      --muted:#667089;
+      --line:#d9e2f0;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+      --radius:18px;
+      --accent:#f0b400;
+      --accent-bg:#fff8e1;
+      --success-bg:#eef8f0;
+      --success-line:#b9dec0;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
-      background:#f4f7fc;
-      color:#172033;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
     }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
     .wrap{
-      max-width:760px;
-      margin:80px auto;
+      max-width:1100px;
+      margin:0 auto;
       padding:0 20px;
     }
-    .card{
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
       background:#fff;
-      border:1px solid #dbe4f2;
-      border-radius:18px;
-      padding:36px 28px;
-      box-shadow:0 12px 28px rgba(0,0,0,.08);
-      text-align:center;
+      border-bottom:1px solid var(--line);
     }
-    h1{
-      margin:0 0 16px;
-      color:#0039a6;
-      font-size:36px;
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+      flex-wrap:wrap;
     }
-    p{
-      font-size:18px;
-      line-height:1.6;
-      margin:0 0 12px;
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:280px;
     }
-    a{
+
+    .brand-logo{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      padding:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      color:var(--blue-dark);
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:var(--text);
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .btn{
       display:inline-block;
-      margin-top:18px;
+      background:var(--blue);
+      color:#fff;
       padding:12px 18px;
       border-radius:12px;
-      background:#0039a6;
-      color:#fff;
+      font-weight:700;
       text-decoration:none;
+      border:none;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      font-size:15px;
+    }
+
+    .btn:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
+    }
+
+    .btn-secondary{
+      background:#ffffff;
+      color:var(--blue-dark);
+      border:1px solid var(--line);
+      box-shadow:none;
+    }
+
+    .btn-secondary:hover{
+      background:#f7f9fd;
+    }
+
+    .thankyou{
+      padding:70px 0 40px;
+    }
+
+    .thankyou-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:36px;
+    }
+
+    .success-box{
+      background:var(--success-bg);
+      border:1px solid var(--success-line);
+      border-radius:14px;
+      padding:16px 18px;
+      font-weight:700;
+      margin-bottom:22px;
+    }
+
+    .thankyou h2{
+      margin:0 0 14px;
+      font-size:42px;
+      line-height:1.1;
+      color:var(--blue-dark);
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      margin:28px 0;
+    }
+
+    .info-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+    }
+
+    .info-card h3{
+      margin:0 0 10px;
+      color:var(--blue-dark);
+      font-size:22px;
+    }
+
+    .info-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .notice-box{
+      border-radius:14px;
+      padding:16px 18px;
+      font-weight:600;
+      border:1px solid #f2d67b;
+      background:var(--accent-bg);
+      margin-top:18px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    footer{
+      margin-top:24px;
+      padding:30px 0 40px;
+      background:#fff;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
       font-weight:700;
     }
-    a:hover{
-      background:#002d7a;
+
+    @media (max-width: 700px){
+      .thankyou{
+        padding:50px 0 30px;
+      }
+
+      .thankyou-card{
+        padding:24px;
+      }
+
+      .thankyou h2{
+        font-size:32px;
+      }
+
+      nav{
+        gap:12px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Vielen Dank!</h1>
-      <p>Deine Anfrage oder Bestellung wurde erfolgreich übermittelt.</p>
-      <p>Ich melde mich schnellstmöglich bei dir zurück.</p>
-      <a href="/index.html">Zurück zur Startseite</a>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
+        <div>
+          <h1>Count of Patches</h1>
+          <p>Faire Preise für die Blaulichtfamilie</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="/index.html">Startseite</a>
+        <a href="/thw">THW</a>
+        <a href="/feuerwehr">Feuerwehr</a>
+        <a href="/polizei">Polizei</a>
+        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
+        <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <main>
+    <section class="thankyou">
+      <div class="wrap">
+        <div class="thankyou-card">
+          <div class="success-box">
+            Vielen Dank – deine Anfrage wurde erfolgreich übermittelt.
+          </div>
+
+          <h2>Danke für deine Anfrage</h2>
+          <p class="lead">
+            Wir haben deine Angaben erhalten und schauen uns deine Anfrage schnellstmöglich an.
+            Du bekommst von uns zeitnah eine Rückmeldung.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Wie geht es weiter?</h3>
+              <p>Wir prüfen deine Anfrage, sehen uns hochgeladene Dateien an und melden uns mit einer passenden Rückmeldung bei dir.</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Individuelle Umsetzung</h3>
+              <p>Ob Patch, Basecap, Schlüsselanhänger oder Textilien – wir schauen immer auf eine saubere und praxisnahe Lösung.</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Standardprodukte</h3>
+              <p>Direkt bestellbare Schlüsselanhänger und weitere Standardartikel findest du zusätzlich in unserem Shop.</p>
+            </div>
+          </div>
+
+          <div class="notice-box">
+            <strong>Hinweis:</strong> Für individuelle Anfertigungen, Sonderwünsche oder größere Mengen kann die Bearbeitung je nach Umfang leicht variieren. Wir melden uns so schnell wie möglich bei dir.
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="/index.html">Zur Startseite</a>
+            <a class="btn btn-secondary" href="https://count-of-patches.myshopify.com/collections/schluesselanhaenger" target="_blank" rel="noopener">Zum Shop</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-links">
+      <a href="/index.html">Startseite</a>
+      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
 </body>
 </html>

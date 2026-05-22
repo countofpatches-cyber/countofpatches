@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über mich – Count of Patches</title>
-  <meta name="description" content="Mehr über Count of Patches – praxisnahe Lösungen für Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie.">
+  <title>Ablauf – Count of Patches</title>
+  <meta name="description" content="So läuft deine Anfrage bei Count of Patches ab – von der ersten Anfrage bis zur fertigen Umsetzung für Patches, Basecaps, Schlüsselanhänger und Textilien.">
   <style>
     :root{
       --blue:#0039a6;
@@ -18,8 +18,8 @@
       --radius:18px;
       --accent:#f0b400;
       --accent-bg:#fff8e1;
-      --trust-bg:#eef4ff;
-      --trust-line:#cfe0ff;
+      --process-bg:#eef4ff;
+      --process-line:#cfe0ff;
     }
 
     *{box-sizing:border-box}
@@ -184,52 +184,65 @@
       font-size:17px;
     }
 
-    .content-grid{
+    .steps{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:24px;
-      align-items:start;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
     }
 
-    .card{
+    .step-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
       box-shadow:var(--shadow);
-      padding:24px;
+      padding:22px;
+      position:relative;
     }
 
-    .card h3{
-      margin:0 0 12px;
+    .step-number{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:var(--blue);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:14px;
+    }
+
+    .step-card h3{
+      margin:0 0 10px;
       color:var(--blue-dark);
-      font-size:26px;
+      font-size:24px;
     }
 
-    .card p{
-      margin:0 0 14px;
+    .step-card p{
+      margin:0;
       color:var(--muted);
     }
 
-    .trust-box{
-      background:var(--trust-bg);
-      border:1px solid var(--trust-line);
+    .info-box{
+      background:var(--process-bg);
+      border:1px solid var(--process-line);
       border-radius:16px;
       padding:20px 22px;
-      margin-top:20px;
+      margin-top:24px;
     }
 
-    .trust-box strong{
+    .info-box strong{
       color:var(--blue-dark);
     }
 
-    .values{
+    .faq-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns:1fr 1fr;
       gap:20px;
-      margin-top:10px;
     }
 
-    .value-card{
+    .faq-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
@@ -237,13 +250,13 @@
       padding:22px;
     }
 
-    .value-card h3{
+    .faq-card h3{
       margin:0 0 10px;
       color:var(--blue-dark);
       font-size:22px;
     }
 
-    .value-card p{
+    .faq-card p{
       margin:0;
       color:var(--muted);
     }
@@ -281,8 +294,8 @@
       font-weight:700;
     }
 
-    @media (max-width: 900px){
-      .content-grid{
+    @media (max-width: 800px){
+      .faq-grid{
         grid-template-columns:1fr;
       }
     }
@@ -292,8 +305,7 @@
         padding:48px 0 26px;
       }
 
-      .hero-card,
-      .card{
+      .hero-card{
         padding:24px;
       }
 
@@ -324,9 +336,9 @@
 
       <nav>
         <a href="/index.html">Startseite</a>
-        <a href="/ablauf.html">Ablauf</a>
         <a href="/thw">THW</a>
         <a href="/feuerwehr">Feuerwehr</a>
+        <a href="/polizei">Polizei</a>
         <a href="/schluesselanhaenger">Schlüsselanhänger</a>
         <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
       </nav>
@@ -337,14 +349,13 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
-          <h2>Über Count of Patches</h2>
+          <h2>So läuft deine Anfrage bei Count of Patches ab</h2>
           <p>
-            Count of Patches steht für praxisnahe, saubere und glaubwürdige Lösungen
-            für die Blaulichtfamilie.
+            Ob individuelle Patches, Basecaps, Schlüsselanhänger oder Textilien:
+            der Ablauf ist klar, unkompliziert und praxisnah aufgebaut.
           </p>
           <p>
-            Der Fokus liegt auf individuellen Umsetzungen für THW, Feuerwehr, Polizei,
-            Zoll, Bund/Land und Hilfsorganisationen – ergänzt durch ausgewählte Standardprodukte im Shop.
+            Du sendest deine Anfrage, wir prüfen die Angaben und melden uns mit einer passenden Rückmeldung.
           </p>
 
           <div class="actions">
@@ -357,91 +368,108 @@
 
     <section>
       <div class="wrap">
-        <h2 class="section-title">Wofür Count of Patches steht</h2>
-        <p class="section-sub">Keine Massenware, sondern Lösungen mit Blick auf Einsatzrealität, Qualität und saubere Umsetzung.</p>
+        <h2 class="section-title">Der Ablauf in 5 Schritten</h2>
+        <p class="section-sub">Von der ersten Idee bis zur fertigen Umsetzung.</p>
 
-        <div class="content-grid">
-          <div class="card">
-            <h3>Praxisnah statt beliebig</h3>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Anfrage senden</h3>
             <p>
-              Gerade im Bereich von THW, Feuerwehr, Polizei und Hilfsorganisationen zählt nicht nur ein gutes Design,
-              sondern auch der Bezug zur Einheit, zum Einsatzalltag und zur tatsächlichen Nutzung.
+              Du sendest deine Anfrage direkt über das Formular auf der Startseite.
+              Dort kannst du Produktart, Menge, Machart und weitere Wünsche angeben.
             </p>
-            <p>
-              Deshalb steht Count of Patches für Produkte, die nicht einfach nur gut aussehen,
-              sondern im Gesamtbild glaubwürdig, passend und sauber umgesetzt sind.
-            </p>
-            <p>
-              Dazu gehören Patches, Ärmelabzeichen, Basecaps, Schlüsselanhänger sowie T-Shirts und Poloshirts
-              mit individueller Veredelung.
-            </p>
-
-            <div class="trust-box">
-              <strong>Wichtig:</strong> Der Schwerpunkt liegt auf individueller Umsetzung,
-              klarer Kommunikation und einem Ergebnis, das zur jeweiligen Einheit oder Organisation passt.
-            </div>
           </div>
 
-          <div class="card">
-            <h3>Für wen das gedacht ist</h3>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Dateien & Angaben prüfen</h3>
             <p>
-              Count of Patches richtet sich an:
-            </p>
-            <p>
-              THW Ortsverbände, Fachgruppen und Einheiten, Feuerwehren, Polizeibereiche,
-              Zoll, Bund/Land sowie Hilfsorganisationen wie DRK, ASB, Malteser oder DLRG.
-            </p>
-            <p>
-              Auch kleinere Stückzahlen, Sonderwünsche und individuelle Anforderungen können berücksichtigt werden –
-              immer mit Blick auf eine sinnvolle und saubere Lösung.
+              Wir sehen uns deine Angaben, Logos, Wappen, Skizzen oder Vorlagen an
+              und prüfen, welche Umsetzung am besten zu deinem Vorhaben passt.
             </p>
           </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Rückmeldung erhalten</h3>
+            <p>
+              Du bekommst eine Rückmeldung zu deiner Anfrage.
+              Dabei geht es um die passende Umsetzung, mögliche Optionen und den weiteren Ablauf.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Freigabe & Abstimmung</h3>
+            <p>
+              Bei individuellen Projekten werden Details abgestimmt,
+              damit am Ende alles zur Einheit, zum Einsatzzweck und zum gewünschten Stil passt.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Umsetzung</h3>
+            <p>
+              Nach der finalen Abstimmung wird dein Projekt umgesetzt.
+              Ziel ist immer eine saubere, glaubwürdige und praxistaugliche Lösung.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <strong>Wichtig:</strong> Standardprodukte wie direkt verfügbare Schlüsselanhänger laufen über den Shop.
+          Individuelle Anfertigungen und Sonderwünsche laufen über die Anfrage auf der Startseite.
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <h2 class="section-title">Die Werte dahinter</h2>
-        <p class="section-sub">Worauf es bei Count of Patches ankommt.</p>
+        <h2 class="section-title">Häufige Fragen zum Ablauf</h2>
+        <p class="section-sub">Kurz erklärt, damit du direkt weißt, wie es weitergeht.</p>
 
-        <div class="values">
-          <div class="value-card">
-            <h3>Vertrauen</h3>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Kann ich eigene Dateien hochladen?</h3>
             <p>
-              Klare Kommunikation, nachvollziehbarer Ablauf und ein ehrlicher Umgang mit Anforderungen und Möglichkeiten.
+              Ja. Im Anfrageformular kannst du Dateien wie Logos, Wappen,
+              Vorlagen oder Skizzen direkt mitsenden.
             </p>
           </div>
 
-          <div class="value-card">
-            <h3>Individualität</h3>
+          <div class="faq-card">
+            <h3>Sind auch individuelle Lösungen möglich?</h3>
             <p>
-              Keine Lösung von der Stange, sondern Umsetzung passend zur Einheit, Organisation oder zum Einsatzzweck.
+              Ja. Gerade individuelle Anfertigungen gehören zum Kernbereich.
+              Standardprodukte laufen über den Shop, individuelle Umsetzungen über die Anfrage.
             </p>
           </div>
 
-          <div class="value-card">
-            <h3>Qualität</h3>
+          <div class="faq-card">
+            <h3>Welche Produkte sind möglich?</h3>
             <p>
-              Saubere Gestaltung, stimmige Details und ein Ergebnis, das optisch und praktisch überzeugt.
+              Patches, Ärmelabzeichen, Basecaps, Schlüsselanhänger,
+              T-Shirts, Poloshirts und textile Veredelungen.
             </p>
           </div>
 
-          <div class="value-card">
-            <h3>Praxisbezug</h3>
+          <div class="faq-card">
+            <h3>Für wen ist das gedacht?</h3>
             <p>
-              Produkte sollen nicht nur gut wirken, sondern auch zum tatsächlichen Umfeld und Anspruch passen.
+              Für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen
+              sowie für Einheiten, Ortsverbände und ähnliche Bereiche.
             </p>
           </div>
         </div>
 
         <div class="notice-box">
-          <strong>Hinweis:</strong> Standardprodukte wie direkt verfügbare Schlüsselanhänger findest du zusätzlich im Shop.
-          Individuelle Projekte laufen weiterhin über die Anfrage auf der Startseite.
+          <strong>Hinweis:</strong> Je klarer deine Angaben in der Anfrage sind, desto schneller und gezielter kann die Rückmeldung erfolgen.
         </div>
 
         <div class="actions">
-          <a class="btn" href="/index.html#anfrage">Individuell anfragen</a>
+          <a class="btn" href="/index.html#anfrage">Jetzt Anfrage senden</a>
           <a class="btn btn-secondary" href="https://count-of-patches.myshopify.com/collections/schluesselanhaenger" target="_blank" rel="noopener">Schlüsselanhänger im Shop</a>
         </div>
       </div>
@@ -451,7 +479,7 @@
   <footer>
     <div class="wrap footer-links">
       <a href="/index.html">Startseite</a>
-      <a href="/ablauf.html">Ablauf</a>
+      <a href="/ueber-mich.html">Über mich</a>
       <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Count of Patches – Patches, Basecaps, Schlüsselanhänger & Textilien</title>
   <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps, Schlüsselanhänger, T-Shirts und Poloshirts für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
+
   <style>
     :root{
       --blue:#0039a6;
@@ -16,6 +17,10 @@
       --line:#d9e2f0;
       --shadow:0 12px 28px rgba(0,0,0,.08);
       --radius:18px;
+      --accent:#f0b400;
+      --accent-bg:#fff8e1;
+      --shop-bg:#eef4ff;
+      --shop-line:#cfe0ff;
     }
 
     *{box-sizing:border-box}
@@ -116,16 +121,36 @@
       padding:12px 18px;
       border-radius:12px;
       font-weight:700;
-      text-decoration:none;
       border:none;
       cursor:pointer;
       box-shadow:var(--shadow);
       font-size:15px;
+      text-decoration:none;
     }
 
     .btn:hover{
       background:var(--blue-dark);
       text-decoration:none;
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--blue-dark);
+      border:1px solid var(--line);
+      box-shadow:none;
+    }
+
+    .btn-secondary:hover{
+      background:#f7f9fd;
+    }
+
+    .btn-accent{
+      background:var(--accent);
+      color:#1a2238;
+    }
+
+    .btn-accent:hover{
+      background:#dca400;
     }
 
     .hero{
@@ -140,7 +165,7 @@
     }
 
     .card{
-      background:var(--card);
+      background:#fff;
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -177,7 +202,6 @@
       border:1px solid #d9e8ff;
       border-radius:14px;
       padding:14px 16px;
-      color:var(--text);
       font-weight:600;
     }
 
@@ -197,38 +221,50 @@
       font-size:17px;
     }
 
-    .category-grid,
-    .preview-grid{
+    .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
 
-    .category-card,
-    .preview-card{
+    .box{
       background:#fff;
       border:1px solid var(--line);
       border-radius:16px;
       box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .category-card .inner,
-    .preview-card .inner{
       padding:20px;
     }
 
-    .category-card h3,
-    .preview-card h3{
+    .box h3{
       margin:0 0 10px;
-      color:var(--blue-dark);
       font-size:24px;
+      color:var(--blue-dark);
     }
 
-    .category-card p,
-    .preview-card p{
+    .box p{
       margin:0 0 14px;
       color:var(--muted);
+    }
+
+    .shop-banner{
+      background:var(--shop-bg);
+      border:1px solid var(--shop-line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .shop-banner h2{
+      margin:0 0 12px;
+      color:var(--blue-dark);
+      font-size:34px;
+    }
+
+    .shop-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
     }
 
     .form-section{
@@ -252,30 +288,19 @@
       display:block;
       margin-bottom:6px;
       font-weight:700;
-      color:var(--text);
     }
 
-    input,
-    select,
-    textarea{
+    input,select,textarea{
       width:100%;
       padding:12px 14px;
       border:1px solid #cdd8ea;
       border-radius:12px;
       font:inherit;
-      color:var(--text);
-      background:#fff;
     }
 
     textarea{
       min-height:120px;
       resize:vertical;
-    }
-
-    .small{
-      font-size:13px;
-      color:var(--muted);
-      margin-top:-6px;
     }
 
     .notice{
@@ -305,452 +330,276 @@
     }
 
     .hidden-netlify-form{
-      display:none !important;
+      display:none!important;
     }
 
-    @media (max-width: 960px){
+    @media (max-width:960px){
       .hero-grid,
       .form-section{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 700px){
+    @media (max-width:700px){
       .hero h2{font-size:34px}
       .section-title{font-size:28px}
+      .shop-banner h2{font-size:28px}
       .grid-two{grid-template-columns:1fr}
       nav{gap:12px}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap topbar">
-      <div class="brand">
-        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
-        <div>
-          <h1>Count of Patches</h1>
-          <p>Faire Preise für die Blaulichtfamilie</p>
-        </div>
-      </div>
 
-      <nav>
-        <a href="/thw">THW</a>
-        <a href="/feuerwehr">Feuerwehr</a>
-        <a href="/polizei">Polizei</a>
-        <a href="/zoll">Zoll</a>
-        <a href="/behoerden">Bund/Land</a>
-        <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-        <a href="/basecaps">Basecaps</a>
-        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
-        <a href="/textilien">Textilien</a>
-        <a class="btn" href="#anfrage">Preisanfrage</a>
-      </nav>
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
+      <div>
+        <h1>Count of Patches</h1>
+        <p>Faire Preise für die Blaulichtfamilie</p>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="card">
-          <h2>Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie</h2>
-          <p>
-            Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.
-            Faire Preise, klare Kommunikation und saubere Umsetzung.
-          </p>
-          <p>
-            Bestellbar sind unter anderem Patch / Ärmelabzeichen, Basecaps, Schlüsselanhänger,
-            T-Shirts und Poloshirts.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
-            <a class="btn" href="#bestellung">Direkt bestellen</a>
-          </div>
-        </div>
+    <nav>
+      <a href="/thw">THW</a>
+      <a href="/feuerwehr">Feuerwehr</a>
+      <a href="/polizei">Polizei</a>
+      <a href="/zoll">Zoll</a>
+      <a href="/behoerden">Bund/Land</a>
+      <a href="/hilfsorganisationen">Hilfsorganisationen</a>
+      <a href="/basecaps">Basecaps</a>
+      <a href="/schluesselanhaenger">Schlüsselanhänger</a>
+      <a href="/textilien">Textilien</a>
+      <a href="/shop">Shop</a>
+      <a class="btn" href="#anfrage">Preisanfrage</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="hero-box">
-          <div class="info">Patch / Ärmelabzeichen: Mindestmenge 20 Stück</div>
-          <div class="info">Schlüsselanhänger: Mindestmenge 50 Stück</div>
-          <div class="info">Basecaps: keine Mindestmenge</div>
-          <div class="info">T-Shirts & Poloshirts mit individueller Veredelung möglich</div>
-        </div>
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div class="card">
+      <h2>Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie</h2>
+
+      <p>
+        Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll,
+        Bund/Land und Hilfsorganisationen.
+      </p>
+
+      <p>
+        Faire Preise, klare Kommunikation und saubere Umsetzung.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
+        <a class="btn btn-secondary" href="/shop">Jetzt im Shop kaufen</a>
       </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="section-title">Produktbereiche</h2>
-        <p class="section-sub">Wähle einfach den passenden Bereich aus und sieh dir Beispiele an.</p>
-
-        <div class="category-grid">
-          <div class="category-card"><div class="inner"><h3>THW</h3><p>Beispiele für Ortsverbände, Fachgruppen und weitere Einheiten.</p><a href="/thw">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Feuerwehr</h3><p>Patches und Ärmelabzeichen für Feuerwehren und Jugendfeuerwehren.</p><a href="/feuerwehr">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Polizei</h3><p>Beispiele für Polizei-Patches und individuelle Umsetzungen.</p><a href="/polizei">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Zoll</h3><p>Beispiele für Zoll-Patches und individuelle Anfertigungen.</p><a href="/zoll">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Bund / Land</h3><p>Abzeichen und Patches für Behörden, Ämter und weitere Bereiche.</p><a href="/behoerden">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Hilfsorganisationen</h3><p>DRK, ASB, Malteser, DLRG und weitere Hilfsorganisationen.</p><a href="/hilfsorganisationen">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Basecaps</h3><p>Beispiele für Basecaps mit individueller Bestickung oder Druck.</p><a href="/basecaps">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Rubber PVC Schlüsselanhänger für Feuerwehr, THW, DRK, Polizei und mehr.</p><a href="/schluesselanhaenger">Zur Galerie</a></div></div>
-          <div class="category-card"><div class="inner"><h3>Textilien</h3><p>Beispiele für T-Shirts, Poloshirts und textile Veredelungen.</p><a href="/textilien">Zur Galerie</a></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="section-title">Vorschau</h2>
-        <p class="section-sub">Ein kurzer Überblick über einige Produktbereiche.</p>
-        <div class="preview-grid">
-          <div class="preview-card"><div class="inner"><h3>Basecaps</h3><p>Kein Mindestabnahmewert. Ideal für kleine Stückzahlen.</p><a href="/basecaps">Galerie ansehen</a></div></div>
-          <div class="preview-card"><div class="inner"><h3>Schlüsselanhänger</h3><p>Nur als Rubber PVC Variante. Mindestmenge 50 Stück.</p><a href="/schluesselanhaenger">Galerie ansehen</a></div></div>
-          <div class="preview-card"><div class="inner"><h3>Textilien</h3><p>T-Shirts und Poloshirts mit individueller Bestickung und Veredelung.</p><a href="/textilien">Galerie ansehen</a></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="anfrage">
-      <div class="wrap">
-        <h2 class="section-title">Preisanfrage</h2>
-        <p class="section-sub">Sende deine Anfrage direkt über das Formular.</p>
-
-        <div class="form-section">
-          <div class="card">
-            <div class="notice">Datei-Upload ist möglich. Nach dem Absenden wirst du auf die Danke-Seite weitergeleitet.</div>
-
-            <form name="preisanfrage" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
-              <input type="hidden" name="form-name" value="preisanfrage">
-              <p hidden>
-                <label>Bitte leer lassen: <input name="bot-field"></label>
-              </p>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_vorname">Vorname</label>
-                  <input id="pa_vorname" name="vorname" type="text" required>
-                </div>
-                <div>
-                  <label for="pa_nachname">Nachname</label>
-                  <input id="pa_nachname" name="nachname" type="text" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_anschrift">Anschrift</label>
-                  <input id="pa_anschrift" name="anschrift" type="text" required>
-                </div>
-                <div>
-                  <label for="pa_plz">Postleitzahl</label>
-                  <input id="pa_plz" name="plz" type="text" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_wohnort">Wohnort</label>
-                  <input id="pa_wohnort" name="wohnort" type="text" required>
-                </div>
-                <div>
-                  <label for="pa_email">E-Mail-Adresse</label>
-                  <input id="pa_email" name="email" type="email" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="pa_dienststelle">Dienststelle / Ortsverband (optional)</label>
-                <input id="pa_dienststelle" name="dienststelle" type="text">
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_produkt">Produkt</label>
-                  <select id="pa_produkt" name="produkt" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen (Mindestmenge 20)</option>
-                    <option value="Basecap">Basecap (keine Mindestmenge)</option>
-                    <option value="Schlüsselanhänger">Schlüsselanhänger (Mindestmenge 50)</option>
-                    <option value="T-Shirt">T-Shirt</option>
-                    <option value="Poloshirt">Poloshirt</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pa_stueckzahl">Menge / Stückzahl</label>
-                  <input id="pa_stueckzahl" name="stueckzahl" type="number" min="1" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_groesse">Größenauswahl</label>
-                  <select id="pa_groesse" name="groessenwunsch">
-                    <option value="">Bitte auswählen</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pa_farbe">Farbe</label>
-                  <select id="pa_farbe" name="farbe">
-                    <option value="">Bitte auswählen</option>
-                    <option value="Ultramarinblau">Ultramarinblau</option>
-                    <option value="Weiß">Weiß</option>
-                    <option value="Weitere Farben auf Anfrage">Weitere Farben auf Anfrage</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_machart">Machart</label>
-                  <select id="pa_machart" name="machart" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="Gewebt">Gewebt</option>
-                    <option value="Gestickt">Gestickt</option>
-                    <option value="UV-Druck">UV-Druck</option>
-                    <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                    <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                    <option value="Textilveredelung / Bestickung">Textilveredelung / Bestickung</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pa_schluesselanhaenger_typ">Motiv Schlüsselanhänger (optional)</label>
-                  <select id="pa_schluesselanhaenger_typ" name="schluesselanhaenger_typ">
-                    <option value="">Bitte auswählen</option>
-                    <option value="DRK">DRK</option>
-                    <option value="THW">THW</option>
-                    <option value="THW Jugend">THW Jugend</option>
-                    <option value="ASB">ASB</option>
-                    <option value="Malteser">Malteser</option>
-                    <option value="Feuerwehr schwarz">Feuerwehr schwarz</option>
-                    <option value="Feuerwehr gelb">Feuerwehr gelb</option>
-                    <option value="Feuerwehr rot">Feuerwehr rot</option>
-                    <option value="Polizei">Polizei</option>
-                    <option value="Individuelle Anfrage">Individuelle Anfrage</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_rueckenbestickung">Rückenbestickung</label>
-                  <select id="pa_rueckenbestickung" name="rueckenbestickung">
-                    <option value="">Bitte auswählen</option>
-                    <option value="Ja">Ja</option>
-                    <option value="Nein">Nein</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pa_brustbestickung">Brustbestickung mit Wappen</label>
-                  <select id="pa_brustbestickung" name="brustbestickung_mit_wappen">
-                    <option value="">Bitte auswählen</option>
-                    <option value="Ja">Ja</option>
-                    <option value="Nein">Nein</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="pa_linker_arm_name">Linker Arm: Name</label>
-                  <select id="pa_linker_arm_name" name="linker_arm_name">
-                    <option value="">Bitte auswählen</option>
-                    <option value="Ja">Ja</option>
-                    <option value="Nein">Nein</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pa_rechter_arm_funktion">Rechter Arm: Funktion</label>
-                  <select id="pa_rechter_arm_funktion" name="rechter_arm_funktion">
-                    <option value="">Bitte auswählen</option>
-                    <option value="Ja">Ja</option>
-                    <option value="Nein">Nein</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="pa_datei">Datei hochladen (optional)</label>
-                <input id="pa_datei" name="datei" type="file">
-                <div class="small">Bei Textilien können Logos, Wappen oder Skizzen hochgeladen werden.</div>
-              </div>
-
-              <div>
-                <label for="pa_hinweise">Weitere Hinweise</label>
-                <textarea id="pa_hinweise" name="hinweise"></textarea>
-              </div>
-
-              <button class="btn" type="submit">Preisanfrage absenden</button>
-            </form>
-          </div>
-
-          <div id="bestellung" class="card">
-            <div class="notice">Direktbestellung mit Lieferadresse und optionalem Datei-Upload.</div>
-
-            <form name="bestellung" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
-              <input type="hidden" name="form-name" value="bestellung">
-              <p hidden>
-                <label>Bitte leer lassen: <input name="bot-field"></label>
-              </p>
-
-              <div class="grid-two">
-                <div>
-                  <label for="be_vorname">Vorname</label>
-                  <input id="be_vorname" name="vorname" type="text" required>
-                </div>
-                <div>
-                  <label for="be_nachname">Nachname</label>
-                  <input id="be_nachname" name="nachname" type="text" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="be_anschrift">Anschrift</label>
-                  <input id="be_anschrift" name="anschrift" type="text" required>
-                </div>
-                <div>
-                  <label for="be_plz">Postleitzahl</label>
-                  <input id="be_plz" name="plz" type="text" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="be_wohnort">Wohnort</label>
-                  <input id="be_wohnort" name="wohnort" type="text" required>
-                </div>
-                <div>
-                  <label for="be_email">E-Mail-Adresse</label>
-                  <input id="be_email" name="email" type="email" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="be_dienststelle">Dienststelle / Ortsverband (optional)</label>
-                <input id="be_dienststelle" name="dienststelle" type="text">
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="be_produkt">Produkt</label>
-                  <select id="be_produkt" name="produkt" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen</option>
-                    <option value="Basecap">Basecap</option>
-                    <option value="Schlüsselanhänger">Schlüsselanhänger</option>
-                    <option value="T-Shirt">T-Shirt</option>
-                    <option value="Poloshirt">Poloshirt</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="be_stueckzahl">Stückzahl</label>
-                  <input id="be_stueckzahl" name="stueckzahl" type="number" min="1" required>
-                </div>
-              </div>
-
-              <div class="grid-two">
-                <div>
-                  <label for="be_groesse">Größenwunsch</label>
-                  <select id="be_groesse" name="groessenwunsch">
-                    <option value="">Bitte auswählen</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="be_machart">Machart</label>
-                  <select id="be_machart" name="machart" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="Gewebt">Gewebt</option>
-                    <option value="Gestickt">Gestickt</option>
-                    <option value="UV-Druck">UV-Druck</option>
-                    <option value="Rubber PVC 2D">Rubber PVC 2D</option>
-                    <option value="Rubber PVC 3D">Rubber PVC 3D</option>
-                    <option value="Textilveredelung / Bestickung">Textilveredelung / Bestickung</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="be_lieferadresse">Lieferadresse</label>
-                <textarea id="be_lieferadresse" name="lieferadresse" required></textarea>
-              </div>
-
-              <div>
-                <label for="be_datei">Datei hochladen / Artikelbeschreibung</label>
-                <input id="be_datei" name="datei" type="file">
-              </div>
-
-              <div>
-                <label for="be_hinweise">Zusätzliche Hinweise</label>
-                <textarea id="be_hinweise" name="hinweise"></textarea>
-              </div>
-
-              <button class="btn" type="submit">Bestellung absenden</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-links">
-      <a href="/index.html">Startseite</a>
-      <a href="/ablauf.html">Ablauf</a>
-      <a href="/ueber-mich.html">Über mich</a>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
     </div>
-  </footer>
 
-  <form name="preisanfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
-    <input type="hidden" name="form-name" value="preisanfrage">
-    <input type="text" name="vorname">
-    <input type="text" name="nachname">
-    <input type="text" name="anschrift">
-    <input type="text" name="plz">
-    <input type="text" name="wohnort">
-    <input type="email" name="email">
-    <input type="text" name="dienststelle">
-    <input type="text" name="produkt">
-    <input type="text" name="stueckzahl">
-    <input type="text" name="groessenwunsch">
-    <input type="text" name="farbe">
-    <input type="text" name="machart">
-    <input type="text" name="schluesselanhaenger_typ">
-    <input type="text" name="rueckenbestickung">
-    <input type="text" name="brustbestickung_mit_wappen">
-    <input type="text" name="linker_arm_name">
-    <input type="text" name="rechter_arm_funktion">
-    <input type="file" name="datei">
-    <textarea name="hinweise"></textarea>
-  </form>
+    <div class="hero-box">
+      <div class="info">Patch / Ärmelabzeichen: Mindestmenge 20 Stück</div>
+      <div class="info">Schlüsselanhänger: Mindestmenge 50 Stück</div>
+      <div class="info">Basecaps: keine Mindestmenge</div>
+      <div class="info">T-Shirts & Poloshirts individuell möglich</div>
+    </div>
 
-  <form name="bestellung" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden class="hidden-netlify-form">
-    <input type="hidden" name="form-name" value="bestellung">
-    <input type="text" name="vorname">
-    <input type="text" name="nachname">
-    <input type="text" name="anschrift">
-    <input type="text" name="plz">
-    <input type="text" name="wohnort">
-    <input type="email" name="email">
-    <input type="text" name="dienststelle">
-    <input type="text" name="produkt">
-    <input type="text" name="stueckzahl">
-    <input type="text" name="groessenwunsch">
-    <input type="text" name="machart">
-    <textarea name="lieferadresse"></textarea>
-    <input type="file" name="datei">
-    <textarea name="hinweise"></textarea>
-  </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="shop-banner">
+      <h2>Standardprodukte direkt im Shop bestellen</h2>
+
+      <p>
+        Schlüsselanhänger, Basecaps, Textilien und Sonderaktionen
+        jetzt direkt bestellbar.
+      </p>
+
+      <div class="shop-actions">
+        <a class="btn btn-accent" href="/shop">Zum Shop</a>
+        <a class="btn btn-secondary" href="#anfrage">Individuell anfragen</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <h2 class="section-title">Direkt im Shop erhältlich</h2>
+    <p class="section-sub">
+      Standardprodukte schnell und direkt bestellen.
+    </p>
+
+    <div class="grid">
+
+      <div class="box">
+        <h3>Schlüsselanhänger</h3>
+        <p>PVC Rubber Schlüsselanhänger für THW, Feuerwehr, Polizei und mehr.</p>
+        <a href="/shop/collections/schluesselanhaenger">Jetzt ansehen</a>
+      </div>
+
+      <div class="box">
+        <h3>Textilien</h3>
+        <p>Poloshirts und T-Shirts direkt verfügbar.</p>
+        <a href="/shop">Jetzt ansehen</a>
+      </div>
+
+      <div class="box">
+        <h3>Basecaps</h3>
+        <p>Bestickte Caps für Dienst und Freizeit.</p>
+        <a href="/shop">Jetzt ansehen</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="anfrage">
+  <div class="wrap">
+
+    <h2 class="section-title">Preisanfrage für individuelle Projekte</h2>
+    <p class="section-sub">
+      Patches, Sonderanfertigungen, Textilveredelung oder größere Mengen.
+    </p>
+
+    <div class="form-section">
+
+      <div class="card">
+
+        <div class="notice">
+          Datei-Upload möglich. Nach Absenden Weiterleitung auf Danke-Seite.
+        </div>
+
+        <form
+          name="preisanfrage"
+          method="POST"
+          action="/danke.html"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          enctype="multipart/form-data"
+        >
+
+          <input type="hidden" name="form-name" value="preisanfrage">
+
+          <p hidden>
+            <label>Leer lassen:
+              <input name="bot-field">
+            </label>
+          </p>
+
+          <div class="grid-two">
+            <div>
+              <label>Vorname</label>
+              <input type="text" name="vorname" required>
+            </div>
+
+            <div>
+              <label>Nachname</label>
+              <input type="text" name="nachname" required>
+            </div>
+          </div>
+
+          <div>
+            <label>E-Mail</label>
+            <input type="email" name="email" required>
+          </div>
+
+          <div>
+            <label>Produkt</label>
+            <select name="produkt" required>
+              <option value="">Bitte auswählen</option>
+              <option>Patch / Ärmelabzeichen</option>
+              <option>Basecap</option>
+              <option>Schlüsselanhänger</option>
+              <option>T-Shirt</option>
+              <option>Poloshirt</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Stückzahl</label>
+            <input type="number" min="1" name="menge" required>
+          </div>
+
+          <div>
+            <label>Datei hochladen</label>
+            <input type="file" name="datei">
+          </div>
+
+          <div>
+            <label>Weitere Hinweise</label>
+            <textarea name="hinweise"></textarea>
+          </div>
+
+          <button class="btn" type="submit">
+            Preisanfrage absenden
+          </button>
+
+        </form>
+      </div>
+
+      <div class="card">
+
+        <div class="notice">
+          Standardprodukte bitte direkt über den Shop bestellen.
+        </div>
+
+        <h3 style="margin-top:0;">Direkt zu den Standardprodukten</h3>
+
+        <p>
+          Für sofort verfügbare Schlüsselanhänger geht es hier direkt in den Shop.
+        </p>
+
+        <a class="btn btn-secondary"
+           href="/shop/collections/schluesselanhaenger">
+          Schlüsselanhänger im Shop
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-links">
+    <a href="/index.html">Startseite</a>
+    <a href="/ablauf.html">Ablauf</a>
+    <a href="/ueber-mich.html">Über mich</a>
+    <a href="/shop">Shop</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<form
+  name="preisanfrage"
+  method="POST"
+  data-netlify="true"
+  hidden
+  class="hidden-netlify-form"
+>
+  <input type="hidden" name="form-name" value="preisanfrage">
+  <input type="text" name="vorname">
+  <input type="text" name="nachname">
+  <input type="email" name="email">
+  <input type="text" name="produkt">
+  <input type="text" name="menge">
+  <input type="file" name="datei">
+  <textarea name="hinweise"></textarea>
+</form>
+
 </body>
 </html>
