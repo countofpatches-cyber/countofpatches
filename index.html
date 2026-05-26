@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Count of Patches – Patches, Basecaps, Schlüsselanhänger & Textilien</title>
-
   <meta name="description" content="Faire Preise für die Blaulichtfamilie. Patches, Basecaps, Schlüsselanhänger, T-Shirts und Poloshirts für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.">
 
   <style>
@@ -34,19 +33,9 @@
       line-height:1.6;
     }
 
-    a{
-      color:var(--blue);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
+    a{text-decoration:none;color:var(--blue)}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
 
     .wrap{
       max-width:1200px;
@@ -66,16 +55,16 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:20px;
-      padding:16px 0;
+      gap:18px;
+      padding:14px 0;
       flex-wrap:wrap;
+      position:relative;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width:280px;
     }
 
     .brand-logo{
@@ -101,17 +90,52 @@
       font-size:14px;
     }
 
-    nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
+    .menu-area{
+      position:relative;
+      margin-left:auto;
     }
 
-    nav a{
+    .menu-button{
+      background:var(--blue);
+      color:#fff;
+      border:none;
+      border-radius:12px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      font-size:15px;
+    }
+
+    .menu-panel{
+      display:none;
+      position:absolute;
+      right:0;
+      top:52px;
+      min-width:280px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding:12px;
+      z-index:200;
+    }
+
+    .menu-panel.open{
+      display:grid;
+      gap:6px;
+    }
+
+    .menu-panel a{
       color:var(--text);
       font-weight:700;
-      font-size:15px;
+      padding:10px 12px;
+      border-radius:10px;
+    }
+
+    .menu-panel a:hover{
+      background:#f3f6fb;
+      text-decoration:none;
     }
 
     .btn{
@@ -140,21 +164,15 @@
       box-shadow:none;
     }
 
-    .btn-secondary:hover{
-      background:#f7f9fd;
-    }
-
     .btn-accent{
       background:var(--accent);
       color:#1a2238;
     }
 
-    .btn-accent:hover{
-      background:#dca400;
-    }
+    main{padding-bottom:20px}
 
     .hero{
-      padding:54px 0 28px;
+      padding:52px 0 28px;
     }
 
     .hero-grid{
@@ -242,6 +260,68 @@
       margin-top:18px;
     }
 
+    .gallery-filter{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .filter-btn{
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .filter-btn.active{
+      background:var(--blue);
+      color:#fff;
+      border-color:var(--blue);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:18px;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      padding:12px;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:240px;
+      object-fit:contain;
+      background:#eef3fb;
+      border-radius:12px;
+    }
+
+    .gallery-caption{
+      margin-top:10px;
+      font-weight:700;
+      color:var(--blue-dark);
+      font-size:14px;
+    }
+
+    .error-box{
+      background:#fff1f1;
+      border:1px solid #efc4c4;
+      color:#8f2727;
+      border-radius:12px;
+      padding:12px;
+      white-space:pre-line;
+    }
+
     .form-section{
       display:grid;
       grid-template-columns:1fr;
@@ -271,6 +351,7 @@
       border:1px solid #cdd8ea;
       border-radius:12px;
       font:inherit;
+      background:#fff;
     }
 
     textarea{
@@ -304,19 +385,92 @@
       font-weight:700;
     }
 
+    .hidden-netlify-form{
+      display:none !important;
+    }
+
     @media (max-width:960px){
-      .hero-grid,
-      .form-section{
+      .hero-grid{
         grid-template-columns:1fr;
       }
     }
 
     @media (max-width:700px){
-      .hero h2{font-size:34px}
-      .section-title{font-size:28px}
-      .shop-banner h2{font-size:28px}
-      .grid-two{grid-template-columns:1fr}
-      nav{gap:12px}
+      .wrap{padding:0 14px}
+
+      .topbar{
+        align-items:flex-start;
+      }
+
+      .brand{
+        width:100%;
+      }
+
+      .brand-logo{
+        width:56px;
+        height:56px;
+      }
+
+      .menu-area{
+        width:100%;
+      }
+
+      .menu-button{
+        width:100%;
+      }
+
+      .menu-panel{
+        position:static;
+        width:100%;
+        margin-top:10px;
+      }
+
+      .hero{
+        padding:30px 0 18px;
+      }
+
+      .hero h2{
+        font-size:32px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section-title{
+        font-size:28px;
+      }
+
+      .shop-banner h2{
+        font-size:26px;
+      }
+
+      .grid-two{
+        grid-template-columns:1fr;
+      }
+
+      .card,
+      .shop-banner{
+        padding:20px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-item img{
+        height:220px;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .hero-actions,
+      .shop-actions{
+        flex-direction:column;
+      }
     }
   </style>
 </head>
@@ -333,23 +487,23 @@
       </div>
     </div>
 
-    <nav>
-      <a href="/thw">THW</a>
-      <a href="/feuerwehr">Feuerwehr</a>
-      <a href="/polizei">Polizei</a>
-      <a href="/zoll">Zoll</a>
-      <a href="/behoerden">Bund/Land</a>
-      <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-      <a href="/basecaps">Basecaps</a>
-      <a href="/schluesselanhaenger">Schlüsselanhänger</a>
-      <a href="/textilien">Textilien</a>
-      <a href="https://count-of-patches.com">Shop</a>
-      <a class="btn" href="#anfrage">Preisanfrage</a>
-    </nav>
+    <div class="menu-area">
+      <button class="menu-button" type="button" onclick="toggleMenu()">☰ Menü</button>
+      <nav id="menuPanel" class="menu-panel">
+        <a href="#start">Startseite</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#anfrage">Preisanfrage</a>
+        <a href="https://count-of-patches.com">Shop</a>
+        <a href="/ablauf.html">Ablauf</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="start">
 
 <section class="hero">
   <div class="wrap hero-grid">
@@ -358,8 +512,7 @@
       <h2>Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie</h2>
 
       <p>
-        Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll,
-        Bund/Land und Hilfsorganisationen.
+        Individuelle Lösungen für THW, Feuerwehr, Polizei, Zoll, Bund/Land und Hilfsorganisationen.
       </p>
 
       <p>
@@ -368,11 +521,7 @@
 
       <div class="hero-actions">
         <a class="btn" href="#anfrage">Jetzt Preisanfrage senden</a>
-
-        <a class="btn btn-secondary"
-           href="https://count-of-patches.com">
-          Jetzt im Shop kaufen
-        </a>
+        <a class="btn btn-secondary" href="https://count-of-patches.com">Jetzt im Shop kaufen</a>
       </div>
     </div>
 
@@ -388,104 +537,193 @@
 
 <section>
   <div class="wrap">
-
     <div class="shop-banner">
       <h2>Standardprodukte direkt im Shop bestellen</h2>
-
       <p>
-        Schlüsselanhänger, Basecaps, Textilien und Sonderaktionen
-        jetzt direkt bestellbar.
+        Schlüsselanhänger, Basecaps, Textilien und Sonderaktionen sind direkt im Shop bestellbar.
+        Individuelle Projekte laufen weiterhin über das Preisanfrageformular.
       </p>
 
       <div class="shop-actions">
-        <a class="btn btn-accent"
-           href="https://count-of-patches.com">
-          Zum Shop
-        </a>
-
-        <a class="btn btn-secondary"
-           href="#anfrage">
-          Individuell anfragen
-        </a>
+        <a class="btn btn-accent" href="https://count-of-patches.com">Zum Shop</a>
+        <a class="btn btn-secondary" href="#anfrage">Individuell anfragen</a>
       </div>
     </div>
+  </div>
+</section>
 
+<section id="galerie">
+  <div class="wrap">
+    <h2 class="section-title">Galerie</h2>
+    <p class="section-sub">
+      Alle Produktbereiche in einer gemeinsamen Galerie. Wähle einfach den gewünschten Bereich aus.
+    </p>
+
+    <div class="gallery-filter">
+      <button class="filter-btn active" type="button" data-filter="alle">Alle</button>
+      <button class="filter-btn" type="button" data-filter="thw">THW</button>
+      <button class="filter-btn" type="button" data-filter="feuerwehr">Feuerwehr</button>
+      <button class="filter-btn" type="button" data-filter="polizei">Polizei</button>
+      <button class="filter-btn" type="button" data-filter="zoll">Zoll</button>
+      <button class="filter-btn" type="button" data-filter="behoerden">Bund/Land</button>
+      <button class="filter-btn" type="button" data-filter="hilfsorganisationen">Hilfsorganisationen</button>
+      <button class="filter-btn" type="button" data-filter="basecaps">Basecaps</button>
+      <button class="filter-btn" type="button" data-filter="schluesselanhaenger">Schlüsselanhänger</button>
+      <button class="filter-btn" type="button" data-filter="textilien">Textilien</button>
+    </div>
+
+    <div id="galleryGrid" class="gallery-grid"></div>
   </div>
 </section>
 
 <section id="anfrage">
   <div class="wrap">
 
-    <h2 class="section-title">
-      Preisanfrage für individuelle Projekte
-    </h2>
+    <h2 class="section-title">Preisanfrage für individuelle Projekte</h2>
 
     <p class="section-sub">
       Patches, Sonderanfertigungen, Textilveredelung oder größere Mengen.
     </p>
 
     <div class="form-section">
-
       <div class="card">
 
         <div class="notice">
-          Datei-Upload möglich. Nach Absenden Weiterleitung auf Danke-Seite.
+          Datei-Upload möglich. Nach dem Absenden wirst du auf die Danke-Seite weitergeleitet.
         </div>
 
-        <form>
+        <form name="preisanfrage" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="preisanfrage">
+          <p hidden>
+            <label>Bitte leer lassen: <input name="bot-field"></label>
+          </p>
 
           <div class="grid-two">
             <div>
-              <label>Vorname</label>
-              <input type="text" required>
+              <label for="vorname">Vorname</label>
+              <input id="vorname" name="vorname" type="text" required>
             </div>
 
             <div>
-              <label>Nachname</label>
-              <input type="text" required>
+              <label for="nachname">Nachname</label>
+              <input id="nachname" name="nachname" type="text" required>
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div>
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div>
+              <label for="dienststelle">Dienststelle / Ortsverband</label>
+              <input id="dienststelle" name="dienststelle" type="text">
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div>
+              <label for="produkt">Produkt</label>
+              <select id="produkt" name="produkt" required>
+                <option value="">Bitte auswählen</option>
+                <option value="Patch / Ärmelabzeichen">Patch / Ärmelabzeichen</option>
+                <option value="Basecap">Basecap</option>
+                <option value="Schlüsselanhänger">Schlüsselanhänger</option>
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Poloshirt">Poloshirt</option>
+	        <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="stueckzahl">Menge / Stückzahl</label>
+              <input id="stueckzahl" name="stueckzahl" type="number" min="1" required>
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div>
+              <label for="groesse">Größe</label>
+              <select id="groesse" name="groesse">
+                <option value="">Bitte auswählen</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+		<option value="80mm">80mm</option>
+		<option value="70mm">70</option>
+		<option value="freie Eingabe">freie Eingabe</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="farbe">Farbe</label>
+              <select id="farbe" name="farbe">
+                <option value="">Bitte auswählen</option>
+                <option value="Ultramarinblau">Ultramarinblau</option>
+                <option value="Weiß">Weiß</option>
+                <option value="Weitere Farben auf Anfrage">Weitere Farben auf Anfrage</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div>
+              <label for="rueckenbestickung">Rückenbestickung</label>
+              <select id="rueckenbestickung" name="rueckenbestickung">
+                <option value="">Bitte auswählen</option>
+                <option value="Ja">Ja</option>
+                <option value="Nein">Nein</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="brustbestickung">Brustbestickung mit Wappen</label>
+              <select id="brustbestickung" name="brustbestickung_mit_wappen">
+                <option value="">Bitte auswählen</option>
+                <option value="Ja">Ja</option>
+                <option value="Nein">Nein</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div>
+              <label for="linker_arm">Linker Arm: Name</label>
+              <select id="linker_arm" name="linker_arm_name">
+                <option value="">Bitte auswählen</option>
+                <option value="Ja">Ja</option>
+                <option value="Nein">Nein</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="rechter_arm">Rechter Arm: Funktion</label>
+              <select id="rechter_arm" name="rechter_arm_funktion">
+                <option value="">Bitte auswählen</option>
+                <option value="Ja">Ja</option>
+                <option value="Nein">Nein</option>
+              </select>
             </div>
           </div>
 
           <div>
-            <label>E-Mail</label>
-            <input type="email" required>
+            <label for="datei">Datei hochladen</label>
+            <input id="datei" name="datei" type="file">
           </div>
 
           <div>
-            <label>Produkt</label>
-            <select required>
-              <option value="">Bitte auswählen</option>
-              <option>Patch / Ärmelabzeichen</option>
-              <option>Basecap</option>
-              <option>Schlüsselanhänger</option>
-              <option>T-Shirt</option>
-              <option>Poloshirt</option>
-            </select>
+            <label for="hinweise">Weitere Hinweise</label>
+            <textarea id="hinweise" name="hinweise"></textarea>
           </div>
 
-          <div>
-            <label>Stückzahl</label>
-            <input type="number" min="1" required>
-          </div>
-
-          <div>
-            <label>Datei hochladen</label>
-            <input type="file">
-          </div>
-
-          <div>
-            <label>Weitere Hinweise</label>
-            <textarea></textarea>
-          </div>
-
-          <button class="btn" type="submit">
-            Preisanfrage absenden
-          </button>
-
+          <button class="btn" type="submit">Preisanfrage absenden</button>
         </form>
 
       </div>
-
     </div>
 
   </div>
@@ -496,6 +734,7 @@
 <footer>
   <div class="wrap footer-links">
     <a href="/index.html">Startseite</a>
+    <a href="#galerie">Galerie</a>
     <a href="/ablauf.html">Ablauf</a>
     <a href="/ueber-mich.html">Über mich</a>
     <a href="https://count-of-patches.com">Shop</a>
@@ -503,6 +742,129 @@
     <a href="/datenschutz.html">Datenschutz</a>
   </div>
 </footer>
+
+<form name="preisanfrage" method="POST" data-netlify="true" hidden class="hidden-netlify-form">
+  <input type="hidden" name="form-name" value="preisanfrage">
+  <input type="text" name="vorname">
+  <input type="text" name="nachname">
+  <input type="email" name="email">
+  <input type="text" name="dienststelle">
+  <input type="text" name="produkt">
+  <input type="text" name="stueckzahl">
+  <input type="text" name="groesse">
+  <input type="text" name="farbe">
+  <input type="text" name="rueckenbestickung">
+  <input type="text" name="brustbestickung_mit_wappen">
+  <input type="text" name="linker_arm_name">
+  <input type="text" name="rechter_arm_funktion">
+  <input type="file" name="datei">
+  <textarea name="hinweise"></textarea>
+</form>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("menuPanel").classList.toggle("open");
+  }
+
+  document.addEventListener("click", function(event){
+    const menu = document.getElementById("menuPanel");
+    const button = document.querySelector(".menu-button");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+      menu.classList.remove("open");
+    }
+  });
+
+  const galleryLabels = {
+    thw: "THW",
+    feuerwehr: "Feuerwehr",
+    polizei: "Polizei",
+    zoll: "Zoll",
+    behoerden: "Bund / Land",
+    hilfsorganisationen: "Hilfsorganisationen",
+    basecaps: "Basecaps",
+    schluesselanhaenger: "Schlüsselanhänger",
+    textilien: "Textilien"
+  };
+
+  let galleryData = {};
+  let currentFilter = "alle";
+
+  async function loadGallery(){
+    const grid = document.getElementById("galleryGrid");
+
+    try{
+      const response = await fetch("/galleries.json?v=" + Date.now(), { cache: "no-store" });
+
+      if(!response.ok){
+        throw new Error("galleries.json konnte nicht geladen werden.");
+      }
+
+      galleryData = await response.json();
+      renderGallery("alle");
+
+    }catch(error){
+      grid.innerHTML = '<div class="error-box">Galerie konnte nicht geladen werden. Prüfe bitte die Datei /galleries.json.</div>';
+    }
+  }
+
+  function renderGallery(filter){
+    currentFilter = filter;
+    const grid = document.getElementById("galleryGrid");
+    grid.innerHTML = "";
+
+    let items = [];
+
+    Object.keys(galleryLabels).forEach(function(key){
+      if(filter === "alle" || filter === key){
+        const images = galleryData[key] || [];
+        images.forEach(function(src){
+          items.push({ key:key, src:src });
+        });
+      }
+    });
+
+    if(items.length === 0){
+      grid.innerHTML = '<div class="error-box">Für diesen Bereich sind aktuell keine Bilder hinterlegt.</div>';
+      return;
+    }
+
+    items.forEach(function(item){
+      const card = document.createElement("div");
+      card.className = "gallery-item";
+
+      const img = document.createElement("img");
+      img.src = "/" + item.src + "?v=" + Date.now();
+      img.alt = galleryLabels[item.key] + " Bild";
+      img.loading = "lazy";
+
+      img.onerror = function(){
+        card.innerHTML = '<div class="error-box">Bild konnte nicht geladen werden:<br>/' + item.src + '</div>';
+      };
+
+      const caption = document.createElement("div");
+      caption.className = "gallery-caption";
+      caption.textContent = galleryLabels[item.key];
+
+      card.appendChild(img);
+      card.appendChild(caption);
+      grid.appendChild(card);
+    });
+  }
+
+  document.querySelectorAll(".filter-btn").forEach(function(button){
+    button.addEventListener("click", function(){
+      document.querySelectorAll(".filter-btn").forEach(function(btn){
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+      renderGallery(button.getAttribute("data-filter"));
+    });
+  });
+
+  loadGallery();
+</script>
 
 </body>
 </html>

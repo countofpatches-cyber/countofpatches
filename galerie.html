@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie – Count of Patches</title>
+  <meta name="description" content="Gesamtgalerie von Count of Patches mit Patches, Basecaps, Schlüsselanhängern und Textilien.">
+
+  <style>
+    :root{
+      --blue:#0039a6;
+      --blue-dark:#002d7a;
+      --light:#f3f6fb;
+      --card:#ffffff;
+      --text:#1a2238;
+      --muted:#667089;
+      --line:#d9e2f0;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding:14px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      padding:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      color:var(--blue-dark);
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    nav{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    nav a{
+      color:var(--text);
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--blue);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
+    }
+
+    main{
+      padding:42px 0;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size:42px;
+      color:var(--blue-dark);
+      line-height:1.15;
+    }
+
+    .lead{
+      margin:0 0 24px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .filter-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:24px;
+    }
+
+    .filter-btn{
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .filter-btn.active{
+      background:var(--blue);
+      color:#fff;
+      border-color:var(--blue);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      padding:12px;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:260px;
+      object-fit:contain;
+      background:#eef3fb;
+      border-radius:12px;
+      display:block;
+    }
+
+    .caption{
+      margin-top:10px;
+      font-weight:700;
+      color:var(--blue-dark);
+      font-size:14px;
+    }
+
+    .error-box{
+      background:#fff1f1;
+      border:1px solid #efc4c4;
+      color:#8f2727;
+      border-radius:12px;
+      padding:12px;
+      white-space:pre-line;
+    }
+
+    footer{
+      margin-top:24px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:28px 0 36px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-weight:700;
+    }
+
+    @media(max-width:700px){
+      .wrap{padding:0 14px}
+
+      .topbar{
+        align-items:flex-start;
+      }
+
+      .brand img{
+        width:56px;
+        height:56px;
+      }
+
+      nav{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      nav a{
+        background:#f3f6fb;
+        border-radius:10px;
+        padding:10px;
+        text-align:center;
+      }
+
+      h2{
+        font-size:32px;
+      }
+
+      .card{
+        padding:20px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-item img{
+        height:230px;
+      }
+
+      .filter-btn{
+        flex:1 1 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <img src="/logo.jpeg" alt="Count of Patches Logo">
+      <div>
+        <h1>Count of Patches</h1>
+        <p>Faire Preise für die Blaulichtfamilie</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="/index.html">Startseite</a>
+      <a href="/galerie.html">Galerie</a>
+      <a href="/index.html#anfrage">Preisanfrage</a>
+      <a href="https://count-of-patches.com">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+      <h2>Galerie</h2>
+      <p class="lead">
+        Hier findest du eine gemeinsame Übersicht aller bisherigen Arbeiten und Produktbereiche.
+      </p>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" type="button" data-filter="alle">Alle</button>
+        <button class="filter-btn" type="button" data-filter="thw">THW</button>
+        <button class="filter-btn" type="button" data-filter="feuerwehr">Feuerwehr</button>
+        <button class="filter-btn" type="button" data-filter="polizei">Polizei</button>
+        <button class="filter-btn" type="button" data-filter="zoll">Zoll</button>
+        <button class="filter-btn" type="button" data-filter="behoerden">Bund/Land</button>
+        <button class="filter-btn" type="button" data-filter="hilfsorganisationen">Hilfsorganisationen</button>
+        <button class="filter-btn" type="button" data-filter="basecaps">Basecaps</button>
+        <button class="filter-btn" type="button" data-filter="schluesselanhaenger">Schlüsselanhänger</button>
+        <button class="filter-btn" type="button" data-filter="textilien">Textilien</button>
+      </div>
+
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-links">
+    <a href="/index.html">Startseite</a>
+    <a href="/galerie.html">Galerie</a>
+    <a href="/ablauf.html">Ablauf</a>
+    <a href="/ueber-mich.html">Über mich</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+  const labels = {
+    thw: "THW",
+    feuerwehr: "Feuerwehr",
+    polizei: "Polizei",
+    zoll: "Zoll",
+    behoerden: "Bund / Land",
+    hilfsorganisationen: "Hilfsorganisationen",
+    basecaps: "Basecaps",
+    schluesselanhaenger: "Schlüsselanhänger",
+    textilien: "Textilien"
+  };
+
+  let galleryData = {};
+
+  async function loadGallery(){
+    const grid = document.getElementById("galleryGrid");
+
+    try{
+      const response = await fetch("/galleries.json?v=" + Date.now(), { cache:"no-store" });
+
+      if(!response.ok){
+        throw new Error("galleries.json konnte nicht geladen werden.");
+      }
+
+      galleryData = await response.json();
+      renderGallery("alle");
+
+    }catch(error){
+      grid.innerHTML = '<div class="error-box">Galerie konnte nicht geladen werden. Prüfe bitte, ob /galleries.json vorhanden und korrekt formatiert ist.</div>';
+    }
+  }
+
+  function renderGallery(filter){
+    const grid = document.getElementById("galleryGrid");
+    grid.innerHTML = "";
+
+    let items = [];
+
+    Object.keys(labels).forEach(function(key){
+      if(filter === "alle" || filter === key){
+        const images = galleryData[key] || [];
+
+        images.forEach(function(src){
+          items.push({
+            key:key,
+            src:src
+          });
+        });
+      }
+    });
+
+    if(items.length === 0){
+      grid.innerHTML = '<div class="error-box">Für diesen Bereich sind aktuell keine Bilder hinterlegt.</div>';
+      return;
+    }
+
+    items.forEach(function(item){
+      const box = document.createElement("div");
+      box.className = "gallery-item";
+
+      const img = document.createElement("img");
+      img.src = "/" + item.src + "?v=" + Date.now();
+      img.alt = labels[item.key] + " Bild";
+      img.loading = "lazy";
+
+      img.onerror = function(){
+        box.innerHTML = '<div class="error-box">Bild konnte nicht geladen werden:<br>/' + item.src + '</div>';
+      };
+
+      const caption = document.createElement("div");
+      caption.className = "caption";
+      caption.textContent = labels[item.key];
+
+      box.appendChild(img);
+      box.appendChild(caption);
+      grid.appendChild(box);
+    });
+  }
+
+  document.querySelectorAll(".filter-btn").forEach(function(button){
+    button.addEventListener("click", function(){
+      document.querySelectorAll(".filter-btn").forEach(function(btn){
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+      renderGallery(button.getAttribute("data-filter"));
+    });
+  });
+
+  loadGallery();
+</script>
+
+</body>
+</html>

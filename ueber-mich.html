@@ -4,458 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über mich – Count of Patches</title>
-  <meta name="description" content="Mehr über Count of Patches – praxisnahe Lösungen für Patches, Basecaps, Schlüsselanhänger und Textilien für die Blaulichtfamilie.">
+  <meta name="description" content="Über Count of Patches, individuelle Patchlösungen und die Verbindung zur Blaulichtfamilie.">
   <style>
-    :root{
-      --blue:#0039a6;
-      --blue-dark:#002d7a;
-      --light:#f3f6fb;
-      --card:#ffffff;
-      --text:#1a2238;
-      --muted:#667089;
-      --line:#d9e2f0;
-      --shadow:0 12px 28px rgba(0,0,0,.08);
-      --radius:18px;
-      --accent:#f0b400;
-      --accent-bg:#fff8e1;
-      --trust-bg:#eef4ff;
-      --trust-line:#cfe0ff;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{
-      color:var(--blue);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    .wrap{
-      max-width:1150px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-    }
-
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:16px 0;
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:280px;
-    }
-
-    .brand-logo{
-      width:64px;
-      height:64px;
-      object-fit:contain;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-      padding:4px;
-    }
-
-    .brand h1{
-      margin:0;
-      color:var(--blue-dark);
-      font-size:22px;
-      line-height:1.1;
-    }
-
-    .brand p{
-      margin:4px 0 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      color:var(--text);
-      font-weight:700;
-      font-size:15px;
-    }
-
-    .btn{
-      display:inline-block;
-      background:var(--blue);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:700;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      box-shadow:var(--shadow);
-      font-size:15px;
-    }
-
-    .btn:hover{
-      background:var(--blue-dark);
-      text-decoration:none;
-    }
-
-    .btn-secondary{
-      background:#ffffff;
-      color:var(--blue-dark);
-      border:1px solid var(--line);
-      box-shadow:none;
-    }
-
-    .btn-secondary:hover{
-      background:#f7f9fd;
-    }
-
-    .hero{
-      padding:60px 0 30px;
-    }
-
-    .hero-card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:34px;
-    }
-
-    .hero h2{
-      margin:0 0 14px;
-      font-size:42px;
-      line-height:1.1;
-      color:var(--blue-dark);
-    }
-
-    .hero p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    section{
-      padding:18px 0 28px;
-    }
-
-    .section-title{
-      margin:0 0 14px;
-      font-size:34px;
-      color:var(--blue-dark);
-    }
-
-    .section-sub{
-      margin:0 0 22px;
-      color:var(--muted);
-      font-size:17px;
-    }
-
-    .content-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .card h3{
-      margin:0 0 12px;
-      color:var(--blue-dark);
-      font-size:26px;
-    }
-
-    .card p{
-      margin:0 0 14px;
-      color:var(--muted);
-    }
-
-    .trust-box{
-      background:var(--trust-bg);
-      border:1px solid var(--trust-line);
-      border-radius:16px;
-      padding:20px 22px;
-      margin-top:20px;
-    }
-
-    .trust-box strong{
-      color:var(--blue-dark);
-    }
-
-    .values{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-      margin-top:10px;
-    }
-
-    .value-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:22px;
-    }
-
-    .value-card h3{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-      font-size:22px;
-    }
-
-    .value-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .notice-box{
-      border-radius:14px;
-      padding:16px 18px;
-      font-weight:600;
-      border:1px solid #f2d67b;
-      background:var(--accent-bg);
-      margin-top:22px;
-    }
-
-    .actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:24px;
-    }
-
-    footer{
-      margin-top:24px;
-      padding:30px 0 40px;
-      background:#fff;
-      border-top:1px solid var(--line);
-    }
-
-    .footer-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .footer-links a{
-      font-weight:700;
-    }
-
-    @media (max-width: 900px){
-      .content-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 700px){
-      .hero{
-        padding:48px 0 26px;
-      }
-
-      .hero-card,
-      .card{
-        padding:24px;
-      }
-
-      .hero h2{
-        font-size:32px;
-      }
-
-      .section-title{
-        font-size:28px;
-      }
-
-      nav{
-        gap:12px;
-      }
-    }
+    :root{--blue:#0039a6;--blue-dark:#002d7a;--light:#f3f6fb;--text:#1a2238;--muted:#667089;--line:#d9e2f0;--shadow:0 12px 28px rgba(0,0,0,.08);--radius:18px}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.6}
+    a{color:var(--blue);text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:14px}.brand img{width:64px;height:64px;object-fit:contain;border:1px solid var(--line);border-radius:14px;padding:4px}
+    .brand h1{margin:0;color:var(--blue-dark);font-size:22px}.brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:16px;flex-wrap:wrap}nav a{font-weight:700;color:var(--text)}
+    main{padding:42px 0}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:22px}
+    .highlight{border-left:6px solid var(--blue);background:linear-gradient(to bottom,#fff,#f8fbff)}
+    h2{font-size:42px;color:var(--blue-dark);margin:0 0 14px}h3{color:var(--blue-dark);font-size:26px;margin:0 0 10px}
+    p{color:var(--muted);font-size:17px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700}
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}h2{font-size:32px}.card{padding:22px}nav{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap topbar">
-      <div class="brand">
-        <img class="brand-logo" src="/logo.jpeg" alt="Count of Patches Logo">
-        <div>
-          <h1>Count of Patches</h1>
-          <p>Faire Preise für die Blaulichtfamilie</p>
-        </div>
-      </div>
-
-      <nav>
-        <a href="/index.html">Startseite</a>
-        <a href="/ablauf.html">Ablauf</a>
-        <a href="/thw">THW</a>
-        <a href="/feuerwehr">Feuerwehr</a>
-        <a href="/schluesselanhaenger">Schlüsselanhänger</a>
-        <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
-      </nav>
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <img src="/logo.jpeg" alt="Count of Patches Logo">
+      <div><h1>Count of Patches</h1><p>Faire Preise für die Blaulichtfamilie</p></div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-card">
-          <h2>Über Count of Patches</h2>
-          <p>
-            Count of Patches steht für praxisnahe, saubere und glaubwürdige Lösungen
-            für die Blaulichtfamilie.
-          </p>
-          <p>
-            Der Fokus liegt auf individuellen Umsetzungen für THW, Feuerwehr, Polizei,
-            Zoll, Bund/Land und Hilfsorganisationen – ergänzt durch ausgewählte Standardprodukte im Shop.
-          </p>
-
-          <div class="actions">
-            <a class="btn" href="/index.html#anfrage">Jetzt anfragen</a>
-            <a class="btn btn-secondary" href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Zum Shop</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="section-title">Wofür Count of Patches steht</h2>
-        <p class="section-sub">Keine Massenware, sondern Lösungen mit Blick auf Einsatzrealität, Qualität und saubere Umsetzung.</p>
-
-        <div class="content-grid">
-          <div class="card">
-            <h3>Praxisnah statt beliebig</h3>
-            <p>
-              Gerade im Bereich von THW, Feuerwehr, Polizei und Hilfsorganisationen zählt nicht nur ein gutes Design,
-              sondern auch der Bezug zur Einheit, zum Einsatzalltag und zur tatsächlichen Nutzung.
-            </p>
-            <p>
-              Deshalb steht Count of Patches für Produkte, die nicht einfach nur gut aussehen,
-              sondern im Gesamtbild glaubwürdig, passend und sauber umgesetzt sind.
-            </p>
-            <p>
-              Dazu gehören Patches, Ärmelabzeichen, Basecaps, Schlüsselanhänger sowie T-Shirts und Poloshirts
-              mit individueller Veredelung.
-            </p>
-
-            <div class="trust-box">
-              <strong>Wichtig:</strong> Der Schwerpunkt liegt auf individueller Umsetzung,
-              klarer Kommunikation und einem Ergebnis, das zur jeweiligen Einheit oder Organisation passt.
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Für wen das gedacht ist</h3>
-            <p>
-              Count of Patches richtet sich an:
-            </p>
-            <p>
-              THW Ortsverbände, Fachgruppen und Einheiten, Feuerwehren, Polizeibereiche,
-              Zoll, Bund/Land sowie Hilfsorganisationen wie DRK, ASB, Malteser oder DLRG.
-            </p>
-            <p>
-              Auch kleinere Stückzahlen, Sonderwünsche und individuelle Anforderungen können berücksichtigt werden –
-              immer mit Blick auf eine sinnvolle und saubere Lösung.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2 class="section-title">Die Werte dahinter</h2>
-        <p class="section-sub">Worauf es bei Count of Patches ankommt.</p>
-
-        <div class="values">
-          <div class="value-card">
-            <h3>Vertrauen</h3>
-            <p>
-              Klare Kommunikation, nachvollziehbarer Ablauf und ein ehrlicher Umgang mit Anforderungen und Möglichkeiten.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <h3>Individualität</h3>
-            <p>
-              Keine Lösung von der Stange, sondern Umsetzung passend zur Einheit, Organisation oder zum Einsatzzweck.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <h3>Qualität</h3>
-            <p>
-              Saubere Gestaltung, stimmige Details und ein Ergebnis, das optisch und praktisch überzeugt.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <h3>Praxisbezug</h3>
-            <p>
-              Produkte sollen nicht nur gut wirken, sondern auch zum tatsächlichen Umfeld und Anspruch passen.
-            </p>
-          </div>
-        </div>
-
-        <div class="notice-box">
-          <strong>Hinweis:</strong> Standardprodukte wie direkt verfügbare Schlüsselanhänger findest du zusätzlich im Shop.
-          Individuelle Projekte laufen weiterhin über die Anfrage auf der Startseite.
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="/index.html#anfrage">Individuell anfragen</a>
-          <a class="btn btn-secondary" href="https://count-of-patches.myshopify.com/collections/schluesselanhaenger" target="_blank" rel="noopener">Schlüsselanhänger im Shop</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-links">
+    <nav>
       <a href="/index.html">Startseite</a>
-      <a href="/ablauf.html">Ablauf</a>
-      <a href="https://count-of-patches.myshopify.com" target="_blank" rel="noopener">Shop</a>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/galerie.html">Galerie</a>
+      <a href="/index.html#anfrage">Preisanfrage</a>
+      <a href="https://count-of-patches.com">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+      <h2>Über mich – Count of Patches</h2>
+      <p>Hinter Count of Patches steht nicht nur die Leidenschaft für Patches und individuelle Designs, sondern auch eine enge Verbindung zur Blaulichtfamilie.</p>
+      <p>Seit vielen Jahren bin ich selbst im Technischen Hilfswerk aktiv und kenne die Anforderungen, Wünsche und Besonderheiten von Einheiten, Ortsverbänden und Organisationen aus eigener Erfahrung.</p>
     </div>
-  </footer>
+
+    <div class="card highlight">
+      <h3>Ein besonderes Projekt – Kleiner Heros</h3>
+      <p>Ein prägendes Großprojekt war meine Mitwirkung am Patch „Kleiner Heros“.</p>
+      <p>Nach dem verheerenden Hochwasser, das unter anderem den Serengeti-Park Hodenhagen getroffen hat, durfte ich bei der Umsetzung des Patches maßgeblich mitwirken und meine Erfahrung im Bereich Vermarktung einbringen.</p>
+      <p>Durch den Verkauf der Patches konnte eine hohe Spendensumme generiert und an beteiligte Helfer übergeben werden.</p>
+      <p><a href="https://helferverein.thw-kl.de/geschichte-heros/" target="_blank" rel="noopener noreferrer">Mehr zum Projekt „Kleiner Heros“</a></p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Mein Anspruch</h3>
+        <p>Jedes Patch ist mehr als nur ein Produkt. Es steht für Identität, Zusammenhalt, Erinnerung und Engagement.</p>
+        <p>Egal ob bestehendes Design, Neuentwicklung oder Rekonstruktion – jedes Projekt wird individuell begleitet.</p>
+      </div>
+
+      <div class="card">
+        <h3>Zusammenarbeit</h3>
+        <p>Mittlerweile vertrauen zahlreiche Organisationen auf Count of Patches – von Ortsverbänden über Landesebenen bis hin zu bundesweiten Einrichtungen.</p>
+        <p>Im Mittelpunkt steht eine zuverlässige, saubere und praxisnahe Umsetzung.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Interesse an einem eigenen Projekt?</h3>
+      <p>Ob Patch, Ärmelabzeichen, Basecap, Schlüsselanhänger oder Textilien – ich freue mich über jede Anfrage.</p>
+      <a class="btn" href="/index.html#anfrage">Jetzt Anfrage senden</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/index.html">Startseite</a> · <a href="/ablauf.html">Ablauf</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
 </body>
 </html>

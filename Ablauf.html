@@ -3,371 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ablauf deiner Bestellung | Count of Patches</title>
-  <meta name="description" content="So läuft deine Bestellung bei Count of Patches ab: Muster, Freigabe, Produktion und Rechnung.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://countofpatches.de/ablauf.html">
-
+  <title>Ablauf – Count of Patches</title>
   <style>
-    :root{
-      --blue:#0039A6;
-      --blue-dark:#002c80;
-      --light:#f4f7fc;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#5e6b85;
-      --line:#dbe4f2;
-      --shadow:0 12px 28px rgba(0,0,0,0.08);
-      --radius:18px;
-    }
-
-    *{
-      box-sizing:border-box;
-    }
-
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--light);
-      color:var(--text);
-      line-height:1.7;
-    }
-
-    a{
-      color:var(--blue);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-
-    header{
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      position:sticky;
-      top:0;
-      z-index:50;
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:16px 0;
-      flex-wrap:wrap;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .brand img{
-      width:62px;
-      height:62px;
-      object-fit:contain;
-      border-radius:14px;
-      background:#fff;
-      border:1px solid var(--line);
-      padding:4px;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:22px;
-      color:var(--blue-dark);
-      line-height:1.1;
-    }
-
-    .brand p{
-      margin:4px 0 0;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      color:var(--text);
-      font-weight:600;
-      font-size:15px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:12px;
-      background:var(--blue);
-      color:#fff;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow:var(--shadow);
-    }
-
-    .btn:hover{
-      background:var(--blue-dark);
-      text-decoration:none;
-    }
-
-    main{
-      padding:52px 0 40px;
-    }
-
-    .hero-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:34px;
-      margin-bottom:24px;
-    }
-
-    h2{
-      margin:0 0 14px;
-      font-size:40px;
-      color:var(--blue-dark);
-      line-height:1.1;
-    }
-
-    .lead{
-      margin:0;
-      font-size:18px;
-      color:var(--muted);
-    }
-
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-      margin-top:24px;
-    }
-
-    .step{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .step-number{
-      display:inline-block;
-      min-width:38px;
-      height:38px;
-      line-height:38px;
-      text-align:center;
-      border-radius:999px;
-      background:#eef4ff;
-      color:var(--blue-dark);
-      font-weight:700;
-      margin-bottom:12px;
-    }
-
-    .step h3{
-      margin:0 0 10px;
-      color:var(--blue-dark);
-      font-size:22px;
-    }
-
-    .step p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .notice{
-      margin-top:24px;
-      background:#f7fbff;
-      border:1px solid #d6e7ff;
-      border-radius:16px;
-      padding:18px 20px;
-      color:var(--text);
-    }
-
-    .cta{
-      margin-top:24px;
-      background:linear-gradient(135deg, var(--blue), var(--blue-dark));
-      color:#fff;
-      border-radius:20px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .cta h3{
-      margin:0 0 6px;
-      font-size:28px;
-      color:#fff;
-    }
-
-    .cta p{
-      margin:0;
-      color:#e6edff;
-    }
-
-    footer{
-      margin-top:34px;
-      background:#fff;
-      border-top:1px solid var(--line);
-      padding:28px 0 38px;
-    }
-
-    .footer-links a{
-      display:inline-block;
-      margin:0 14px 8px 0;
-      font-weight:600;
-    }
-
-    @media (max-width: 900px){
-      .steps{
-        grid-template-columns:1fr;
-      }
-
-      h2{
-        font-size:32px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .hero-card,
-      .step{
-        padding:24px;
-      }
-
-      h2{
-        font-size:28px;
-      }
-    }
+    :root{--blue:#0039a6;--blue-dark:#002d7a;--light:#f3f6fb;--text:#1a2238;--muted:#667089;--line:#d9e2f0;--shadow:0 12px 28px rgba(0,0,0,.08);--radius:18px}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.6}
+    a{color:var(--blue);text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:14px}.brand img{width:64px;height:64px;object-fit:contain;border:1px solid var(--line);border-radius:14px;padding:4px}
+    .brand h1{margin:0;color:var(--blue-dark);font-size:22px}.brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:16px;flex-wrap:wrap}nav a{font-weight:700;color:var(--text)}
+    main{padding:42px 0}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:22px}
+    h2{font-size:42px;color:var(--blue-dark);margin:0 0 14px}h3{color:var(--blue-dark);margin:0 0 10px}
+    p{color:var(--muted);font-size:17px}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    .num{display:inline-block;background:var(--blue);color:#fff;border-radius:999px;padding:6px 12px;font-weight:700;margin-bottom:10px}
+    .btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700}
+    footer{padding:28px 0;background:#fff;border-top:1px solid var(--line)}
+    @media(max-width:700px){h2{font-size:32px}.card{padding:22px}nav{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}}
   </style>
 </head>
 <body>
-
 <header>
-  <div class="wrap nav">
+  <div class="wrap topbar">
     <div class="brand">
-      <img src="logo.jpeg" alt="Count of Patches Logo">
-      <div>
-        <h1>Count of Patches</h1>
-        <p>Faire Preise für die Blaulichtfamilie</p>
-      </div>
+      <img src="/logo.jpeg" alt="Count of Patches Logo">
+      <div><h1>Count of Patches</h1><p>Faire Preise für die Blaulichtfamilie</p></div>
     </div>
-
     <nav>
       <a href="/index.html">Startseite</a>
-      <a href="/thw">THW</a>
-      <a href="/feuerwehr">Feuerwehr</a>
-      <a href="/polizei">Polizei</a>
-      <a href="/zoll">Zoll</a>
-      <a href="/behoerden">Bund/Land</a>
-      <a href="/hilfsorganisationen">Hilfsorganisationen</a>
-      <a class="btn" href="mailto:Countofpatches@outlook.de">Preisanfrage</a>
+      <a href="/galerie.html">Galerie</a>
+      <a href="/index.html#anfrage">Preisanfrage</a>
+      <a href="https://count-of-patches.com">Shop</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <div class="hero-card">
-      <h2>Ablauf deiner Bestellung</h2>
-      <p class="lead">
-        So läuft deine Bestellung bei Count of Patches ab – klar, transparent und mit der Möglichkeit,
-        bis zur Freigabe Änderungen vorzunehmen.
-      </p>
+    <div class="card">
+      <h2>So läuft dein Projekt ab</h2>
+      <p>Von der ersten Idee bis zum fertigen Produkt begleite ich dein Projekt persönlich und praxisnah.</p>
     </div>
 
     <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Eingang deiner Bestellung</h3>
-        <p>
-          Nach dem Eingang deiner Bestellung erstellen wir ein Muster.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Muster & Freigabe</h3>
-        <p>
-          Dieses Muster erhältst du als Foto zum Betrachten und Freigeben.
-          Bis zu diesem Zeitpunkt können wir noch ohne Probleme Änderungen vornehmen.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Änderungen sind möglich</h3>
-        <p>
-          Getreu dem Motto: <strong>Nichts ändert sich so schnell wie die Lage.</strong>
-          Deshalb sind Anpassungen bis zur Freigabe problemlos umsetzbar.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Produktion</h3>
-        <p>
-          Nach deiner Freigabe beginnt die Produktion.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>Rechnung</h3>
-        <p>
-          Zum Produktionsende wird die Rechnung erstellt.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">6</div>
-        <h3>Zahlungsablauf</h3>
-        <p>
-          Bestellst du als Privatperson, wird die Rechnung vor dem Versand fällig.
-          Bei Bestellungen über Dienststellen wird die Rechnung nach Lieferung fällig.
-        </p>
-      </div>
+      <div class="step"><span class="num">1</span><h3>Anfrage senden</h3><p>Du sendest deine Idee, Stückzahl, gewünschte Machart und vorhandene Dateien über das Preisanfrageformular.</p></div>
+      <div class="step"><span class="num">2</span><h3>Abstimmung</h3><p>Wir prüfen Motiv, Größe, Machart und Details. Bei Bedarf werden offene Punkte gemeinsam geklärt.</p></div>
+      <div class="step"><span class="num">3</span><h3>Entwurf & Freigabe</h3><p>Vor der Produktion erfolgt eine Abstimmung, damit Design und Umsetzung zu deiner Einheit passen.</p></div>
+      <div class="step"><span class="num">4</span><h3>Produktion</h3><p>Nach Freigabe wird dein Projekt produziert – sauber, zuverlässig und passend zur gewünschten Ausführung.</p></div>
+      <div class="step"><span class="num">5</span><h3>Versand</h3><p>Nach Fertigstellung werden die Produkte versendet oder nach Absprache übergeben.</p></div>
     </div>
 
-    <div class="notice">
-      <strong>Hinweis:</strong> Je genauer die Angaben zu Design, Stückzahl und Machart sind,
-      desto schneller kann die Bearbeitung deiner Anfrage oder Bestellung erfolgen.
-    </div>
-
-    <div class="cta">
-      <div>
-        <h3>Jetzt anfragen oder bestellen</h3>
-        <p>Für Patches, Schlüsselanhänger und Basecaps direkt über die Startseite.</p>
-      </div>
-      <a class="btn" href="/index.html#anfrage">Zur Anfrage / Bestellung</a>
+    <div class="card">
+      <h3>Wichtig</h3>
+      <p>Patches haben in der Regel eine Mindestmenge von 20 Stück. Schlüsselanhänger haben eine Mindestmenge von 50 Stück. Basecaps sind ohne Mindestmenge möglich.</p>
+      <a class="btn" href="/index.html#anfrage">Jetzt Anfrage senden</a>
     </div>
   </div>
 </main>
 
 <footer>
-  <div class="wrap footer-links">
-    <a href="/index.html">Startseite</a>
-    <a href="/ueber-mich.html">Über mich</a>
-    <a href="/impressum.html">Impressum</a>
-    <a href="/datenschutz.html">Datenschutz</a>
+  <div class="wrap">
+    <a href="/index.html">Startseite</a> · <a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-
 </body>
 </html>
